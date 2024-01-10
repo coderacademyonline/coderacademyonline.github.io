@@ -477,51 +477,47 @@
 </ol>
 <h3 id="手动数据校验的痛点"><a href="#手动数据校验的痛点" class="headerlink" title="手动数据校验的痛点"></a>手动数据校验的痛点</h3><p>日常开发中，有些写项目可能没有采用Spring Validator，采用的是在代码中手动校验数据。但是手动校验数据会带来代码冗余、错误处理的一致性以及业务规则的维护的一些痛点。</p>
 <ul>
-<li><p>代码冗余的手动校验逻辑，导致代码中大量的if-else</p>
+<li>代码冗余的手动校验逻辑，导致代码中大量的if-else</li>
+</ul>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> ResponseEntity<span class="token operator">&lt;</span>String<span class="token operator">></span> <span class="token function">registerUser</span><span class="token punctuation">(</span>UserRegistrationRequest request<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>request <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">return</span> ResponseEntity<span class="token punctuation">.</span><span class="token function">badRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">body</span><span class="token punctuation">(</span><span class="token string">"Request cannot be null"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>request <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> ResponseEntity<span class="token punctuation">.</span><span class="token function">badRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">body</span><span class="token punctuation">(</span><span class="token string">"Request cannot be null"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>StringUtils<span class="token punctuation">.</span><span class="token function">isBlank</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span><span class="token function">getUsername</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">return</span> ResponseEntity<span class="token punctuation">.</span><span class="token function">badRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">body</span><span class="token punctuation">(</span><span class="token string">"Username cannot be blank"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>StringUtils<span class="token punctuation">.</span><span class="token function">isBlank</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span><span class="token function">getUsername</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> ResponseEntity<span class="token punctuation">.</span><span class="token function">badRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">body</span><span class="token punctuation">(</span><span class="token string">"Username cannot be blank"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-  <span class="token keyword">if</span> <span class="token punctuation">(</span>StringUtils<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span><span class="token function">getPassword</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">6</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-      <span class="token keyword">return</span> ResponseEntity<span class="token punctuation">.</span><span class="token function">badRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">body</span><span class="token punctuation">(</span><span class="token string">"Password must be at least 6 characters long"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-  <span class="token punctuation">}</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>StringUtils<span class="token punctuation">.</span><span class="token function">length</span><span class="token punctuation">(</span>request<span class="token punctuation">.</span><span class="token function">getPassword</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">&lt;</span> <span class="token number">6</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> ResponseEntity<span class="token punctuation">.</span><span class="token function">badRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">body</span><span class="token punctuation">(</span><span class="token string">"Password must be at least 6 characters long"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
 
-  <span class="token comment" spellcheck="true">// 处理用户注册逻辑</span>
-  <span class="token keyword">return</span> ResponseEntity<span class="token punctuation">.</span><span class="token function">ok</span><span class="token punctuation">(</span><span class="token string">"User registered successfully"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token comment" spellcheck="true">// 处理用户注册逻辑</span>
+    <span class="token keyword">return</span> ResponseEntity<span class="token punctuation">.</span><span class="token function">ok</span><span class="token punctuation">(</span><span class="token string">"User registered successfully"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ul>
+<li><p>缺乏统一的错误处理机制</p>
+</li>
+<li><p>业务规则维护的困难<br>随着业务规则的增加，手动编写的校验逻辑可能变得庞大且难以维护。修改和扩展校验规则可能需要修改多个地方，增加了维护成本。</p>
+</li>
+<li><p>缺乏验证组的支持<br>手动校验通常不支持验证组的概念，难以根据不同场景执行不同的验证规则。</p>
+</li>
+<li><p>不易于集成前端验证<br>手动校验不易与前端验证框架集成，导致前后端验证逻辑可能不一致。</p>
 </li>
 </ul>
-<pre><code>- 缺乏统一的错误处理机制
+<p>通过引入 Spring Validator，我们能够有效解决这些痛点，提高代码的可读性、可维护性，并确保校验逻辑的一致性。</p>
+<h3 id="Spring-Boot-中的-Validation-概述"><a href="#Spring-Boot-中的-Validation-概述" class="headerlink" title="Spring Boot 中的 Validation 概述"></a>Spring Boot 中的 Validation 概述</h3><p>因Springboot的<code>spring-boot-starter-web</code>默认内置了<code>Hibernate-Validator</code>（Spring boot 2.3以前版本），虽然<code>Hibernate-Validator</code>也能做到数据校验，但是考虑到<code>spring-boot-starter-validation</code> 是一个抽象层，使得验证框架的具体实现变得可插拔。这意味着，除了 <code>Hibernate Validator</code>，开发者可以选择其他符合 Bean Validation 规范的实现。所以我们可以手动引入<code>spring-boot-starter-validation</code>实现数据验证。</p>
+<pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-validation<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span>
 
-- 业务规则维护的困难
-随着业务规则的增加，手动编写的校验逻辑可能变得庞大且难以维护。修改和扩展校验规则可能需要修改多个地方，增加了维护成本。
-
--  缺乏验证组的支持
-手动校验通常不支持验证组的概念，难以根据不同场景执行不同的验证规则。
-
-- 不易于集成前端验证
-手动校验不易与前端验证框架集成，导致前后端验证逻辑可能不一致。
-
-通过引入 Spring Validator，我们能够有效解决这些痛点，提高代码的可读性、可维护性，并确保校验逻辑的一致性。
-### Spring Boot 中的 Validation 概述
-
-因Springboot的`spring-boot-starter-web`默认内置了`Hibernate-Validator`（Spring boot 2.3以前版本），虽然`Hibernate-Validator`也能做到数据校验，但是考虑到`spring-boot-starter-validation` 是一个抽象层，使得验证框架的具体实现变得可插拔。这意味着，除了 `Hibernate Validator`，开发者可以选择其他符合 Bean Validation 规范的实现。所以我们可以手动引入`spring-boot-starter-validation`实现数据验证。
-```xml
-&lt;dependency&gt;
-    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
-    &lt;artifactId&gt;spring-boot-starter-validation&lt;/artifactId&gt;
-&lt;/dependency&gt;
-
-&lt;dependency&gt;  
-    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;  
-    &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;  
-&lt;/dependency&gt;</code></pre><p><code>spring-boot-starter-validation</code> 不仅支持 JSR-303（Bean Validation 1.0）规范，还提供了对 JSR-380（Bean Validation 2.0）规范的全面支持。这使得开发者可以利用 Bean Validation 2.0 的新特性，更灵活地定义验证规则，包括对集合、嵌套对象的验证等。</p>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.boot<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>  
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-boot-starter-web<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>  
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><code>spring-boot-starter-validation</code> 不仅支持 JSR-303（Bean Validation 1.0）规范，还提供了对 JSR-380（Bean Validation 2.0）规范的全面支持。这使得开发者可以利用 Bean Validation 2.0 的新特性，更灵活地定义验证规则，包括对集合、嵌套对象的验证等。</p>
 <p>通过在实体类的字段上使用标准的 Bean Validation 注解（如 <code>@NotBlank</code>、<code>@Size</code>、<code>@Email</code> 等），我们能够直观地定义数据的验证规则。这些验证规则会在应用程序的不同层次（如控制器层）生效，确保输入数据的正确性。</p>
 <h3 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h3><p>Spring Boot Validation 提供了一系列注解，用于在实体类中定义验证规则。以下是一些常用的校验相关的注解及其功能以及用法：<br>1.<strong><code>@NotNull</code>：</strong> 校验元素值不能为 null。如果元素为null，则验证失败。通常用于字段级别的验证。</p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@NotNull</span><span class="token punctuation">(</span>message <span class="token operator">=</span> <span class="token string">"Name cannot be null"</span><span class="token punctuation">)</span>
@@ -974,7 +970,7 @@
 </li>
 </ul>
 <p>传递<code>userId</code>，不传递<code>userName</code>时，校验通过<br><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240109171703.png" alt="image.png"></p>
-<h3 id="处理验证错误"><a href="#处理验证错误" class="headerlink" title="处理验证错误"></a>处理验证错误</h3><p>由上述测试结果中，可以看出接口抛出的一场结果并不是很友好，我们需要统一的处理一下异常以及返回结果，给予用户友好提示。具体实现，在这里不再赘述，可以移步：</p>
+<h3 id="处理验证错误"><a href="#处理验证错误" class="headerlink" title="处理验证错误"></a>处理验证错误</h3><p>由上述测试结果中，可以看出接口抛出的一场结果并不是很友好，我们需要统一的处理一下异常以及返回结果，给予用户友好提示。具体实现，在这里不再赘述，可以移步：<a href="https://www.coderacademy.online/article/springbootcommonresponse.html">SpringBoot统一异常处理</a></p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>Spring Boot Validation通过简化验证流程、集成Bean Validation规范、支持分组验证以及提供友好的错误处理，为Java应用开发者提供了强大而灵活的数据验证机制。最佳实践包括在控制器层使用<code>@Validated</code>注解、合理利用各种验证注解、使用自定义验证注解解决特定业务需求，确保代码清晰简洁、符合规范，并提高系统的可维护性和用户体验。</p>
 
             </div>
