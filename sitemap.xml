@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.coderacademy.online/article/jvmclassloader.html</loc>
+    
+    <lastmod>2024-01-10T11:28:44.714Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.coderacademy.online/article/2d9d416b.html</loc>
     
     <lastmod>2024-01-10T11:27:07.642Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>https://www.coderacademy.online/article/springbootcommonresponse.html</loc>
     
     <lastmod>2024-01-10T06:34:28.366Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.coderacademy.online/article/jvmclassloader.html</loc>
-    
-    <lastmod>2024-01-10T03:51:47.449Z</lastmod>
     
   </url>
   
@@ -86,13 +86,6 @@
   </url>
   
   <url>
-    <loc>https://www.coderacademy.online/archives/index.html</loc>
-    
-    <lastmod>2021-07-29T12:54:42.000Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://www.coderacademy.online/categories/index.html</loc>
     
     <lastmod>2021-07-29T12:54:42.000Z</lastmod>
@@ -101,6 +94,13 @@
   
   <url>
     <loc>https://www.coderacademy.online/tags/index.html</loc>
+    
+    <lastmod>2021-07-29T12:54:42.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.coderacademy.online/archives/index.html</loc>
     
     <lastmod>2021-07-29T12:54:42.000Z</lastmod>
     

@@ -71,7 +71,7 @@
       
       <categories>
           
-          <category> Java </category>
+          <category> Java核心基础 </category>
           
       </categories>
       
@@ -223,9 +223,9 @@
       
         <tags>
             
-            <tag> Java工具类 </tag>
-            
             <tag> Guava </tag>
+            
+            <tag> Java工具类 </tag>
             
         </tags>
       
