@@ -13,7 +13,8 @@
 
 
 我们日常开发的项目中，如果代码中存在大量的if-else语句，阅读起来非常的折磨（直接劝退），维护起来也很难，也特别容易出问题。比如说以下：
-接下来，本文介绍我们常使用的8种方">
+
+接下来，本文介绍我们常使用的8种">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -371,9 +372,11 @@
                 <blockquote>
 <p>关注公众号【码农Academy】，每日技术干货马上就来！</p>
 </blockquote>
-<p><img src="https://raw.githubusercontent.com/coderacademyonline/blogimage/master/contact.jpg" alt="contact.jpg"></p>
-<p>我们日常开发的项目中，如果代码中存在大量的if-else语句，阅读起来非常的折磨（直接劝退），维护起来也很难，也特别容易出问题。比如说以下：<br><img src="https://raw.githubusercontent.com/coderacademyonline/blogimage/master/coderacademy/ifelse%E5%9E%83%E5%9C%BE%E4%BB%A3%E7%A0%81.png" alt="ifelse垃圾代码.png"></p>
-<p>接下来，本文介绍我们常使用的8种方法去优化if-else。<br><img src="https://raw.githubusercontent.com/coderacademyonline/blogimage/master/coderacademy/ifelse%E4%BC%98%E5%8C%96%E6%96%B9%E6%A1%88.png" alt="ifelse优化方案.png"></p>
+<p><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/medias/contact.jpg" alt="contact.jpg"></p>
+<p>我们日常开发的项目中，如果代码中存在大量的if-else语句，阅读起来非常的折磨（直接劝退），维护起来也很难，也特别容易出问题。比如说以下：</p>
+<p><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/ifelse%E5%9E%83%E5%9C%BE%E4%BB%A3%E7%A0%81.png" alt="ifelse垃圾代码.png"></p>
+<p>接下来，本文介绍我们常使用的8种方法去优化if-else。</p>
+<p><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/ifelse%E4%BC%98%E5%8C%96%E6%96%B9%E6%A1%88.png" alt="ifelse优化方案.png"></p>
 <h3 id="1、提前return，让正常流程走主干"><a href="#1、提前return，让正常流程走主干" class="headerlink" title="1、提前return，让正常流程走主干"></a>1、提前return，让正常流程走主干</h3><p>如果if-else代码中包含return语句，或者我们可以将包含if-else的代码从主干中抽取到一个单独方法，这样就可以在这个方法中可以return掉。这中思想也是短路求值的一种体现。把多余 else 干掉，使代码更加优雅。</p>
 <ul>
 <li>优化前代码：</li>

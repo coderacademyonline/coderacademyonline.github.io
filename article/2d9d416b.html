@@ -374,7 +374,7 @@
                 <blockquote>
 <p>关注公众号【码农Academy】，每日技术干货马上就来！</p>
 </blockquote>
-<p><img src="https://raw.githubusercontent.com/coderacademyonline/blogimage/master/contact.jpg" alt="contact.jpg"></p>
+<p><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/medias/contact.jpg" alt="contact.jpg"></p>
 <h3 id="1-引言"><a href="#1-引言" class="headerlink" title="1. 引言"></a>1. 引言</h3><p>在当今高度并发的软件开发环境中，有效地管理线程是确保程序性能和稳定性的关键因素之一。Java线程池作为一种强大的并发工具，不仅能够提高任务执行的效率，还能有效地控制系统资源的使用。<br>本文将深入探讨Java线程池的原理、参数配置、自定义以及实际应用。通过理解这些关键概念，开发者将能够更好地应对不同的并发场景，优化程序的执行效率。<br>首先，我们将介绍线程池的基本概念，解释它在并发编程中的作用和优势。随后，我们将深入研究Java线程池的工作原理，剖析其在任务提交、执行和线程管理方面的内部机制。</p>
 <h3 id="2-Java线程池的基础概念"><a href="#2-Java线程池的基础概念" class="headerlink" title="2. Java线程池的基础概念"></a>2. Java线程池的基础概念</h3><p>在并发编程中，线程池是一种重要的设计模式，它能够有效地管理和复用线程，提高程序的性能和资源利用率。Java线程池作为Java并发包（java.util.concurrent）的一部分，为开发者提供了方便、高效的多线程处理方式。同时在阿里巴巴开发规范中，强制要使用线程池去提供线程，不允许在代码中显示的创建线程。</p>
 <h4 id="2-1-什么是线程池？"><a href="#2-1-什么是线程池？" class="headerlink" title="2.1 什么是线程池？"></a>2.1 什么是线程池？</h4><p>线程池是由一组线程组成的线程队列，它们在程序启动时就被创建并一直存在。这些线程可被用来执行提交到线程池的各种任务，从而避免为每个任务都创建新线程。这种机制能够降低线程创建和销毁的开销，提高系统性能。</p>
@@ -428,7 +428,8 @@ Future<span class="token operator">&lt;</span><span class="token operator">?</sp
 <li>只能接受<code>Runnable</code>类型的任务。</li>
 </ul>
 <p>总的来说，<code>submit</code>方法更加灵活，适用于更多场景，而<code>execute</code>方法更加简单，适用于只关心任务执行而不需要获取结果的场景。在实际应用中，根据具体需求选择合适的方法。如果需要获取任务的执行结果、取消任务等，建议使用<code>submit</code>方法。只是执行任务而不关心返回值，可以使用<code>execute</code>方法。</p>
-<h3 id="4-线程池的参数以及配置"><a href="#4-线程池的参数以及配置" class="headerlink" title="4. 线程池的参数以及配置"></a>4. 线程池的参数以及配置</h3><p>Java线程池的性能和行为可以通过一系列参数进行调整，以满足不同的并发需求。<code>ThreadPoolExecutor</code>中提供的构造器如下：<br><img src="https://raw.githubusercontent.com/coderacademyonline/blogimage/master/coderacademy/ThreadPoolExecutor.png" alt="ThreadPoolExecutor.png"></p>
+<h3 id="4-线程池的参数以及配置"><a href="#4-线程池的参数以及配置" class="headerlink" title="4. 线程池的参数以及配置"></a>4. 线程池的参数以及配置</h3><p>Java线程池的性能和行为可以通过一系列参数进行调整，以满足不同的并发需求。<code>ThreadPoolExecutor</code>中提供的构造器如下：</p>
+<p><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/ThreadPoolExecutor.png" alt="ThreadPoolExecutor.png"></p>
 <h4 id="4-1-七大参数"><a href="#4-1-七大参数" class="headerlink" title="4.1 七大参数"></a>4.1 七大参数</h4><h5 id="4-1-核心线程数（Core-Pool-Size）"><a href="#4-1-核心线程数（Core-Pool-Size）" class="headerlink" title="4.1 核心线程数（Core Pool Size）"></a>4.1 核心线程数（Core Pool Size）</h5><p>核心线程数是线程池中一直存活的线程数量（<strong>即使它们处于空闲状态</strong>）。这些线程用于执行提交到线程池的任务。通过合理设置核心线程数，可以在系统负载增加时迅速响应任务。</p>
 <h5 id="4-2-最大线程数（Maximum-Pool-Size）"><a href="#4-2-最大线程数（Maximum-Pool-Size）" class="headerlink" title="4.2 最大线程数（Maximum Pool Size）"></a>4.2 最大线程数（Maximum Pool Size）</h5><p>最大线程数定义了线程池中允许创建的最大线程数量。当核心线程都在执行任务，而新任务仍然到来时，线程池会创建新线程，直到达到最大线程数。超过最大线程数的任务会被拒绝。</p>
 <h5 id="4-3-线程存活时间（Keep-Alive-Time）"><a href="#4-3-线程存活时间（Keep-Alive-Time）" class="headerlink" title="4.3 线程存活时间（Keep Alive Time）"></a>4.3 线程存活时间（Keep Alive Time）</h5><p>线程存活时间指的是非核心线程在空闲状态下的最大存活时间。当线程池中线程数量超过核心线程数时，空闲的非核心线程在经过一定时间后会被终止，从而释放系统资源。</p>
@@ -447,7 +448,7 @@ Future<span class="token operator">&lt;</span><span class="token operator">?</sp
 <li><strong>DiscardOldestPolicy：</strong><br>当任务被拒绝添加时，会抛弃任务队列中最旧的任务也就是最先加入队列的，再把这个新任务添加进去。<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">new</span> <span class="token class-name">ThreadPoolExecutor<span class="token punctuation">.</span>DiscardOldestPolicy</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 </li>
 </ul>
-<h4 id="4-2-线程池提交任务执行流程"><a href="#4-2-线程池提交任务执行流程" class="headerlink" title="4.2 线程池提交任务执行流程"></a>4.2 线程池提交任务执行流程</h4><h5 id="4-2-1-执行流程"><a href="#4-2-1-执行流程" class="headerlink" title="4.2.1 执行流程"></a>4.2.1 执行流程</h5><p><img src="https://raw.githubusercontent.com/coderacademyonline/blogimage/master/coderacademy/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B.png" alt="线程池执行流程.png"></p>
+<h4 id="4-2-线程池提交任务执行流程"><a href="#4-2-线程池提交任务执行流程" class="headerlink" title="4.2 线程池提交任务执行流程"></a>4.2 线程池提交任务执行流程</h4><h5 id="4-2-1-执行流程"><a href="#4-2-1-执行流程" class="headerlink" title="4.2.1 执行流程"></a>4.2.1 执行流程</h5><p><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/%E7%BA%BF%E7%A8%8B%E6%B1%A0%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B.png" alt="线程池执行流程.png"></p>
 <h5 id="4-2-2-实例讲解"><a href="#4-2-2-实例讲解" class="headerlink" title="4.2.2 实例讲解"></a>4.2.2 实例讲解</h5><p>某银行柜台，共有5个窗口（Maximum Pool Size），平时常开2个窗口办理业务（Core Pool Size），银行大厅摆了5个椅子（Work Queue）供客户等待。银行规定当常开的窗口都在办理业务，并且大厅椅子上都坐满了客户，那么另外3个不常开的窗口也要打开办理业务。如果这3个窗口也都全部在办理业务，后面继续来银行办理业务的客户银行将拒绝办理。如果某个员工空闲下并且超过了5（Keep Alive Time）秒钟（TimeUnit）那么他就可以关闭窗口去休息。但是必须保留2个常开的窗口。<br>我们先按照上述流程创建一个线程池：</p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">// 推荐使用Guava的ThreadFactory构建ThreadFactory，自定义线程名称 方便后续排查问题  </span>
 ThreadFactory threadFactory <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ThreadFactoryBuilder</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setNameFormat</span><span class="token punctuation">(</span><span class="token string">"mythread-pool-"</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">build</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
@@ -468,15 +469,17 @@ ExecutorService executorService <span class="token operator">=</span> <span clas
         <span class="token keyword">new</span> <span class="token class-name">ThreadPoolExecutor<span class="token punctuation">.</span>AbortPolicy</span><span class="token punctuation">(</span><span class="token punctuation">)</span>  
 <span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>（1）初始状态下，只有2个窗口为2个客户办理业务。</p>
-<p><img src="https://raw.githubusercontent.com/coderacademyonline/blogimage/master/coderacademy/ThreadPool_%E6%BC%94%E7%A4%BA1.png" alt="ThreadPool_演示1.png"></p>
+<p><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/ThreadPool_%E6%BC%94%E7%A4%BA1.png" alt="ThreadPool_演示1.png"></p>
 <p>（2）在客户1,客户2办理业务或者说常开窗口一直都有客户在办理业务，此时陆续有客户进来，需要在银行大厅的椅子上等待。</p>
-<p><img src="https://raw.githubusercontent.com/coderacademyonline/blogimage/master/coderacademy/ThreadPool_%E5%9B%BE%E8%A7%A32.png" alt="ThreadPool_图解2.png"></p>
+<p><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/ThreadPool_%E5%9B%BE%E8%A7%A32.png" alt="ThreadPool_图解2.png"></p>
 <p>（3）直到大厅的椅子都坐满。</p>
-<p><img src="https://raw.githubusercontent.com/coderacademyonline/blogimage/master/coderacademy/ThreadPool_%E5%9B%BE%E8%A7%A35.png" alt="ThreadPool_图解5.png"></p>
+<p><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/ThreadPool_%E5%9B%BE%E8%A7%A35.png" alt="ThreadPool_图解5.png"></p>
 <p>（4）此时如果在所有的窗口都在办理业务，大厅椅子坐满，如果再来一个客户，将开启3/4/5的窗口</p>
-<p><img src="https://raw.githubusercontent.com/coderacademyonline/blogimage/master/coderacademy/ThreadPool_%E5%9B%BE%E8%A7%A37.png" alt="ThreadPool_图解7.png"></p>
-<p>（5）此时如果在所有的窗口都在办理业务，大厅椅子坐满，还从外面再来2个客户办理业务，那么就需要把剩下的窗口都要打开去办理业务。<br><img src="https://raw.githubusercontent.com/coderacademyonline/blogimage/master/coderacademy/ThreadPool_%E5%9B%BE%E8%A7%A38.png" alt="ThreadPool_图解8.png"></p>
-<p>（6）此时如果再来1个客户，就会按照线程池定义的拒绝策略去执行，比如我们设置策略为：AbortPolicy，就会抛出异常。<br><img src="https://raw.githubusercontent.com/coderacademyonline/blogimage/master/coderacademy/ThreadPool_%E5%9B%BE%E8%A7%A39.png" alt="ThreadPool_图解9.png"></p>
+<p><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/ThreadPool_%E5%9B%BE%E8%A7%A37.png" alt="ThreadPool_图解7.png"></p>
+<p>（5）此时如果在所有的窗口都在办理业务，大厅椅子坐满，还从外面再来2个客户办理业务，那么就需要把剩下的窗口都要打开去办理业务。</p>
+<p><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/ThreadPool_%E5%9B%BE%E8%A7%A38.png" alt="ThreadPool_图解8.png"></p>
+<p>（6）此时如果再来1个客户，就会按照线程池定义的拒绝策略去执行，比如我们设置策略为：AbortPolicy，就会抛出异常。</p>
+<p><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/ThreadPool_%E5%9B%BE%E8%A7%A39.png" alt="ThreadPool_图解9.png"></p>
 <h4 id="4-3-线程池参数配置"><a href="#4-3-线程池参数配置" class="headerlink" title="4.3 线程池参数配置"></a>4.3 线程池参数配置</h4><p>线程池的配置参数在实际应用中需要根据具体的业务场景和性能需求进行巧妙调整。这就好比在日常生活中，如果有一个任务需要三人协同完成，但却有六人前来参与，就会造成三人的资源浪费；反之，若只安排两人协作，可能会超负荷而不切实际。因此，在线程池参数配置时，过小或过大都会带来问题。</p>
 <p>当线程池数量设置过小时，面对大量同时到达的任务或请求，可能导致这些任务在任务队列中排队等待执行。甚至在任务队列达到最大容量时，无法处理额外的任务，或者导致任务队列积压，有可能引发内存溢出（OOM）问题。这明显是一个问题，因为CPU资源无法得到充分利用。</p>
 <p>相反，若线程数量设置过大，大量线程可能会同时争夺CPU资源，导致频繁的上下文切换，从而增加线程的执行时间，影响整体执行效率。因此，在线程池配置中需要平衡线程数量，以满足高并发场景下的任务处理需求，同时避免不必要的资源争夺和上下文切换，以保障系统的稳定性和性能。</p>
@@ -507,7 +510,7 @@ ExecutorService executorService <span class="token operator">=</span> <span clas
 <pre class="line-numbers language-java"><code class="language-java">ExecutorService executorService4 <span class="token operator">=</span> Executors<span class="token punctuation">.</span><span class="token function">newScheduledThreadPool</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
 <p>创建一个允许最大线程数等于Integer.MAX，但是他使用的阻塞工作队列是<code>DelayedWorkQueue</code>。<code>DelayedWorkQueue</code>的核心数据结构是二叉最小堆的优先队列，队列满时会自动扩容。所以最大线程数没有意义，线程池中永远会保持至多有核心线程数个工作线程正在运行。</p>
 <p><strong>注意：</strong> 以上创建线程池的方法，可以做自己Demo使用，不应该用在项目中。在阿里巴巴代码规范中，不支持使用这种方式去创建，支持手动创建线程池。</p>
-<p><img src="https://raw.githubusercontent.com/coderacademyonline/blogimage/master/coderacademy/ThreadPool_%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83.png" alt="ThreadPool_阿里巴巴开发规范.png"></p>
+<p><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/ThreadPool_%E9%98%BF%E9%87%8C%E5%B7%B4%E5%B7%B4%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83.png" alt="ThreadPool_阿里巴巴开发规范.png"></p>
 <h3 id="6-总结"><a href="#6-总结" class="headerlink" title="6.总结"></a>6.总结</h3><p>Java线程池是多线程编程中的重要工具，能够有效管理和复用线程，提高系统性能和资源利用率。本文深入探讨了线程池的基础概念、工作原理、参数配置、自定义以及使用示例，并强调了注意事项。<br>通过了解线程池的工作原理，开发者可以更好地配置线程池以适应不同的并发需求。自定义线程池则使得线程池更灵活地适应特定业务场景。在实际应用中，要谨慎选择线程池类型、合理配置参数、注意任务的生命周期和线程安全等问题，以确保系统的稳定性和性能。</p>
 <h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p>1、<a href="https://tech.meituan.com/2020/04/02/java-pooling-pratice-in-meituan.html" target="_blank" rel="noopener">Java线程池实现原理及其在美团业务中的实践 - 美团技术团队 (meituan.com)</a><br>2、《Java并发编程实战》</p>
 
