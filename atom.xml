@@ -186,7 +186,7 @@
     <link href="https://www.coderacademy.online/article/2d9d416b.html"/>
     <id>https://www.coderacademy.online/article/2d9d416b.html</id>
     <published>2024-01-04T02:27:05.000Z</published>
-    <updated>2024-01-10T10:19:38.370Z</updated>
+    <updated>2024-01-10T11:27:07.642Z</updated>
     
     <summary type="html">
     
@@ -206,13 +206,11 @@
       <category term="Java核心基础" scheme="https://www.coderacademy.online/categories/Java%E6%A0%B8%E5%BF%83%E5%9F%BA%E7%A1%80/"/>
     
     
-      <category term="Java基础" scheme="https://www.coderacademy.online/tags/Java%E5%9F%BA%E7%A1%80/"/>
+      <category term="Java" scheme="https://www.coderacademy.online/tags/Java/"/>
     
       <category term="Java线程池" scheme="https://www.coderacademy.online/tags/Java%E7%BA%BF%E7%A8%8B%E6%B1%A0/"/>
     
       <category term="自定义线程池" scheme="https://www.coderacademy.online/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E7%BA%BF%E7%A8%8B%E6%B1%A0/"/>
-    
-      <category term="并发编程" scheme="https://www.coderacademy.online/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
@@ -274,9 +272,9 @@
       <category term="Java工具类" scheme="https://www.coderacademy.online/categories/Java%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
     
     
-      <category term="Guava" scheme="https://www.coderacademy.online/tags/Guava/"/>
-    
       <category term="Java工具类" scheme="https://www.coderacademy.online/tags/Java%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
+    
+      <category term="Guava" scheme="https://www.coderacademy.online/tags/Guava/"/>
     
   </entry>
   

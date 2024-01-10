@@ -165,13 +165,11 @@
       
         <tags>
             
-            <tag> Java基础 </tag>
+            <tag> Java </tag>
             
             <tag> Java线程池 </tag>
             
             <tag> 自定义线程池 </tag>
-            
-            <tag> 并发编程 </tag>
             
         </tags>
       
@@ -225,9 +223,9 @@
       
         <tags>
             
-            <tag> Guava </tag>
-            
             <tag> Java工具类 </tag>
+            
+            <tag> Guava </tag>
             
         </tags>
       
