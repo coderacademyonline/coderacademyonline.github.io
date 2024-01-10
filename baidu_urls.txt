@@ -1,3 +1,5 @@
+https://www.coderacademy.online/article/springbootcommonresponse.html
+https://www.coderacademy.online/article/springbootvalidation.html
 https://www.coderacademy.online/article/jvmclassloader.html
 https://www.coderacademy.online/article/7cd2c424.html
 https://www.coderacademy.online/article/1d31dad8.html

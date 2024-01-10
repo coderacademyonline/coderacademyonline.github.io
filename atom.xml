@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.coderacademy.online/"/>
-  <updated>2024-01-10T03:51:47.449Z</updated>
+  <updated>2024-01-10T06:34:28.366Z</updated>
   <id>https://www.coderacademy.online/</id>
   
   <author>
@@ -15,6 +15,72 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SpringBoot统一结果返回，统一异常处理，大牛都这么玩</title>
+    <link href="https://www.coderacademy.online/article/springbootcommonresponse.html"/>
+    <id>https://www.coderacademy.online/article/springbootcommonresponse.html</id>
+    <published>2024-01-10T06:19:57.000Z</published>
+    <updated>2024-01-10T06:34:28.366Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="SpringBoot" scheme="https://www.coderacademy.online/categories/SpringBoot/"/>
+    
+    
+      <category term="SpringBoot" scheme="https://www.coderacademy.online/tags/SpringBoot/"/>
+    
+      <category term="SpringBoot统一结果返回" scheme="https://www.coderacademy.online/tags/SpringBoot%E7%BB%9F%E4%B8%80%E7%BB%93%E6%9E%9C%E8%BF%94%E5%9B%9E/"/>
+    
+      <category term="SpringBoot统一异常处理" scheme="https://www.coderacademy.online/tags/SpringBoot%E7%BB%9F%E4%B8%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>新来的一个同事，把SpringBoot参数校验玩的那叫一个优雅</title>
+    <link href="https://www.coderacademy.online/article/springbootvalidation.html"/>
+    <id>https://www.coderacademy.online/article/springbootvalidation.html</id>
+    <published>2024-01-10T06:19:41.000Z</published>
+    <updated>2024-01-10T06:31:59.780Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="SpringBoot" scheme="https://www.coderacademy.online/categories/SpringBoot/"/>
+    
+    
+      <category term="SpringBoot" scheme="https://www.coderacademy.online/tags/SpringBoot/"/>
+    
+      <category term="SpringBoot Validation" scheme="https://www.coderacademy.online/tags/SpringBoot-Validation/"/>
+    
+      <category term="SpringBoot参数校验" scheme="https://www.coderacademy.online/tags/SpringBoot%E5%8F%82%E6%95%B0%E6%A0%A1%E9%AA%8C/"/>
+    
+  </entry>
   
   <entry>
     <title>重温Java基础（三）之Java虚拟机类加载机制探究：生命周期、初始化、使用与验证</title>
