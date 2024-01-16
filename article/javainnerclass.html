@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="面试官：请说一下Mysql中count(1)、count(*)以及count(列)的区别？, Java，Spring，SpringBoot，SpringCloud，Elasticsearch，MQ，工作流，规则引擎">
+    <meta name="keywords" content="重温Java基础（一）Java中的四种内部类, Java，Spring，SpringBoot，SpringCloud，Elasticsearch，MQ，工作流，规则引擎">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
@@ -12,7 +12,7 @@
 关注公众号【码农Academy】，每日技术干货马上就来！
 
 
-近期在Review项目代码时，发现同事们在查询MySQL行数时存在多样的方式，有的使用COUNT(1), 有的用COUNT(id), 还有人选择了COUNT(*)。这混杂的选择">
+当谈到Java基础内部类时，我们通常指的是在一个类的内部定义的另一个类。内部类在Java中有四种类型：成员内部类、静态内部类、局部内部类和匿名内部类。本文将重点介绍成员内部类和">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +20,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>面试官：请说一下Mysql中count(1)、count(*)以及count(列)的区别？ | 码农Academy的博客</title>
+    <title>重温Java基础（一）Java中的四种内部类 | 码农Academy的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -270,13 +270,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/featureimages/22.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        面试官：请说一下Mysql中count(1)、count(*)以及count(列)的区别？
+                        重温Java基础（一）Java中的四种内部类
                     </div>
                 </div>
             </div>
@@ -387,16 +387,12 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/Mysql的count函数/" target="_blank">
-                            <span class="chip bg-color">Mysql的count函数</span>
+                        <a href="/tags/Java四大内部类/" target="_blank">
+                            <span class="chip bg-color">Java四大内部类</span>
                         </a>
                         
-                        <a href="/tags/Mysql/" target="_blank">
-                            <span class="chip bg-color">Mysql</span>
-                        </a>
-                        
-                        <a href="/tags/高性能mysql/" target="_blank">
-                            <span class="chip bg-color">高性能mysql</span>
+                        <a href="/tags/Java基础/" target="_blank">
+                            <span class="chip bg-color">Java基础</span>
                         </a>
                         
                     </div>
@@ -407,8 +403,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/Mysql/" class="post-category" target="_blank">
-                            Mysql
+                        <a href="/categories/Java基础/" class="post-category" target="_blank">
+                            Java基础
                         </a>
                         
                     </div>
@@ -419,7 +415,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-01-06
+                    2024-01-14
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -433,14 +429,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.1k
+                    2.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    13 分
+                    7 分
                 </div>
                 
                 
@@ -460,104 +456,158 @@
 <p>关注公众号【码农Academy】，每日技术干货马上就来！</p>
 </blockquote>
 <p><img src="https://raw.githubusercontent.com/coderacademyonline/blogimage/master/contact.jpg" alt="contact.jpg"></p>
-<p>近期在Review项目代码时，发现同事们在查询MySQL行数时存在多样的方式，有的使用<code>COUNT(1)</code>, 有的用<code>COUNT(id)</code>, 还有人选择了<code>COUNT(*)</code>。这混杂的选择引发了我的思考。当然这三种count的方式也是众说纷纭，其中最大的分歧点就是<code>COUNT(*)</code>和<code>COUNT(1)</code>查询性能上，有人觉得<code>COUNT(*)</code>需要转换为<code>COUNT(1)</code>，所以<code>COUNT(1)</code>得速度更快。究竟这三种计数方式之间有何区别，它们的背后原理是怎样的呢？</p>
-<h3 id="COUNT-含义"><a href="#COUNT-含义" class="headerlink" title="COUNT()含义"></a>COUNT()含义</h3><p>在《高性能Mysql》一书第236页中是这么解释<code>COUNT</code>的作用的：</p>
-<blockquote>
-<p>COUNT()是一个特殊的函数，有两种非常不同的作用:它可以统计某个列值的数量，也可以统计行数。在统计列值时要求列值是非空的(不统计NULL)。如果在COUNT()的括号中指定了列或者列的表达式，则统计的就是这个表达式有值的结果数”。因为很多人对 NULL理解有问题，所以这里很容易产生误解。<br>COUNT()的另一个作用是统计结果集的行数。当MySOL确认括号内的表达式值不可能为空时，实际上就是在统计行数。最简单的就是当我们使用COUNT(<em>)的时候，这种情况下通配符</em>并不会像我们猜想的那样扩展成所有的列，实际上，它会忽略所有的列而直接统计所有的行数。<br>我们发现一个最常见的错误就是，在括号内指定了一个列却希望统计结果集的行数。如果希望知道的是结果集的行数，最好使用<code>COUNT(*)</code>，这样写意义清晰，性能也会很好</p>
-</blockquote>
-<p>由此我们也可以大概总结<code>COUNT</code>函数的种方式如下：</p>
+<p>当谈到Java基础内部类时，我们通常指的是在一个类的内部定义的另一个类。内部类在Java中有四种类型：成员内部类、静态内部类、局部内部类和匿名内部类。本文将重点介绍成员内部类和静态内部类的用法和示例。</p>
+<h3 id="一、成员内部类"><a href="#一、成员内部类" class="headerlink" title="一、成员内部类"></a>一、成员内部类</h3><p>使用内部类最吸引人的原因是：每个内部类都能独立地继承一个（接口的）实现，所以无论外围类是否已经继承了某个（接口的）实现，对于内部类都没有影响。接口只是解决了部分问题，而内部类使得多重继承的解决方案变得更加完整。而内部类带来的许多好处：</p>
 <ul>
-<li><p><code>COUNT(1)</code>: 此查询返回的是结果集中的行数，不关心具体的列内容，因此使用常数1。<br>在很多数据库系统中，这种方式被优化为与 <code>SELECT COUNT(*)</code> 相同的性能水平，因为数据库引擎通常忽略括号内的内容。</p>
+<li><p>1、内部类可以用多个实例，每个实例都有自己的状态信息，并且与其他外围对象的信息相互独立。</p>
 </li>
-<li><p><code>COUNT(*)</code>：统计整个表的行数，不考虑是否有NULL值。<br>通常优于 <code>COUNT(id)</code>，因为它不需要关心具体的列，且现代数据库引擎会对其进行特殊优化。</p>
+<li><p>2、在单个外围类中，可以让多个内部类以不同的方式实现同一个接口，或者继承同一个类。</p>
 </li>
-<li><p><code>COUNT(列)</code> ：统计指定列非空值的数量。需要考虑是否有NULL值<br>此种方式取决于列是否有索引。如果 列有索引，数据库引擎可能会利用索引进行快速计数。如果没有索引，或者有大量NULL值，性能可能较差，因为需要扫描整个表。</p>
+<li><p>3、创建内部类对象的时刻并不依赖于外围类对象的创建。</p>
 </li>
-</ul>
-<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><h4 id="1、Mysql5-7"><a href="#1、Mysql5-7" class="headerlink" title="1、Mysql5.7"></a>1、Mysql5.7</h4><p>在<a href="https://dev.mysql.com/doc/refman/5.7/en/aggregate-functions.html#function_count" target="_blank" rel="noopener">MySql 5.7官方文档</a>中是这么介绍<code>COUNT(expr)</code>函数的</p>
-<blockquote>
-<p><code>COUNT(expr)</code><br>Returns a count of the number of non-NULL values of expr in the rows retrieved by a SELECT statement. The result is a BIGINT value.<br>If there are no matching rows, <code>COUNT()</code>returns 0.<br><code></code>mysql&gt; SELECT student.student_name,COUNT(<em>)<br>       FROM student,course<br>       WHERE student.student_id=course.student_id<br>       GROUP BY student_name;<code></code><br>`COUNT(</em>)` is somewhat different in that it returns a count of the number of rows retrieved, whether or not they contain NULL values.</p>
-<p>For transactional storage engines such as InnoDB, storing an exact row count is problematic. Multiple transactions may be occurring at the same time, each of which may affect the count.</p>
-<p>InnoDB does not keep an internal count of rows in a table because concurrent transactions might “see” different numbers of rows at the same time. Consequently, <code>SELECT COUNT(*)</code> statements only count rows visible to the current transaction.</p>
-<p>Prior to MySQL 5.7.18, InnoDB processes <code>SELECT COUNT(*)</code> statements by scanning the clustered index. As of MySQL 5.7.18, InnoDB processes <code>SELECT COUNT(*)</code> statements by traversing the smallest available secondary index unless an index or optimizer hint directs the optimizer to use a different index. If a secondary index is not present, the clustered index is scanned.</p>
-<p>Processing <code>SELECT COUNT(*)</code> statements takes some time if index records are not entirely in the buffer pool. For a faster count, create a counter table and let your application update it according to the inserts and deletes it does. However, this method may not scale well in situations where thousands of concurrent transactions are initiating updates to the same counter table. If an approximate row count is sufficient, use SHOW TABLE STATUS.</p>
-<p>InnoDB handles <code>SELECT COUNT(*)</code> and <code>SELECT COUNT(1)</code> operations in the same way. There is no performance difference.</p>
-<p>For MyISAM tables, <code>COUNT(*)</code> is optimized to return very quickly if the SELECT retrieves from one table, no other columns are retrieved, and there is no WHERE clause. For example:<br><code>mysql&gt; SELECT COUNT(*) FROM student;</code><br>This optimization only applies to MyISAM tables, because an exact row count is stored for this storage engine and can be accessed very quickly. COUNT(1) is only subject to the same optimization if the first column is defined as NOT NULL.</p>
-</blockquote>
-<p>从官方文档中我们可以看出mysql官方对<code>COUNT</code>函数的解释：</p>
-<ul>
-<li><p><code>COUNT(expr)</code> 返回由 SELECT 语句检索的行中 _expr_ 的非 NULL 值的数量，结果为 BIGINT 值。如果没有匹配的行，<code>COUNT()</code> 返回 0。</p>
+<li><p>4、内部类并没有令人迷惑的“is-a”关系，他就是一个独立的实体。</p>
 </li>
-<li><p><code>COUNT(*)</code> 有所不同，它返回所检索的行数的计数，无论它们是否包含 NULL 值。</p>
-</li>
-<li><p>对于事务性存储引擎（如 InnoDB），存储准确的行数是有问题的。因为多个事务可能同时影响计数，InnoDB 不会保留表中行的内部计数。<code>SELECT COUNT(*)</code> 只会计算当前事务可见的行。</p>
-</li>
-<li><p>在 MySQL 5.7.18 之前，InnoDB 通过扫描聚集索引处理 <code>SELECT COUNT(*)</code> 语句。从 MySQL 5.7.18 开始，除非索引或优化器提示指示使用其他索引，InnoDB 会通过遍历最小的可用二级索引来处理 <code>SELECT COUNT(*)</code> 语句。如果没有二级索引，则将扫描聚集索引。</p>
-</li>
-<li><p>处理 <code>SELECT COUNT(*)</code> 语句可能花费一些时间，如果索引记录没有完全在缓冲池中。为了更快的计数，可以创建一个计数器表，并根据插入和删除操作进行更新。然而，在成千上万的并发事务更新同一计数器表的情况下，该方法可能无法很好地扩展。如果粗略的行数足够，可以使用<code>SHOW TABLE STATUS</code>。</p>
-</li>
-<li><p><strong>InnoDB 处理 <code>SELECT COUNT(*)</code> 和 <code>SELECT COUNT(1)</code> 操作的方式相同，没有性能差异。</strong></p>
-</li>
-<li><p>对于 MyISAM 表，<code>COUNT(\*)</code> 在从一个表中检索、没有检索其他列、没有 WHERE 子句的情况下可以快速返回，因为 MyISAM 存储了准确的行数。COUNT(1) 只有在第一列被定义为 NOT NULL 时才能进行相同的优化。</p>
+<li><p>5、内部类提供了更好的封装，除了该外围类，其他类都不能访问。</p>
 </li>
 </ul>
-<h4 id="2、Mysql-8-0"><a href="#2、Mysql-8-0" class="headerlink" title="2、Mysql 8.0"></a>2、Mysql 8.0</h4><p>在<a href="https://dev.mysql.com/doc/refman/8.0/en/aggregate-functions.html#function_count" target="_blank" rel="noopener">Mysql8.0的文档</a>中对<code>COUNT(expr)</code>的解释是这样</p>
-<blockquote>
-<p><code>COUNT(expr) [over_clause]</code></p>
-<p>Returns a count of the number of non-NULL values of expr in the rows retrieved by a SELECT statement. The result is a BIGINT value.</p>
-<p>If there are no matching rows, <code>COUNT()</code> returns 0.<code>COUNT(NULL)</code>returns 0.</p>
-<p>This function executes as a window function if over_clause is present. over_clause is as described in Section 12.20.2, “Window Function Concepts and Syntax”.</p>
-<p><code>mysql&gt; SELECT student.student_name,COUNT(*)
-       FROM student,course
-       WHERE student.student_id=course.student_id
-       GROUP BY student_name;</code><br><code>COUNT(*)</code>is somewhat different in that it returns a count of the number of rows retrieved, whether or not they contain NULL values.</p>
-<p>For transactional storage engines such as InnoDB, storing an exact row count is problematic. Multiple transactions may be occurring at the same time, each of which may affect the count.</p>
-<p>InnoDB does not keep an internal count of rows in a table because concurrent transactions might “see” different numbers of rows at the same time. Consequently, <code>SELECT COUNT(*)</code> statements only count rows visible to the current transaction.</p>
-<p>As of MySQL 8.0.13, <code>SELECT COUNT(*)</code> FROM tbl_name query performance for InnoDB tables is optimized for single-threaded workloads if there are no extra clauses such as WHERE or GROUP BY.</p>
-<p>InnoDB processes <code>SELECT COUNT(*)</code> statements by traversing the smallest available secondary index unless an index or optimizer hint directs the optimizer to use a different index. If a secondary index is not present, InnoDB processes SELECT COUNT(*) statements by scanning the clustered index.</p>
-<p>Processing <code>SELECT COUNT(*)</code> statements takes some time if index records are not entirely in the buffer pool. For a faster count, create a counter table and let your application update it according to the inserts and deletes it does. However, this method may not scale well in situations where thousands of concurrent transactions are initiating updates to the same counter table. If an approximate row count is sufficient, use SHOW TABLE STATUS.</p>
-<p>InnoDB handles <code>SELECT COUNT(*)</code> and <code>SELECT COUNT(1)</code> operations in the same way. There is no performance difference.</p>
-<p>For MyISAM tables, <code>COUNT(*)</code>is optimized to return very quickly if the SELECT retrieves from one table, no other columns are retrieved, and there is no WHERE clause. For example:</p>
-<p><code>mysql&gt; SELECT COUNT(*) FROM student;</code><br>This optimization only applies to MyISAM tables, because an exact row count is stored for this storage engine and can be accessed very quickly. COUNT(1) is only subject to the same optimization if the first column is defined as NOT NULL.</p>
-</blockquote>
-<p>从mysql8.0的文档中我们可以看出mysql8.0对<code>COUNT</code>的解释</p>
-<ul>
-<li><p><code>COUNT(expr)</code> 返回在由 SELECT 语句检索的行中 <code>_expr_</code> 的非 NULL 值的数量，结果为 BIGINT 值。如果没有匹配的行，<code>COUNT()</code> 返回 0。<code>COUNT(NULL)</code> 也返回 0。</p>
-</li>
-<li><p><code>COUNT(*)</code> 有所不同，它返回所检索的行数的计数，无论它们是否包含 NULL 值。</p>
-</li>
-<li><p>对于事务性存储引擎（如 InnoDB），存储准确的行数是有问题的，因为多个事务可能同时影响计数。InnoDB 不会保留表中行的内部计数。<code>SELECT COUNT(*)</code> 只计算当前事务可见的行。</p>
-</li>
-<li><p>在 MySQL 8.0.13 及以后版本，对于 InnoDB 表，执行 <code>SELECT COUNT(*) FROM tbl_name</code> 查询性能在没有额外子句（如 WHERE 或 GROUP BY）的情况下进行了优化，特别适用于单线程工作负载。</p>
-</li>
-<li><p>InnoDB 处理 <code>SELECT COUNT(*)</code> 语句的方式：</p>
-<ul>
-<li>通过遍历最小可用二级索引，除非指示使用其他索引。</li>
-<li>如果没有二级索引，InnoDB 通过扫描聚集索引来处理 <code>SELECT COUNT(*)</code> 语句。</li>
-</ul>
-</li>
-<li><p>处理 <code>SELECT COUNT(*)</code> 语句可能花费一些时间，如果索引记录没有完全在缓冲池中。为了更快的计数，可以创建一个计数器表，让应用程序根据插入和删除操作进行更新。但是，这种方法在数千个并发事务同时对同一计数器表进行更新的情况下可能不会很好地扩展。如果粗略的行数足够，可以使用 <code>SHOW TABLE STATUS</code>。</p>
-</li>
-<li><p><strong>InnoDB 对待 <code>SELECT COUNT(*)</code> 和 <code>SELECT COUNT(1)</code> 操作的方式相同，没有性能差异。</strong></p>
-</li>
-<li><p>对于 MyISAM 表，<code>COUNT(*)</code> 在从一个表中检索、没有检索其他列、没有 WHERE 子句的情况下可以快速返回，因为 MyISAM 存储了准确的行数。COUNT(1) 只有在第一列被定义为 NOT NULL 时才能进行相同的优化。</p>
-</li>
-</ul>
-<p>结合Mysql5.7与Mysql8.0的文档我们可以看出两个版本对<code>COUNT</code>的支持的差异：</p>
-<ul>
-<li><strong>MySQL 8.0 优化了 InnoDB 表的 <code>SELECT COUNT(*)</code> 查询性能：</strong> 在 MySQL 8.0.13 及以后版本，对于 InnoDB 表，执行 <code>SELECT COUNT(*)</code> 查询的性能进行了优化，特别适用于单线程工作负载。这是 MySQL 5.7 文档中未包含的新特性。</li>
-<li><strong>MyISAM 表的优化说明：</strong><br>   MySQL 8.0 文档中强调了 MyISAM 表在执行 <code>COUNT(*)</code> 时的优化情况，即在从一个表中检索、没有检索其他列、没有 WHERE 子句的情况下可以快速返回。MySQL 5.7 文档中也提到了 MyISAM 表的优化，但对于 <code>COUNT(*)</code> 的具体优化情况没有细节。</li>
-</ul>
-<p>MySQL 8.0 在性能优化方面对于 InnoDB 表的 <code>SELECT COUNT(*)</code> 查询进行了特别的关注，而且在 MyISAM 表的优化方面进行了详细的说明。其他方面，两个版本在<code>COUNT()</code>函数的解释和使用上基本保持一致。</p>
-<p>基于此我们明白，其实<code>COUNT(*)</code>和<code>COUNT(1)</code>其实是一样的，在性能上并没有差异。</p>
-<p>那这两种方式与<code>COUNT(列)</code>的差异呢？从以上《高性能Mysql》以及Mysql官方文档中我们知道，<code>COUNT(列)</code>是统计非空列的行数，它也会遍历整张表，然后会对列对应的值做非空判断，非空的字段进行个数累加。当然这是列为主键索引时的操作。如果列不为主键索引时，那么查询时还需要进行回表操作，再根据主键获取数据，此时无疑是增加了一次IO，在性能上其实是不如<code>COUNT(*)</code>和<code>COUNT(1)</code>的。那么我们就可以知道，按照效率来看，<strong><code>count(*)</code> = count(1) &gt; count(主键) &gt; count(非主键列)</strong>。</p>
-<h3 id="使用建议"><a href="#使用建议" class="headerlink" title="使用建议"></a>使用建议</h3><ul>
-<li><p>如果你想知道一张表的大概行数，我们可以直接使用<code>show table status</code>命令或者咱们使用的一些mysql客户端Navicat或者datagrip都可以办到。</p>
-</li>
-<li><p>如果你想获取一张表的确切行数时，我可以是优先使用<strong>使用 <code>COUNT(*)</code> 获取行数</strong>，这样写法清晰，性能较好，尤其对于 InnoDB 表的优化更为明显。我们要<strong>避免使用 <code>COUNT(列)</code> 统计行数</strong>，除非你真的需要统计该列非空值的数量，否则容易产生误解。</p>
-</li>
-</ul>
-<p>篇幅有限，深入验证将在后续文章中介绍。</p>
+<p>因为内部类可以随意使用外部类的成员变量（包括私有）而不用生成外部类的对象，这也是内部类的唯一优点，如同心脏可以直接访问身体的血液，而不是通过医生来抽血。内部类在没有同名成员变量和局部变量的情况下，内部类会直接访问外部类的成员变量，而无需指定Out.this.属性名，否则，内部类中的局部变量会覆盖外部类的成员变量。而访问内部类本身的成员变量可用this.属性名，访问外部类的成员变量需要使用Out.this.属性名。</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**  
+ * 成员内部类  
+ *  
+ *1.成员内部类中的方法可以直接使用外部类的实例变量和实例方法。  
+ *2.在成员内部类中可以直接用内部类创建对象  
+ *3.成员内部类没有用static修饰且定义在在外部类类体中。  
+ * @author 码农Academy  
+ *  
+ */</span>  
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MemberInnerClass</span> <span class="token punctuation">{</span>  
+    <span class="token keyword">private</span> String str<span class="token operator">=</span><span class="token string">"我是外部类的成员变量"</span><span class="token punctuation">;</span>  
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">outerMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"我是外部类的方法"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span>  
+
+    <span class="token keyword">class</span> <span class="token class-name">InnerClass</span><span class="token punctuation">{</span>  
+                <span class="token keyword">private</span> String str<span class="token operator">=</span><span class="token string">"我是内部类的成员变量"</span><span class="token punctuation">;</span>  
+
+                <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">innerMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+                            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"内部类的成员变量："</span><span class="token operator">+</span><span class="token keyword">this</span><span class="token punctuation">.</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+                            <span class="token function">outerMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//访问外部类方法  </span>
+                            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"内部类再次访问外部类的成员变量："</span><span class="token operator">+</span>MemberInnerClass<span class="token punctuation">.</span><span class="token keyword">this</span><span class="token punctuation">.</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+                <span class="token punctuation">}</span>  
+    <span class="token punctuation">}</span>  
+
+    <span class="token keyword">public</span> InnerClass <span class="token function">makeInnerClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+                <span class="token comment" spellcheck="true">//在外部类方法中创建内部类实例  </span>
+                InnerClass innerClass<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">InnerClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+                <span class="token keyword">return</span> innerClass<span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span>  
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+                MemberInnerClass outerClass<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">MemberInnerClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+                <span class="token comment" spellcheck="true">//成员内部类需要通过外部类的实例才能创建对象，与实例变量需要通过对象来访问相似  </span>
+                <span class="token comment" spellcheck="true">//MemberInnerClass.InnerClass innerClass  =outerClass.makeInnerClass();  </span>
+                <span class="token comment" spellcheck="true">//1.开头的MemberInnerClass是为了标明需要生成的内部类对象在哪个外部类当中  </span>
+ <span class="token comment" spellcheck="true">//2.必须先有外部类的对象才能生成内部类的对象，因为内部类的作用就是为了访问外部类中的成员变量  </span>
+                MemberInnerClass<span class="token punctuation">.</span>InnerClass innerClass <span class="token operator">=</span> outerClass<span class="token punctuation">.</span><span class="token keyword">new</span> <span class="token class-name">InnerClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+                innerClass<span class="token punctuation">.</span><span class="token function">innerMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+
+    <span class="token punctuation">}</span>  
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="二、静态内部类"><a href="#二、静态内部类" class="headerlink" title="二、静态内部类"></a>二、静态内部类</h3><p>如果用static 将内部内静态化，那么内部类就只能访问外部类的静态成员变量，具有局限性，对于实例方法或者非静态变量，只有通过对象引用才能访问，static内部类中不能使用this关键字来访问外部类中的实例成员 。其次，因为内部类被静态化，因此Out.In可以当做一个整体看，可以直接new 出内部类的对象（通过类名访问static，生不生成外部类对象都没关系）</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**  
+ * 静态嵌套类  
+ * 与类的其他成员相似，可以用static修饰内部类，这样的类称为静态内部类。  
+ * 静态内部类与静态内部方法相似，只能访问外部类的static成员，不能直接访问外部类的实例变量，  
+ * 对于实例方法或者非静态变量，只有通过对象引用才能访问。  
+ * 由于static内部类不具有任何对外部类实例的引用，因此static内部类中不能使用this关键字来访问外部类中的实例成员，  
+ * 但是可以访问外部类中的static成员。这与一般类的static方法想通  
+ * @author 码农Academy  
+ *  
+ */</span>  
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StaticNestedClass</span> <span class="token punctuation">{</span>  
+    <span class="token keyword">private</span> <span class="token keyword">static</span> String str<span class="token operator">=</span><span class="token string">"我是外部类的静态变量"</span><span class="token punctuation">;</span>  
+
+    <span class="token keyword">private</span> String outStr<span class="token operator">=</span><span class="token string">"我是外部类的非静态变量"</span><span class="token punctuation">;</span>  
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">InnerClass</span><span class="token punctuation">{</span>  
+                <span class="token keyword">private</span>  String str<span class="token operator">=</span><span class="token string">"我说是静态内部类的变量"</span><span class="token punctuation">;</span>  
+
+                <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">innerMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+                            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"访问外部类："</span><span class="token operator">+</span>StaticNestedClass<span class="token punctuation">.</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+                            <span class="token comment" spellcheck="true">// 对于实例方法或者非静态变量，只有通过对象引用才能访问。  </span>
+                            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"访问外部类非静态成员变量："</span><span class="token operator">+</span><span class="token keyword">new</span> <span class="token class-name">StaticNestedClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span>outStr<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+                            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"访问内部类："</span><span class="token operator">+</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+                <span class="token punctuation">}</span>  
+
+    <span class="token punctuation">}</span>  
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+                <span class="token comment" spellcheck="true">//因为内部类被静态化，因此StaticNestedClass.InnerClass可以当做一个整体看，可以直接new 出内部类的对象（通过类名访问static，生不生成外部类对象都没关系）  </span>
+                StaticNestedClass<span class="token punctuation">.</span>InnerClass innerClass<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">StaticNestedClass<span class="token punctuation">.</span>InnerClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+                innerClass<span class="token punctuation">.</span><span class="token function">innerMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span>  
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="三、局部内部类"><a href="#三、局部内部类" class="headerlink" title="三、局部内部类"></a>三、局部内部类</h3><p>我们将内部类移到了外部类的方法中，然后在外部类的方法中再生成一个内部类对象去调用内部类方法。方法中的内部类可以访问外部类成员。对于方法的参数和局部变量，必须有final修饰才可以访问(JDK 1.8以后不需要！)</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**  
+ * 方法内部类（局部内部类）  
+ * 在方法体或语句块（包括方法、构造方法、局部块或静态初始化块）内部定义的类成为局部内部类。  
+ * 局部内部类不能加任何访问修饰符，因为它只对局部块有效。  
+ * 1.局部内部类只在方法体中有效，就想定义的局部变量一样，在定义的方法体外不能创建局部内部类的对象  
+ * 2.在方法内部定义类时，应注意以下问题：  
+ *  (1).方法定义局部内部类同方法定义局部变量一样，不能使用private、protected、public等访问修饰说明符修饰，也不能使用static修饰，但可以使用final和   abstract修饰  
+ *  (2).方法中的内部类可以访问外部类成员。对于方法的参数和局部变量，必须有final修饰才可以访问(JDK 1.8以后不需要！)。  
+ *  (3).static方法中定义的内部类可以访问外部类定义的static成员  
+ * @author 码农Academy  
+ *  
+ */</span>  
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MethodInnerClass</span> <span class="token punctuation">{</span>  
+
+    <span class="token keyword">private</span> String str<span class="token operator">=</span><span class="token string">"我是外部类的成员变量"</span><span class="token punctuation">;</span>  
+    <span class="token keyword">private</span> String outerStr<span class="token operator">=</span><span class="token string">"我是外部类的成员变量"</span><span class="token punctuation">;</span>  
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">outerMethod</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"我是外部类地方法"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span>  
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span>  <span class="token function">method</span><span class="token punctuation">(</span>String s<span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+        <span class="token keyword">class</span> <span class="token class-name">InnerClass</span><span class="token punctuation">{</span>  
+            <span class="token keyword">private</span> String str<span class="token operator">=</span><span class="token string">"我是方法内部类的成员变量"</span><span class="token punctuation">;</span>  
+            <span class="token keyword">public</span> <span class="token keyword">void</span>  <span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"我是方法内部类地方法,访问方法参数："</span><span class="token operator">+</span>s<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"我是方法内部类地方法,访问内部类的成员变量："</span><span class="token operator">+</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"我是方法内部类地方法,访问外部类的成员变量："</span><span class="token operator">+</span>outerStr<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+                System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"我是方法内部类地方法,访问外部类与内部类同名的成员变量："</span><span class="token operator">+</span>MethodInnerClass<span class="token punctuation">.</span><span class="token keyword">this</span><span class="token punctuation">.</span>str<span class="token punctuation">)</span><span class="token punctuation">;</span>  
+            <span class="token punctuation">}</span>  
+        <span class="token punctuation">}</span>  
+         <span class="token keyword">new</span> <span class="token class-name">InnerClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">print</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span>  
+
+    <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">void</span> <span class="token function">main</span><span class="token punctuation">(</span>String<span class="token punctuation">[</span><span class="token punctuation">]</span> args<span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+        MethodInnerClass out<span class="token operator">=</span><span class="token keyword">new</span> <span class="token class-name">MethodInnerClass</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+        out<span class="token punctuation">.</span><span class="token function">method</span><span class="token punctuation">(</span><span class="token string">"成员内部类"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span>  
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="四、匿名内部类"><a href="#四、匿名内部类" class="headerlink" title="四、匿名内部类"></a>四、匿名内部类</h3><p>定义类的最终目的是创建一个类的实例，但是如果某个类的实例只是用一次，则可以将类的定义与类的创建，放到与一起完成，或者说在定义类的同时就创建一个类。以这种方法定义的没有名字的类成为匿名内部类。  </p>
+<p>匿名内部类因为没有名字，所以不可以继承其他类，但若某个内部类作为一个接口，匿名内部类可以实现接口。我们在使用Lambda表达式时简化匿名内部类。</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**  
+ * 匿名内部类  
+ * @author 码农Academy  
+ */</span>  
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">AnonymousInnerClass</span> <span class="token punctuation">{</span>  
+    <span class="token keyword">private</span> String str<span class="token operator">=</span><span class="token string">"我是外部类的成员变量"</span><span class="token punctuation">;</span>  
+
+    <span class="token keyword">public</span> Inner <span class="token function">getInner</span><span class="token punctuation">(</span><span class="token keyword">final</span> String name<span class="token punctuation">,</span> String city<span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+       <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Inner</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+           <span class="token keyword">private</span> String nameStr <span class="token operator">=</span> name<span class="token punctuation">;</span>  
+
+           <span class="token keyword">public</span> String <span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+             <span class="token keyword">return</span> nameStr<span class="token punctuation">;</span>  
+            <span class="token punctuation">}</span>  
+    <span class="token punctuation">}</span><span class="token punctuation">;</span>  
+  <span class="token punctuation">}</span>  
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
             </div>
             <hr />
@@ -592,9 +642,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《面试官：请说一下Mysql中count(1)、count(*)以及count(列)的区别？》
+                    《重温Java基础（一）Java中的四种内部类》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/article/1d31dad8.html" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/article/javainnerclass.html" property="cc:attributionName"
                rel="cc:attributionURL">
                 码农Academy
             </a> 采用
@@ -635,7 +685,7 @@
         repo: 'coderacademyonline.github.io',
         owner: 'coderacademyonline',
         admin: "coderacademyonline",
-        id: 'article/1d31dad8.html',
+        id: 'article/javainnerclass.html',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -922,24 +972,76 @@
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/article/7cd2c424.html">
+                <a href="/article/mapstruct.html">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Java工具类（二）之深入Guava集合操作">
+                        <img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/featureimages/26.jpg" class="responsive-img" alt="乖乖，咱不用BeanUtil.copyProperties了，咱试试这款神级工具（超详细）">
                         
-                        <span class="card-title">Java工具类（二）之深入Guava集合操作</span>
+                        <span class="card-title">乖乖，咱不用BeanUtil.copyProperties了，咱试试这款神级工具（超详细）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            深入了解Google Guava库的集合操作功能，本文介绍了其强大的特性，包括不可变集合和高效工具类。通过实例演示，为Java开发者提供全面的集合操作解决方案
+                            优化庞大if-else语句的多种方法，包括提前return、枚举、Optional、表驱动、策略模式+工厂模式、规则引擎等，强调选择最适合项目的方案，提高代码清晰性、灵活性和维护性。
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2024-01-07
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2024-01-16
                         </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java工具类/" class="post-category" target="_blank">
+                                    Java工具类
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/MapStruct/" target="_blank">
+                        <span class="chip bg-color">MapStruct</span>
+                    </a>
+                    
+                    <a href="/tags/Java工具类/" target="_blank">
+                        <span class="chip bg-color">Java工具类</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/article/javapairtriple.html">
+                    <div class="card-image">
+                        
+                        <img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/featureimages/21.jpg" class="responsive-img" alt="Java编程的利器：Pair和Triple无缝解决多值返回问题，助力编写高效代码">
+                        
+                        <span class="card-title">Java编程的利器：Pair和Triple无缝解决多值返回问题，助力编写高效代码</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Pair和Triple类是commons-lang3库提供的实用工具，可以方便地将多个值组合在一起，实现多个返回值的效果，提高了代码的可读性和可维护性，使得处理多值情景更加轻松。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2024-01-13
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -959,68 +1061,12 @@
                         <span class="chip bg-color">java</span>
                     </a>
                     
-                    <a href="/tags/Guava/" target="_blank">
-                        <span class="chip bg-color">Guava</span>
+                    <a href="/tags/代码工具类/" target="_blank">
+                        <span class="chip bg-color">代码工具类</span>
                     </a>
                     
-                    <a href="/tags/Guava集合操作/" target="_blank">
-                        <span class="chip bg-color">Guava集合操作</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/article/2d9d416b.html">
-                    <div class="card-image">
-                        
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="重温Java基础（二）之Java线程池最全详解">
-                        
-                        <span class="card-title">重温Java基础（二）之Java线程池最全详解</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            Java线程池是多线程编程中的重要工具，能够有效管理和复用线程，提高系统性能和资源利用率。本文深入探讨了线程池的基础概念、工作原理、参数配置、自定义以及使用示例，并强调了注意事项。
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2024-01-04
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Java核心基础/" class="post-category" target="_blank">
-                                    Java核心基础
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/Java/" target="_blank">
-                        <span class="chip bg-color">Java</span>
-                    </a>
-                    
-                    <a href="/tags/Java线程池/" target="_blank">
-                        <span class="chip bg-color">Java线程池</span>
-                    </a>
-                    
-                    <a href="/tags/自定义线程池/" target="_blank">
-                        <span class="chip bg-color">自定义线程池</span>
+                    <a href="/tags/编程技巧/" target="_blank">
+                        <span class="chip bg-color">编程技巧</span>
                     </a>
                     
                 </div>

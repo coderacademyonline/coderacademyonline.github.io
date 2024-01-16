@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.coderacademy.online/"/>
-  <updated>2024-01-10T06:34:28.366Z</updated>
+  <updated>2024-01-16T12:07:02.102Z</updated>
   <id>https://www.coderacademy.online/</id>
   
   <author>
@@ -17,11 +17,137 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>乖乖，咱不用BeanUtil.copyProperties了，咱试试这款神级工具（超详细）</title>
+    <link href="https://www.coderacademy.online/article/mapstruct.html"/>
+    <id>https://www.coderacademy.online/article/mapstruct.html</id>
+    <published>2024-01-16T11:57:08.000Z</published>
+    <updated>2024-01-16T12:07:02.102Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="Java工具类" scheme="https://www.coderacademy.online/categories/Java%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
+    
+    
+      <category term="MapStruct" scheme="https://www.coderacademy.online/tags/MapStruct/"/>
+    
+      <category term="Java工具类" scheme="https://www.coderacademy.online/tags/Java%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>重温Java基础（一）Java中的四种内部类</title>
+    <link href="https://www.coderacademy.online/article/javainnerclass.html"/>
+    <id>https://www.coderacademy.online/article/javainnerclass.html</id>
+    <published>2024-01-14T15:38:36.000Z</published>
+    <updated>2024-01-15T01:56:58.109Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="Java基础" scheme="https://www.coderacademy.online/categories/Java%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="Java四大内部类" scheme="https://www.coderacademy.online/tags/Java%E5%9B%9B%E5%A4%A7%E5%86%85%E9%83%A8%E7%B1%BB/"/>
+    
+      <category term="Java基础" scheme="https://www.coderacademy.online/tags/Java%E5%9F%BA%E7%A1%80/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java编程的利器：Pair和Triple无缝解决多值返回问题，助力编写高效代码</title>
+    <link href="https://www.coderacademy.online/article/javapairtriple.html"/>
+    <id>https://www.coderacademy.online/article/javapairtriple.html</id>
+    <published>2024-01-13T01:30:36.000Z</published>
+    <updated>2024-01-15T01:56:58.109Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="Java工具类" scheme="https://www.coderacademy.online/categories/Java%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
+    
+    
+      <category term="java" scheme="https://www.coderacademy.online/tags/java/"/>
+    
+      <category term="代码工具类" scheme="https://www.coderacademy.online/tags/%E4%BB%A3%E7%A0%81%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
+    
+      <category term="编程技巧" scheme="https://www.coderacademy.online/tags/%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>面试官：说一下Mysql中from多表跟join表的区别</title>
+    <link href="https://www.coderacademy.online/article/mysqlfromjoin.html"/>
+    <id>https://www.coderacademy.online/article/mysqlfromjoin.html</id>
+    <published>2024-01-11T17:04:06.000Z</published>
+    <updated>2024-01-15T01:56:58.109Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="Mysql" scheme="https://www.coderacademy.online/categories/Mysql/"/>
+    
+    
+      <category term="Mysql查询" scheme="https://www.coderacademy.online/tags/Mysql%E6%9F%A5%E8%AF%A2/"/>
+    
+      <category term="Mysql面试" scheme="https://www.coderacademy.online/tags/Mysql%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
     <title>SpringBoot统一结果返回，统一异常处理，大牛都这么玩</title>
     <link href="https://www.coderacademy.online/article/springbootcommonresponse.html"/>
     <id>https://www.coderacademy.online/article/springbootcommonresponse.html</id>
     <published>2024-01-10T06:19:57.000Z</published>
-    <updated>2024-01-10T06:34:28.366Z</updated>
+    <updated>2024-01-12T05:37:01.077Z</updated>
     
     <summary type="html">
     
@@ -54,7 +180,7 @@
     <link href="https://www.coderacademy.online/article/springbootvalidation.html"/>
     <id>https://www.coderacademy.online/article/springbootvalidation.html</id>
     <published>2024-01-10T06:19:41.000Z</published>
-    <updated>2024-01-10T07:40:32.768Z</updated>
+    <updated>2024-01-12T05:38:08.634Z</updated>
     
     <summary type="html">
     
@@ -252,7 +378,7 @@
     <link href="https://www.coderacademy.online/article/8fd2c424.html"/>
     <id>https://www.coderacademy.online/article/8fd2c424.html</id>
     <published>2024-01-03T11:57:08.000Z</published>
-    <updated>2024-01-10T10:30:27.391Z</updated>
+    <updated>2024-01-12T05:38:33.069Z</updated>
     
     <summary type="html">
     
@@ -272,9 +398,9 @@
       <category term="Java工具类" scheme="https://www.coderacademy.online/categories/Java%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
     
     
-      <category term="Guava" scheme="https://www.coderacademy.online/tags/Guava/"/>
-    
       <category term="Java工具类" scheme="https://www.coderacademy.online/tags/Java%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
+    
+      <category term="Guava" scheme="https://www.coderacademy.online/tags/Guava/"/>
     
   </entry>
   

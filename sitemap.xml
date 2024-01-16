@@ -2,6 +2,55 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.coderacademy.online/article/mapstruct.html</loc>
+    
+    <lastmod>2024-01-16T12:07:02.102Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.coderacademy.online/article/mysqlfromjoin.html</loc>
+    
+    <lastmod>2024-01-15T01:56:58.109Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.coderacademy.online/article/javainnerclass.html</loc>
+    
+    <lastmod>2024-01-15T01:56:58.109Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.coderacademy.online/article/javapairtriple.html</loc>
+    
+    <lastmod>2024-01-15T01:56:58.109Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.coderacademy.online/article/8fd2c424.html</loc>
+    
+    <lastmod>2024-01-12T05:38:33.069Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.coderacademy.online/article/springbootvalidation.html</loc>
+    
+    <lastmod>2024-01-12T05:38:08.634Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.coderacademy.online/article/springbootcommonresponse.html</loc>
+    
+    <lastmod>2024-01-12T05:37:01.077Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.coderacademy.online/article/jvmclassloader.html</loc>
     
     <lastmod>2024-01-10T11:28:44.714Z</lastmod>
@@ -16,30 +65,9 @@
   </url>
   
   <url>
-    <loc>https://www.coderacademy.online/article/8fd2c424.html</loc>
-    
-    <lastmod>2024-01-10T10:30:27.391Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://www.coderacademy.online/article/7fd1e424.html</loc>
     
     <lastmod>2024-01-10T09:52:38.096Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.coderacademy.online/article/springbootvalidation.html</loc>
-    
-    <lastmod>2024-01-10T07:40:32.768Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.coderacademy.online/article/springbootcommonresponse.html</loc>
-    
-    <lastmod>2024-01-10T06:34:28.366Z</lastmod>
     
   </url>
   
@@ -86,6 +114,13 @@
   </url>
   
   <url>
+    <loc>https://www.coderacademy.online/archives/index.html</loc>
+    
+    <lastmod>2021-07-29T12:54:42.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.coderacademy.online/categories/index.html</loc>
     
     <lastmod>2021-07-29T12:54:42.000Z</lastmod>
@@ -94,13 +129,6 @@
   
   <url>
     <loc>https://www.coderacademy.online/tags/index.html</loc>
-    
-    <lastmod>2021-07-29T12:54:42.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.coderacademy.online/archives/index.html</loc>
     
     <lastmod>2021-07-29T12:54:42.000Z</lastmod>
     
