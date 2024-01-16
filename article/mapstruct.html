@@ -387,12 +387,12 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/MapStruct/" target="_blank">
-                            <span class="chip bg-color">MapStruct</span>
-                        </a>
-                        
                         <a href="/tags/Java工具类/" target="_blank">
                             <span class="chip bg-color">Java工具类</span>
+                        </a>
+                        
+                        <a href="/tags/MapStruct/" target="_blank">
+                            <span class="chip bg-color">MapStruct</span>
                         </a>
                         
                     </div>
@@ -456,7 +456,7 @@
 <p>关注公众号【码农Academy】，每日技术干货马上就来！</p>
 </blockquote>
 <p><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/medias/contact.jpg" alt="contact.jpg"></p>
-<h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h3><p>在现代Java应用程序开发中，处理对象之间的映射是一个常见而且必不可少的任务。随着项目规模的增长，手动编写繁琐的映射代码不仅耗时且容易出错，因此开发者们一直在寻找更高效的解决方案。比如基于<code>Dozer</code>封装的<code>BeanUtil.copyProperties</code>对应对象之间的属性拷贝。但是<code>Dozer</code>采用运行时映射的方式，通过反射在运行时动态生成映射代码。这意味着在每次映射时都需要进行反射操作，Dozer在处理复杂映射时可能需要额外的配置和自定义转换器,可能导致一定的性能开销,尤其在大型项目中可能表现不佳。另外在处理处理复杂映射（例如字段名称不一致，某些字段不需要映射）时可能需要额外的配置和自定义转换器，使用起来并不是那么的便捷。那么此时<code>MapStruct</code>变应用而生，成为简化Java Bean映射的利器。</p>
+<h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h3><p>在现代Java应用程序开发中，处理对象之间的映射是一个常见而且必不可少的任务。随着项目规模的增长，手动编写繁琐的映射代码不仅耗时且容易出错，因此开发者们一直在寻找更高效的解决方案。比如基于<code>Dozer</code>封装的或者<code>Spring</code>自带的<code>BeanUtil.copyProperties</code>对应对象之间的属性拷贝。但是<code>Dozer</code>采用运行时映射的方式，通过反射在运行时动态生成映射代码。这意味着在每次映射时都需要进行反射操作，Dozer在处理复杂映射时可能需要额外的配置和自定义转换器,可能导致一定的性能开销,尤其在大型项目中可能表现不佳。另外在处理处理复杂映射（例如字段名称不一致，某些字段不需要映射）时可能需要额外的配置和自定义转换器，使用起来并不是那么的便捷。那么此时<code>MapStruct</code>变应用而生，成为简化Java Bean映射的利器。</p>
 <p><code>MapStruct</code>是一款基于注解和编译时代码生成的工具，旨在简化Java Bean之间的映射过程。通过在<strong>编译时生成高效的映射代码</strong>，避免了运行时的性能开销，使得映射过程更加高效。<code>MapStruct</code>不仅消除了手写映射代码的痛苦，还提供了性能优势。它支持在Java Bean之间进行映射，并通过使用注解标记映射方法和类，提供了一种声明性的方式定义映射规则，简化了映射代码的编写。使得开发者能够专注于业务逻辑而不必过多关注对象之间的转换。并且它还支持自定义转换器和表达式，适用于处理各种复杂的映射场景。</p>
 <p>下面我们就开始介绍如何使用<code>MapStruct</code>来高效的完成对象之间的映射。</p>
 <h3 id="如何MapStruct使用"><a href="#如何MapStruct使用" class="headerlink" title="如何MapStruct使用"></a>如何MapStruct使用</h3><p>使用MapStruct进行Java Bean映射通常包括几个基本步骤，包括项目配置、注解标记、自定义转换器等。以下是详细的使用步骤：</p>
@@ -1692,7 +1692,7 @@ TargetObject <span class="token function">sourceToTarget5</span><span class="tok
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            优化庞大if-else语句的多种方法，包括提前return、枚举、Optional、表驱动、策略模式+工厂模式、规则引擎等，强调选择最适合项目的方案，提高代码清晰性、灵活性和维护性。
+                            MapStruct是Java编译时生成对象映射代码的工具，通过注解简化Bean间的转换。它自动创建映射接口实现，提高效率与性能，优于手动或运行时反射映射，并支持自定义逻辑配置，适用于多种框架，提升开发和维护体验。
                         
                     </div>
                     <div class="publish-info">
@@ -1715,12 +1715,12 @@ TargetObject <span class="token function">sourceToTarget5</span><span class="tok
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/MapStruct/" target="_blank">
-                        <span class="chip bg-color">MapStruct</span>
-                    </a>
-                    
                     <a href="/tags/Java工具类/" target="_blank">
                         <span class="chip bg-color">Java工具类</span>
+                    </a>
+                    
+                    <a href="/tags/MapStruct/" target="_blank">
+                        <span class="chip bg-color">MapStruct</span>
                     </a>
                     
                 </div>
@@ -1946,7 +1946,7 @@ TargetObject <span class="token function">sourceToTarget5</span><span class="tok
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">42.9k</span>
+            <span class="white-color">43k</span>
             
 
             <br>
