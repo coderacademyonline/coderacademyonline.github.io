@@ -532,7 +532,7 @@
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>怎么样？是不是很简单。接下来让我们继续介绍<code>MapStruct</code>的详细功能，揭开它神秘的面纱。。。。。</p>
 <h3 id="MapStruct常用注解"><a href="#MapStruct常用注解" class="headerlink" title="MapStruct常用注解"></a>MapStruct常用注解</h3><p>了解MapStruct的注解及其属性是非常重要的，因为它们定义了映射规则和行为。以下是MapStruct中常用的注解及其属性：</p>
-<h4 id="1、-Mapper"><a href="#1、-Mapper" class="headerlink" title="1、@Mapper"></a>1、<code>@Mapper</code></h4><p>用于标记一个接口或抽象类，用于定义对象之间的映射规则。它有多个属性可以配置映射器的功能。以下是 <code>@Mapper</code> 注解的一些常用属性：</p>
+<h4 id="1-Mapper"><a href="#1-Mapper" class="headerlink" title="1.@Mapper"></a>1.<code>@Mapper</code></h4><p>用于标记一个接口或抽象类，用于定义对象之间的映射规则。它有多个属性可以配置映射器的功能。以下是 <code>@Mapper</code> 注解的一些常用属性：</p>
 <h5 id="1-1-componentModel"><a href="#1-1-componentModel" class="headerlink" title="1.1 componentModel"></a>1.1 <code>componentModel</code></h5><p>指定生成的映射器实例的组件模型,以便与应用框架集成。他有”default”（默认值）、”cdi”、”spring”等可选值（具体参考<code>MappingConstants.ComponentModel</code>）。我们着重介绍一下default以及spring：</p>
 <ul>
 <li><p>default：<code>MapStruct</code>的默认组件模型<br>在默认模式下，MapStruct 会生成一个无参数的构造函数的映射器实例。映射器实例的创建和管理由 <code>MapStruct</code>自动处理。实例通常通过 <code>Mappers.getMapper（Class）</code>获取。适用于简单的映射场景，无需额外的依赖注入或容器管理。</p>
@@ -767,7 +767,7 @@
     <span class="token annotation punctuation">@Mapping</span><span class="token punctuation">(</span>target <span class="token operator">=</span> <span class="token string">"sex"</span><span class="token punctuation">,</span> source <span class="token operator">=</span> <span class="token string">"sex"</span><span class="token punctuation">,</span> qualifiedByName <span class="token operator">=</span> <span class="token string">"convertSexDesc"</span><span class="token punctuation">)</span>  
     TargetObject <span class="token function">sourceToTarget</span><span class="token punctuation">(</span>SourceObject source<span class="token punctuation">)</span><span class="token punctuation">;</span>
  <span class="token punctuation">}</span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h4 id="3-Mapping"><a href="#3-Mapping" class="headerlink" title="3. @Mapping"></a>3. <code>@Mapping</code></h4><p>用于自定义映射器方法中的映射规则。它允许你指定源对象和目标对象之间字段的映射关系。</p>
+<h4 id="3-Mapping"><a href="#3-Mapping" class="headerlink" title="3.@Mapping"></a>3.<code>@Mapping</code></h4><p>用于自定义映射器方法中的映射规则。它允许你指定源对象和目标对象之间字段的映射关系。</p>
 <h5 id="3-1-source-和-target"><a href="#3-1-source-和-target" class="headerlink" title="3.1 source 和 target:"></a>3.1 <code>source</code> 和 <code>target</code>:</h5><ul>
 <li><strong><code>source</code> 含义：</strong> 源对象字段的名称或表达式。</li>
 <li><strong><code>target</code> 含义：</strong> 目标对象字段的名称。</li>
