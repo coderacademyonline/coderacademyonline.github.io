@@ -387,12 +387,12 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/Java工具类/" target="_blank">
-                            <span class="chip bg-color">Java工具类</span>
-                        </a>
-                        
                         <a href="/tags/MapStruct/" target="_blank">
                             <span class="chip bg-color">MapStruct</span>
+                        </a>
+                        
+                        <a href="/tags/Java工具类/" target="_blank">
+                            <span class="chip bg-color">Java工具类</span>
                         </a>
                         
                     </div>
@@ -429,14 +429,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    7.1k
+                    7.3k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    30 分
+                    31 分
                 </div>
                 
                 
@@ -1314,6 +1314,54 @@ TargetObject <span class="token function">sourceToTarget5</span><span class="tok
     <span class="token keyword">return</span> targetObject<span class="token punctuation">;</span>  
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p><code>@ObjectFactory</code> 标记的方法则更具有针对性，它通常用于为特定的目标对象创建实例。如果你定义了一个<code>@ObjectFactory</code>方法且没有指定具体映射方法，则这个工厂方法会作为默认的实例化方式，在所有未明确提供实例化方法的映射目标对象时被调用。</p>
+<h3 id="SpringBoot集成"><a href="#SpringBoot集成" class="headerlink" title="SpringBoot集成"></a>SpringBoot集成</h3><p>上面我们说到了<code>@Mapper</code>注解以及他的属性<code>componentModel</code>，将该值设置为<code>Spring</code>也就是<code>MappingConstants.ComponentModel.SPRING</code>值时，这个映射器生成的实现类就可以被<code>Spring</code>容器管理，这样就可以在使用时就可以注入到其他组件中了。</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Mapper</span><span class="token punctuation">(</span>uses <span class="token operator">=</span> <span class="token punctuation">{</span>MyNameConverter<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">}</span><span class="token punctuation">,</span> imports <span class="token operator">=</span> <span class="token punctuation">{</span>SexEnum<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">}</span><span class="token punctuation">,</span> componentModel <span class="token operator">=</span> MappingConstants<span class="token punctuation">.</span>ComponentModel<span class="token punctuation">.</span>SPRING<span class="token punctuation">)</span>  
+<span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">MyMapper</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Mappings</span><span class="token punctuation">(</span><span class="token punctuation">{</span>  
+    <span class="token annotation punctuation">@Mapping</span><span class="token punctuation">(</span>target <span class="token operator">=</span> <span class="token string">"source"</span><span class="token punctuation">,</span> constant <span class="token operator">=</span> <span class="token string">"API"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>  
+    <span class="token annotation punctuation">@Mapping</span><span class="token punctuation">(</span>target <span class="token operator">=</span> <span class="token string">"sex"</span><span class="token punctuation">,</span> expression <span class="token operator">=</span> <span class="token string">"java(SexEnum.descOfCode(source.getSex()))"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>  
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>  
+    <span class="token annotation punctuation">@Named</span><span class="token punctuation">(</span><span class="token string">"sourceToTarget"</span><span class="token punctuation">)</span>  
+    TargetObject <span class="token function">sourceToTarget</span><span class="token punctuation">(</span>SourceObject source<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>    <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>生成的实现类自动加上<code>@Component</code>注解，并将其注册为Spring Bean，：</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Component</span>  
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MyMapperImpl</span> <span class="token keyword">implements</span> <span class="token class-name">MyMapper</span> <span class="token punctuation">{</span>
+    <span class="token annotation punctuation">@Override</span>  
+    <span class="token keyword">public</span> TargetObject <span class="token function">sourceToTarget</span><span class="token punctuation">(</span>SourceObject source<span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+        <span class="token keyword">if</span> <span class="token punctuation">(</span> source <span class="token operator">==</span> null <span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+            <span class="token keyword">return</span> null<span class="token punctuation">;</span>  
+        <span class="token punctuation">}</span>  
+
+        TargetObject targetObject <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">TargetObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+
+        targetObject<span class="token punctuation">.</span><span class="token function">setUserName</span><span class="token punctuation">(</span> source<span class="token punctuation">.</span><span class="token function">getUserName</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>  
+        targetObject<span class="token punctuation">.</span><span class="token function">setUserId</span><span class="token punctuation">(</span> source<span class="token punctuation">.</span><span class="token function">getUserId</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>  
+        <span class="token keyword">if</span> <span class="token punctuation">(</span> source<span class="token punctuation">.</span><span class="token function">getCreateTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">!=</span> null <span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+            targetObject<span class="token punctuation">.</span><span class="token function">setCreateTime</span><span class="token punctuation">(</span> DateTimeFormatter<span class="token punctuation">.</span>ISO_LOCAL_DATE_TIME<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span> source<span class="token punctuation">.</span><span class="token function">getCreateTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>  
+        <span class="token punctuation">}</span>  
+
+        targetObject<span class="token punctuation">.</span><span class="token function">setSource</span><span class="token punctuation">(</span> <span class="token string">"API"</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>  
+        targetObject<span class="token punctuation">.</span><span class="token function">setSex</span><span class="token punctuation">(</span> SexEnum<span class="token punctuation">.</span><span class="token function">descOfCode</span><span class="token punctuation">(</span>source<span class="token punctuation">.</span><span class="token function">getSex</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">)</span><span class="token punctuation">;</span>  
+
+        <span class="token keyword">return</span> targetObject<span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这样就可以在其他组件中注入<code>MyMapper</code>：</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@SpringBootTest</span>  
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SpringbootCodeApplicationTests</span> <span class="token punctuation">{</span>
+    <span class="token keyword">private</span> MyMapper mapper<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Test</span>  
+    <span class="token keyword">void</span> <span class="token function">testMapper</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>  
+        TargetObject targetObject <span class="token operator">=</span> mapper<span class="token punctuation">.</span><span class="token function">sourceToTarget</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">SourceObject</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span>targetObject<span class="token punctuation">.</span><span class="token function">getSex</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span>
+
+    <span class="token annotation punctuation">@Autowired</span>  
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setMapper</span><span class="token punctuation">(</span>MyMapper mapper<span class="token punctuation">)</span> <span class="token punctuation">{</span>  
+    <span class="token keyword">this</span><span class="token punctuation">.</span>mapper <span class="token operator">=</span> mapper<span class="token punctuation">;</span>  
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>MapStruct是一个利用注解和编译时代码生成技术的Java Bean映射工具，通过在接口上定义映射规则并自动创建实现类，极大地简化了对象转换过程。相比于手动编写映射代码及运行时反射工具如Dozer，MapStruct提供了更高的性能、更好的可读性和易于维护性。它支持灵活的字段映射配置、自定义转换逻辑，并可通过组件模型适应不同框架，是提升开发效率与降低维护成本的理想对象映射解决方案。</p>
 <p>写在最后：可能大家觉得要防御性编程，但是咱可以把编译后实现类的代码CV到你的代码里面就可以了，这样免去了自己手写<code>get</code>，<code>set</code>方法映射，这样不出错，还可以节省时间摸鱼。。。。</p>
 
@@ -1715,12 +1763,12 @@ TargetObject <span class="token function">sourceToTarget5</span><span class="tok
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java工具类/" target="_blank">
-                        <span class="chip bg-color">Java工具类</span>
-                    </a>
-                    
                     <a href="/tags/MapStruct/" target="_blank">
                         <span class="chip bg-color">MapStruct</span>
+                    </a>
+                    
+                    <a href="/tags/Java工具类/" target="_blank">
+                        <span class="chip bg-color">Java工具类</span>
                     </a>
                     
                 </div>
@@ -1946,7 +1994,7 @@ TargetObject <span class="token function">sourceToTarget5</span><span class="tok
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">43k</span>
+            <span class="white-color">43.2k</span>
             
 
             <br>
