@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.coderacademy.online/"/>
-  <updated>2024-01-17T02:48:16.759Z</updated>
+  <updated>2024-01-17T03:44:45.679Z</updated>
   <id>https://www.coderacademy.online/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.coderacademy.online/article/mapstruct.html"/>
     <id>https://www.coderacademy.online/article/mapstruct.html</id>
     <published>2024-01-16T11:57:08.000Z</published>
-    <updated>2024-01-17T02:48:16.759Z</updated>
+    <updated>2024-01-17T03:44:45.679Z</updated>
     
     <summary type="html">
     
@@ -41,9 +41,9 @@
       <category term="Java工具类" scheme="https://www.coderacademy.online/categories/Java%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
     
     
-      <category term="MapStruct" scheme="https://www.coderacademy.online/tags/MapStruct/"/>
-    
       <category term="Java工具类" scheme="https://www.coderacademy.online/tags/Java%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
+    
+      <category term="MapStruct" scheme="https://www.coderacademy.online/tags/MapStruct/"/>
     
   </entry>
   
@@ -398,9 +398,9 @@
       <category term="Java工具类" scheme="https://www.coderacademy.online/categories/Java%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
     
     
-      <category term="Guava" scheme="https://www.coderacademy.online/tags/Guava/"/>
-    
       <category term="Java工具类" scheme="https://www.coderacademy.online/tags/Java%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
+    
+      <category term="Guava" scheme="https://www.coderacademy.online/tags/Guava/"/>
     
   </entry>
   
