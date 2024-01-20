@@ -1,4 +1,6 @@
+https://www.coderacademy.online/article/springbootchain.html
 https://www.coderacademy.online/article/mapstruct.html
+https://www.coderacademy.online/article/ideamybatisplugins.html
 https://www.coderacademy.online/article/javainnerclass.html
 https://www.coderacademy.online/article/javapairtriple.html
 https://www.coderacademy.online/article/mysqlfromjoin.html

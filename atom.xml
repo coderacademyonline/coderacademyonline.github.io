@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.coderacademy.online/"/>
-  <updated>2024-01-17T03:44:45.679Z</updated>
+  <updated>2024-01-20T03:17:50.078Z</updated>
   <id>https://www.coderacademy.online/</id>
   
   <author>
@@ -17,11 +17,44 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>乖乖，咱不用BeanUtil.copyProperties了，咱试试这款神级工具（超详细）</title>
+    <title>SpringBoot责任链与自定义注解：优雅解耦复杂业务</title>
+    <link href="https://www.coderacademy.online/article/springbootchain.html"/>
+    <id>https://www.coderacademy.online/article/springbootchain.html</id>
+    <published>2024-01-20T02:00:00.000Z</published>
+    <updated>2024-01-20T03:17:50.078Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="SpringBoot" scheme="https://www.coderacademy.online/categories/SpringBoot/"/>
+    
+    
+      <category term="SpringBoot" scheme="https://www.coderacademy.online/tags/SpringBoot/"/>
+    
+      <category term="责任链模式" scheme="https://www.coderacademy.online/tags/%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/"/>
+    
+      <category term="策略模式" scheme="https://www.coderacademy.online/tags/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>乖乖，咱不用BeanUtil.copy了，咱试试这款神级工具（超详细）</title>
     <link href="https://www.coderacademy.online/article/mapstruct.html"/>
     <id>https://www.coderacademy.online/article/mapstruct.html</id>
     <published>2024-01-16T11:57:08.000Z</published>
-    <updated>2024-01-17T03:44:45.679Z</updated>
+    <updated>2024-01-19T01:42:17.904Z</updated>
     
     <summary type="html">
     
@@ -44,6 +77,39 @@
       <category term="Java工具类" scheme="https://www.coderacademy.online/tags/Java%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
     
       <category term="MapStruct" scheme="https://www.coderacademy.online/tags/MapStruct/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>推荐几款IDEA插件，助你玩转Mybatis开发</title>
+    <link href="https://www.coderacademy.online/article/ideamybatisplugins.html"/>
+    <id>https://www.coderacademy.online/article/ideamybatisplugins.html</id>
+    <published>2024-01-15T14:50:00.000Z</published>
+    <updated>2024-01-20T03:21:52.291Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;欢迎老铁来到我的博客，扫码下图关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="IDEA插件" scheme="https://www.coderacademy.online/categories/IDEA%E6%8F%92%E4%BB%B6/"/>
+    
+    
+      <category term="IDEA" scheme="https://www.coderacademy.online/tags/IDEA/"/>
+    
+      <category term="IDEA插件" scheme="https://www.coderacademy.online/tags/IDEA%E6%8F%92%E4%BB%B6/"/>
+    
+      <category term="MyBatis插件" scheme="https://www.coderacademy.online/tags/MyBatis%E6%8F%92%E4%BB%B6/"/>
     
   </entry>
   
@@ -147,7 +213,7 @@
     <link href="https://www.coderacademy.online/article/springbootcommonresponse.html"/>
     <id>https://www.coderacademy.online/article/springbootcommonresponse.html</id>
     <published>2024-01-10T06:19:57.000Z</published>
-    <updated>2024-01-12T05:37:01.077Z</updated>
+    <updated>2024-01-20T03:20:10.122Z</updated>
     
     <summary type="html">
     
@@ -312,7 +378,7 @@
     <link href="https://www.coderacademy.online/article/2d9d416b.html"/>
     <id>https://www.coderacademy.online/article/2d9d416b.html</id>
     <published>2024-01-04T02:27:05.000Z</published>
-    <updated>2024-01-10T11:27:07.642Z</updated>
+    <updated>2024-01-20T03:20:59.879Z</updated>
     
     <summary type="html">
     
@@ -398,9 +464,9 @@
       <category term="Java工具类" scheme="https://www.coderacademy.online/categories/Java%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
     
     
-      <category term="Java工具类" scheme="https://www.coderacademy.online/tags/Java%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
-    
       <category term="Guava" scheme="https://www.coderacademy.online/tags/Guava/"/>
+    
+      <category term="Java工具类" scheme="https://www.coderacademy.online/tags/Java%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
     
   </entry>
   
