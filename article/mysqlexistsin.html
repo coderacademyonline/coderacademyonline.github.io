@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="推荐几款IDEA插件，助你玩转Mybatis开发, Java，Spring，SpringBoot，SpringCloud，Elasticsearch，MQ，工作流，规则引擎">
+    <meta name="keywords" content="面试官：Mysql中EXISTS与IN的使用有哪些差异, Java，Spring，SpringBoot，SpringCloud，Elasticsearch，MQ，工作流，规则引擎">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
@@ -12,8 +12,7 @@
 欢迎老铁来到我的博客，扫码下图关注公众号【码农Academy】，每日技术干货马上就来！
 
 
-
-写在前面，假如有老铁乘坐传送门过来的，建议扫码关注公众号之后，后台回复[插件]即可获取，安装后可享受一下MyBatis Log带来的便捷，真香啊">
+在数据库查询优化中，查询效率直接关系到应用程序性能。其中，IN和EXISTS是两种常见的子查询操作符，广泛应用于SQL查询语句，但它们在执行效率上">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +20,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>推荐几款IDEA插件，助你玩转Mybatis开发 | 码农Academy的博客</title>
+    <title>面试官：Mysql中EXISTS与IN的使用有哪些差异 | 码农Academy的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -271,13 +270,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/featureimages/23.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/featureimages/30.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        推荐几款IDEA插件，助你玩转Mybatis开发
+                        面试官：Mysql中EXISTS与IN的使用有哪些差异
                     </div>
                 </div>
             </div>
@@ -388,16 +387,16 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/IDEA/" target="_blank">
-                            <span class="chip bg-color">IDEA</span>
+                        <a href="/tags/面试/" target="_blank">
+                            <span class="chip bg-color">面试</span>
                         </a>
                         
-                        <a href="/tags/IDEA插件/" target="_blank">
-                            <span class="chip bg-color">IDEA插件</span>
+                        <a href="/tags/Mysql/" target="_blank">
+                            <span class="chip bg-color">Mysql</span>
                         </a>
                         
-                        <a href="/tags/MyBatis插件/" target="_blank">
-                            <span class="chip bg-color">MyBatis插件</span>
+                        <a href="/tags/exists与in/" target="_blank">
+                            <span class="chip bg-color">exists与in</span>
                         </a>
                         
                     </div>
@@ -408,8 +407,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/IDEA插件/" class="post-category" target="_blank">
-                            IDEA插件
+                        <a href="/categories/Mysql/" class="post-category" target="_blank">
+                            Mysql
                         </a>
                         
                     </div>
@@ -420,7 +419,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-01-15
+                    2024-01-22
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -434,14 +433,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    957
+                    2.7k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    10 分
                 </div>
                 
                 
@@ -461,32 +460,106 @@
 <p>欢迎老铁来到我的博客，扫码下图关注公众号【码农Academy】，每日技术干货马上就来！</p>
 </blockquote>
 <p><img src="https://raw.githubusercontent.com/coderacademyonline/blogimage/master/contact.jpg" alt="contact.jpg"></p>
+<p>在数据库查询优化中，查询效率直接关系到应用程序性能。其中，IN和EXISTS是两种常见的子查询操作符，广泛应用于SQL查询语句，但它们在执行效率上有所不同。</p>
+<p>本文深入探讨IN和EXISTS的工作原理，以及在何种情境下选择更为合适。通过对这两种操作符的详细分析，揭示它们在实际应用中的优缺点，一起了解如何在数据库查询中灵活运用IN和EXISTS，以优化查询语句的执行。</p>
+<h3 id="IN与EXISTS基本概念与用法"><a href="#IN与EXISTS基本概念与用法" class="headerlink" title="IN与EXISTS基本概念与用法"></a>IN与EXISTS基本概念与用法</h3><h4 id="IN子查询"><a href="#IN子查询" class="headerlink" title="IN子查询"></a>IN子查询</h4><p>在MySQL中，当使用<code>IN</code>子查询时，主查询（外表）中的每一行都会与子查询（内表）的结果集进行比较。先执行子查询生成一个临时表，然后主查询取出对应的字段值，系统会遍历子查询结果集，检查这个字段值是否存在于子查询结果集中。如果存在，则该行满足条件，会被加入到最终的查询结果中。例如：</p>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> t_order <span class="token keyword">where</span> customer_no <span class="token operator">in</span> <span class="token punctuation">(</span><span class="token keyword">SELECT</span> customer_no <span class="token keyword">FROM</span> t_customer <span class="token keyword">WHERE</span> country <span class="token operator">=</span> <span class="token string">'US'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>在这个例子中，对于<code>t_order</code>表中的每一行，MySQL会查看<code>t_customer</code>表中是否存在与其<code>customer_no</code>相匹配的记录。如果<code>t_customer</code>表中有任何行的<code>customer_no</code>与<code>t_order</code>表中当前行的<code>customer_no</code>相同，那么这一行就会被包含在最终查询结果中。</p>
+<p><code>IN</code>子查询的效率通常在子查询结果集较小的情况下较高，因为它需要处理并可能缓存整个子查询结果。</p>
+<h4 id="EXISTS子查询"><a href="#EXISTS子查询" class="headerlink" title="EXISTS子查询"></a>EXISTS子查询</h4><p><code>EXISTS</code>子查询则是用于判断关联性，它并不关心子查询返回的具体数据值，而只关注是否存在匹配的行。对于主查询表中的每一行，执行内部的<code>EXISTS</code>子查询。当<code>EXISTS</code>子查询找到一行或多行符合<code>WHERE</code>条件的记录时，立即返回真(<code>TRUE</code>)。这个<code>TRUE</code>值会导致外层查询的那一行被纳入最终结果中，因为<code>WHERE EXISTS</code>条件为真。一旦<code>EXISTS</code>子查询找到匹配项，它就不需要继续查找剩余的记录了，即实现了所谓的“短路”或“早期终结”。例如：</p>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> t_order torder <span class="token keyword">WHERE</span> <span class="token keyword">EXISTS</span><span class="token punctuation">(</span><span class="token keyword">SELECT</span> <span class="token number">1</span> <span class="token keyword">FROM</span> t_customer tcustomer <span class="token keyword">WHERE</span> tcustomer<span class="token punctuation">.</span>customer_no <span class="token operator">=</span> torder<span class="token punctuation">.</span>customer_no <span class="token operator">AND</span> tcustomer<span class="token punctuation">.</span>country <span class="token operator">=</span> <span class="token string">'US'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p>在这个例子中，只要<code>t_customer</code>表中存在至少一条记录，其<code>customer_no</code>与<code>t_order</code>表中的当前行<code>customer_no</code>相符，MySQL就认为<code>EXISTS</code>条件为真，并将当前的<code>t_order</code>表行作为结果返回。无论<code>t_customer</code>表有多少其他相关记录，都不再影响此条目是否被选中。<br><code>EXISTS</code>在子查询表大但只需验证是否存在对应关系时更高效，它支持“短路”机制，一旦找到匹配项就结束子查询，不必遍历完整个子查询表。</p>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>MySQL中的<code>IN</code>语句是把外表和内表作<code>HASH</code>连接，而<code>EXISTS</code>语句是对外表作<code>LOOP</code>循环，每次<code>LOOP</code>循环再对内表进行查询，单纯的理解<code>EXISTS</code>比<code>IN</code>语句的效率要高的说法其实是不准确的，要区分情景:</p>
+<ul>
+<li>如果查询的两不表大小相当，那么用<code>EXISTS</code>和<code>IN</code>差别不大。</li>
+<li>如果两个表中一个较小，一个是大表，则子查询表大的用<code>EXISTS</code>,子查询表小的用 <code>IN</code>。</li>
+</ul>
+<h3 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h3><p>下面我们来通过实际案例去验证数据量和索引对<code>IN</code>与<code>EXISTS</code>子查询性能的影响。<br>我们创建两张表：</p>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- t_order</span>
+<span class="token keyword">DROP</span> <span class="token keyword">TABLE</span> <span class="token keyword">IF</span> <span class="token keyword">EXISTS</span> <span class="token punctuation">`</span>t_order<span class="token punctuation">`</span><span class="token punctuation">;</span>  
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>t_order<span class="token punctuation">`</span><span class="token punctuation">(</span>  
+ id                 <span class="token keyword">bigint</span> UNSIGNED <span class="token keyword">AUTO_INCREMENT</span> <span class="token keyword">COMMENT</span> <span class="token string">'自增主键'</span>  
+        <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">,</span>  
+ <span class="token punctuation">`</span>order_no<span class="token punctuation">`</span> <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token string">''</span> <span class="token keyword">COMMENT</span> <span class="token string">'订单编号'</span><span class="token punctuation">,</span>  
+ <span class="token punctuation">`</span>customer_no<span class="token punctuation">`</span>      <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token string">''</span> <span class="token keyword">COMMENT</span> <span class="token string">'客户编号'</span><span class="token punctuation">,</span>  
+<span class="token punctuation">`</span>create_time<span class="token punctuation">`</span>      <span class="token keyword">datetime</span>        <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CURRENT_TIMESTAMP</span> <span class="token keyword">COMMENT</span> <span class="token string">'创建时间'</span>  
+<span class="token punctuation">)</span> <span class="token keyword">ENGINE</span> <span class="token operator">=</span> <span class="token keyword">InnoDB</span>  
+  <span class="token keyword">AUTO_INCREMENT</span> <span class="token operator">=</span> <span class="token number">1</span>  
+  <span class="token keyword">DEFAULT</span> <span class="token keyword">CHARSET</span> <span class="token operator">=</span> utf8mb4 <span class="token keyword">COMMENT</span> <span class="token operator">=</span><span class="token string">'测试订单表'</span><span class="token punctuation">;</span>  
+
+<span class="token comment" spellcheck="true">-- t_customer</span>
+<span class="token keyword">DROP</span> <span class="token keyword">TABLE</span> <span class="token keyword">IF</span> <span class="token keyword">EXISTS</span> <span class="token punctuation">`</span>t_customer<span class="token punctuation">`</span><span class="token punctuation">;</span>  
+<span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>t_customer<span class="token punctuation">`</span><span class="token punctuation">(</span>  
+     id                 <span class="token keyword">bigint</span> UNSIGNED <span class="token keyword">AUTO_INCREMENT</span> <span class="token keyword">COMMENT</span> <span class="token string">'自增主键'</span>  
+        <span class="token keyword">PRIMARY</span> <span class="token keyword">KEY</span><span class="token punctuation">,</span>  
+     <span class="token punctuation">`</span>customer_no<span class="token punctuation">`</span>      <span class="token keyword">varchar</span><span class="token punctuation">(</span><span class="token number">16</span><span class="token punctuation">)</span> <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token string">''</span> <span class="token keyword">COMMENT</span> <span class="token string">'客户编号'</span><span class="token punctuation">,</span>  
+    <span class="token punctuation">`</span>create_time<span class="token punctuation">`</span>      <span class="token keyword">datetime</span>        <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">DEFAULT</span> <span class="token keyword">CURRENT_TIMESTAMP</span> <span class="token keyword">COMMENT</span> <span class="token string">'创建时间'</span>  
+<span class="token punctuation">)</span><span class="token keyword">ENGINE</span> <span class="token operator">=</span> <span class="token keyword">InnoDB</span>  
+  <span class="token keyword">AUTO_INCREMENT</span> <span class="token operator">=</span> <span class="token number">1</span>  
+  <span class="token keyword">DEFAULT</span> <span class="token keyword">CHARSET</span> <span class="token operator">=</span> utf8mb4 <span class="token keyword">COMMENT</span> <span class="token operator">=</span><span class="token string">'测试订单客户表'</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>我们通过<code>Python</code>脚本往<code>t_order</code>中插入100万条数据，<code>t_customer</code>中插入1万条数据。</p>
+<p>案例<code>sql</code>:</p>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> t_order <span class="token keyword">where</span> customer_no <span class="token operator">in</span> <span class="token punctuation">(</span><span class="token keyword">SELECT</span> customer_no <span class="token keyword">FROM</span> t_customer <span class="token keyword">WHERE</span> country <span class="token operator">=</span> <span class="token string">'US'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> t_order torder <span class="token keyword">WHERE</span> <span class="token keyword">EXISTS</span><span class="token punctuation">(</span><span class="token keyword">SELECT</span> <span class="token number">1</span> <span class="token keyword">FROM</span> t_customer tcustomer <span class="token keyword">WHERE</span> tcustomer<span class="token punctuation">.</span>customer_no <span class="token operator">=</span> torder<span class="token punctuation">.</span>customer_no <span class="token operator">AND</span> tcustomer<span class="token punctuation">.</span>country <span class="token operator">=</span> <span class="token string">'US'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <blockquote>
-<p>写在前面，假如有老铁乘坐传送门过来的，建议扫码关注公众号之后，后台回复[<mark style="background: #FF5582A6;">插件</mark>]即可获取，安装后可享受一下<code>MyBatis Log</code>带来的便捷，真香啊。。。</p>
+<p>案例执行建立在没有加索引情况下进行。</p>
 </blockquote>
-<p>在软件开发的征程中，MyBatis 框架一直是 Java 开发者中的首选，其简洁的 SQL 映射和强大的灵活性使其成为持久层框架的瑰宝。然而，在我们开发过程中，很多人都曾面对过一个相对繁琐的问题：如何高效而准确地将数据库表映射到实体类和相应的 Mapper 文件中？如何将单测日志中的<code>SQL LOG</code> 快速高效的解析出来？</p>
-<p>当然在将数据库表映射到实体类和相应的 Mapper 文件中我们可以采用代码生成器，比如<code>MyBatis Generator</code>或者结合<code>Spring Freemarker</code>手写代码模板生成， 很多年前用过，但是都是基于配置文件，还要改配置，一点都不方便，下面我们介绍几款插件解决这个问题，当然有免费的插件。。。。</p>
-<h3 id="MyBatisCodeHelperPro"><a href="#MyBatisCodeHelperPro" class="headerlink" title="MyBatisCodeHelperPro"></a>MyBatisCodeHelperPro</h3><p>最好的Mybatis代码提示,代码检测插件,快速生成代码,测试sql,日志转sql等.功能超级全，简直是开发<code>Mybatis</code>用的神级插件。这是官方对这个插件的介绍：</p>
-<p><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240112151551.png" alt="image.png"></p>
-<p>根据介绍，真的可以满足我们日常开发<code>Mybatis</code>所需要的所有功能，除了不会帮你自动写代码以外。。。。</p>
-<p><code>IDEA</code>使用内置的数据库客户端，连接上数据库，选中需要生成代码的表，可以将实体，<code>mapper</code>，<code>mapper xml</code>生成到我们指定的目录里面，我们还可以选择生成的mapper方法，例如：插入，部分字段插入，更新，删除以及查询。最最最让人喜欢的就是在xml中写<code>SQL</code>时的智能提示，这可以快速方便的帮助我们写动态SQL，并且还不会因为字段手写可能会导致的错误。</p>
-<p><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240112145032.png" alt="image.png"></p>
-<p><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240112150712.png" alt="image.png"></p>
-<p><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240112150740.png" alt="image.png"></p>
-<p><strong>但是，他是收费的，并且只能在IDEA企业版中安装</strong></p>
-<p><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240112152112.png" alt="image.png"></p>
-<p>虽然未激活也可以使用，但是功能比激活状态下的要少很多。</p>
-<h3 id="MybatisX"><a href="#MybatisX" class="headerlink" title="MybatisX"></a>MybatisX</h3><p><strong>首先，他是免费的</strong>。他能做到将表映射到对应目录下的实体，mapper，mapperXml，以及可以从mapper的具体方法链接到xml中的具体sql。但是并没有<code>MybatisCodeHelpPro</code>那么多功能，特别是智能提示，只能做到对数据库字段的提示，没法做到<code>#{}</code>中的提示。</p>
-<p><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240112183152.png" alt="image.png"><br><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240112183626.png" alt="image.png"></p>
-<p>如果想白嫖的，<strong>建议安装这个插件，比那些代码生成模板好用。</strong></p>
-<h3 id="Mybatis-Log"><a href="#Mybatis-Log" class="headerlink" title="Mybatis Log"></a><code>Mybatis Log</code></h3><p>可以把IDEA控制中打印的SQL执行的日志，直接转换为可以在数据库中直接执行的SQL，不需要我们自己去替换SQL的参数。直接选中日志中的log右键转换即可。</p>
-<p><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240112190935.png" alt="image.png"></p>
-<p><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240112164411.png" alt="image.png"><br>直接可以运行的sql，在我们排查数据问题时真的可以节省很多时间，还不用出错。</p>
-<p>还有一个功能：假如你从其他地方拷贝过来的SQL LOG,放在IDEA里面的某个文件中也可以右键使用<code>Mybatis Log</code>转换。</p>
-<p><strong>但是，正版的它也是收费的</strong></p>
-<p><strong>但是，我有破解版。。。。</strong></p>
-<p>传送门：扫码关注公众号后，后台回复[<mark style="background: #FF5582A6;">插件</mark>]即可获取，安装后可享受一下<code>Mybatis Log</code>带来的便捷，真香啊。。。</p>
-<p>当然还有一个<code>Mybatis Log Free</code> ，但是他不能在控制台中选中某一条SQL LOG 进行转化，他只能将控制台中所有的<code>SQL LOG</code>转换为<code>SQL</code>。并且它只能在控制台中转换LOG，IDEA中文件的LOG无法转换。</p>
+<h4 id="IN小表，EXISTS小表"><a href="#IN小表，EXISTS小表" class="headerlink" title="IN小表，EXISTS小表"></a>IN小表，EXISTS小表</h4><p>我们在执行上面两条sql时会发现<code>IN</code>查询的速度远远高于<code>EXISTS</code>。</p>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> t_order <span class="token keyword">where</span> customer_no <span class="token operator">in</span> <span class="token punctuation">(</span><span class="token keyword">SELECT</span> customer_no <span class="token keyword">FROM</span> t_customer <span class="token keyword">WHERE</span> country <span class="token operator">=</span> <span class="token string">'US'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> t_order torder <span class="token keyword">WHERE</span> <span class="token keyword">EXISTS</span><span class="token punctuation">(</span><span class="token keyword">SELECT</span> <span class="token number">1</span> <span class="token keyword">FROM</span> t_customer tcustomer <span class="token keyword">WHERE</span> tcustomer<span class="token punctuation">.</span>customer_no <span class="token operator">=</span> torder<span class="token punctuation">.</span>customer_no <span class="token operator">AND</span> tcustomer<span class="token punctuation">.</span>country <span class="token operator">=</span> <span class="token string">'US'</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>我们先看两个sql的执行计划：<br><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240122114228.png" alt="image.png"><br>本案例中<code>IN</code>查询的SQL执行了近5秒。<br><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240122114623.png" alt="image.png"><br>本案例中<code>EXISTS</code>查询的SQL执行了超过5分钟。</p>
+<p>从上述执行计划中，我们可以看到<code>IN</code>查询和<code>EXISTS</code>查询在没有索引的情况下都进行了全表扫描：</p>
+<ul>
+<li><p>IN查询：</p>
+<ul>
+<li>主查询对<code>t_order</code>表进行了全表扫描（ALL），由于没有索引，MySQL需要遍历1005915行数据。</li>
+<li>子查询对<code>t_customer</code>表也进行了全表扫描（MATERIALIZED），查找国家为’US’的客户编号。该表大小较小，有1000行数据。</li>
+</ul>
+</li>
+<li><p>EXISTS查询：</p>
+<ul>
+<li>主查询同样对<code>t_order</code>表进行了全表扫描（ALL），同理，无索引导致效率较低。</li>
+<li>子查询对<code>t_customer</code>表进行了全表扫描（DEPENDENT SUBQUERY），并且根据WHERE条件过滤出与主查询关联的数据。</li>
+</ul>
+</li>
+</ul>
+<p>虽然两者都未使用索引，但根据执行计划中的rows值，<code>IN</code>查询的子查询涉及的数据量要远小于主查询涉及的数据量。具体来说，在<code>IN</code>查询中，子查询只需要处理1000行数据，并将结果用于筛选主查询中的1005915行数据。而在<code>EXISTS</code>查询中，子查询虽然只返回1.00（几乎为1）个匹配记录，但它需要针对每一行主查询的结果进行检查，总共要处理1005915次。</p>
+<p>因此，在这种情况下，<code>IN</code>查询的效率高于<code>EXISTS</code>查询的原因主要是子查询数据集大小的不同以及子查询对主查询的影响程度。尽管两个查询都没有利用到索引优化，但在实际执行时，<code>IN</code>查询所需的计算量相对较小，故其性能优于<code>EXISTS</code>查询。</p>
+<h4 id="IN大表，EXISTS大表"><a href="#IN大表，EXISTS大表" class="headerlink" title="IN大表，EXISTS大表"></a>IN大表，EXISTS大表</h4><p>我们再次变更一下sql，让子查询是大表，观察一下他们的执行情况。即sql：</p>
+<pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> t_customer <span class="token keyword">WHERE</span> customer_no <span class="token operator">IN</span> <span class="token punctuation">(</span><span class="token keyword">SELECT</span> customer_no <span class="token keyword">FROM</span> t_order<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+<span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> t_customer tcustomer <span class="token keyword">WHERE</span> <span class="token keyword">EXISTS</span><span class="token punctuation">(</span><span class="token keyword">SELECT</span> <span class="token number">1</span> <span class="token keyword">FROM</span>  t_order torder <span class="token keyword">WHERE</span> tcustomer<span class="token punctuation">.</span>customer_no <span class="token operator">=</span> torder<span class="token punctuation">.</span>customer_no<span class="token punctuation">)</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>我们再次查看sql的执行计划：<br><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240122152320.png" alt="image.png"><br>执行IN查询语句时花费2秒。</p>
+<p><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240122152415.png" alt="image.png"><br>执行<code>EXISTS</code>查询花费0.25秒。</p>
+<p>由此可以看出<code>EXISTS</code>查询的效率远高于<code>IN</code>查询，我们结合执行计划进行分析：</p>
+<ul>
+<li>IN查询：<ul>
+<li>主查询（<code>t_customer</code>）由于没有索引，MySQL需要对整个表进行全表扫描，涉及行数为1000行。</li>
+<li>子查询（<code>t_order</code>）同样进行了全表扫描，涉及行数为1005915行。虽然子查询的结果通过自动生成的临时键与主查询关联，并且对于每一个主查询中的<code>customer_no</code>，子查询都能很快找到对应的记录（rows值为1），但由于子查询的数据量巨大，所以整体查询效率不高。</li>
+</ul>
+</li>
+<li>EXISTS查询：<ul>
+<li>主查询（<code>t_customer</code>）仍然进行了全表扫描，涉及行数为1000行。</li>
+<li>子查询（<code>t_order</code>）也是全表扫描，但关键在于它是“DEPENDENT SUBQUERY”，这意味着它会依赖于外部查询（即主查询）的每一行结果来决定是否执行。尽管子查询需要处理1005915行数据，但由于其是根据主查询的每一条<code>customer_no</code>逐个检查是否存在匹配项，因此当遇到第一条不满足条件的<code>customer_no</code>时，就可以立即停止对子查询中剩余行的处理。这导致了在实际执行过程中，可能只需要检查一部分<code>t_order</code>表的数据即可完成所有主查询记录的验证，从而提高了查询效率。</li>
+</ul>
+</li>
+</ul>
+<p>在这个案例中，因为主查询表（<code>t_customer</code>）较小，而子查询表（<code>t_order</code>）较大，<code>EXISTS</code>查询能够在较早阶段停止不必要的计算，使得整体查询效率优于<code>IN</code>查询。</p>
+<h3 id="数据量以及索引对IN与-EXISTS性能的影响"><a href="#数据量以及索引对IN与-EXISTS性能的影响" class="headerlink" title="数据量以及索引对IN与`EXISTS性能的影响"></a>数据量以及索引对<code>IN</code>与`EXISTS性能的影响</h3><p>在MySQL中，<code>IN</code>和<code>EXISTS</code>子查询的性能很大程度上取决于内外表的数据量以及相关的索引设置。</p>
+<h4 id="数据量的影响"><a href="#数据量的影响" class="headerlink" title="数据量的影响"></a>数据量的影响</h4><ul>
+<li><p>对于<code>IN</code>子查询：当内表（子查询结果集）较小且数据能够被有效索引时，<code>IN</code>通常表现良好。如果内表很大，即使有索引，由于需要生成并存储完整的子查询结果集以供主查询进行比对，因此随着内表记录数的增长，性能会逐渐下降。</p>
+</li>
+<li><p>对于<code>EXISTS</code>子查询：当外层主查询表较大，而内表虽大但匹配条件的行数较少时，<code>EXISTS</code>的优势更加明显。因为它仅需找到一个匹配项就可以立即结束内部循环，返回真值，无需遍历整个内表。当内表数据量巨大但能快速定位到满足条件的少数行时，<code>EXISTS</code>相比<code>IN</code>更高效。</p>
+<h4 id="索引的影响："><a href="#索引的影响：" class="headerlink" title="索引的影响："></a>索引的影响：</h4></li>
+<li><p>对于<code>IN</code>子查询：如果<code>IN</code>子查询中的字段具有有效的索引，可以减少内表的全表扫描，转而通过索引查找，显著提高查询效率。尤其是覆盖索引（索引包含了查询所需的所有列），可以直接从索引中获取信息，避免回表操作。</p>
+</li>
+<li><p>对于<code>EXISTS</code>子查询：对于<code>EXISTS</code>子查询，同样要求相关联的字段上有合适的索引。例如，在上面的例子中，若<code>t_customer</code>的<code>customer_no</code>字段有索引，那么在执行<code>WHERE tcustomer.customer_no = torder.customer_no</code>时，可以通过索引快速定位匹配记录，从而加速子查询的执行过程。</p>
+</li>
+</ul>
+<p>在决定使用<code>IN</code>还是<code>EXISTS</code>时，首先应考虑的是内外表的数据规模以及关联字段上的索引情况。若内表较小或子查询结果集易于通过索引优化，<code>IN</code>可能是更好的选择。若关注是否存在关联关系且内表虽大但能满足条件的行数有限，同时外层主查询表可能更大，则<code>EXISTS</code>可能提供更高的查询性能。 </p>
+<p>当然最佳实践是结合实际业务需求、数据分布特点以及数据库统计信息，通过分析SQL执行计划来确定最合适的查询策略，并根据实际情况调整表结构和索引设计。</p>
 
             </div>
             <hr />
@@ -521,9 +594,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《推荐几款IDEA插件，助你玩转Mybatis开发》
+                    《面试官：Mysql中EXISTS与IN的使用有哪些差异》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/article/ideamybatisplugins.html" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/article/mysqlexistsin.html" property="cc:attributionName"
                rel="cc:attributionURL">
                 码农Academy
             </a> 采用
@@ -564,7 +637,7 @@
         repo: 'coderacademyonline.github.io',
         owner: 'coderacademyonline',
         admin: "coderacademyonline",
-        id: 'article/ideamybatisplugins.html',
+        id: 'article/mysqlexistsin.html',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -847,49 +920,55 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/article/mapstruct.html">
+                <a href="/article/mysqlexistsin.html">
                     <div class="card-image">
                         
-                        <img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/featureimages/26.jpg" class="responsive-img" alt="乖乖，咱不用BeanUtil.copy了，咱试试这款神级工具（超详细）">
+                        <img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/featureimages/30.jpg" class="responsive-img" alt="面试官：Mysql中EXISTS与IN的使用有哪些差异">
                         
-                        <span class="card-title">乖乖，咱不用BeanUtil.copy了，咱试试这款神级工具（超详细）</span>
+                        <span class="card-title">面试官：Mysql中EXISTS与IN的使用有哪些差异</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            MapStruct是Java编译时生成对象映射代码的工具，通过注解简化Bean间的转换。它自动创建映射接口实现，提高效率与性能，优于手动或运行时反射映射，并支持自定义逻辑配置，适用于多种框架，提升开发和维护体验。
+                            文章深入研究Mysql查询中IN与EXISTS子查询的性能选择。建议在大表驱动小表时选用IN，小表驱动大表时选择EXISTS。性能取决于数据规模和索引。
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2024-01-16
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2024-01-22
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java工具类/" class="post-category" target="_blank">
-                                    Java工具类
+                            <a href="/categories/Mysql/" class="post-category" target="_blank">
+                                    Mysql
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/MapStruct/" target="_blank">
-                        <span class="chip bg-color">MapStruct</span>
+                    <a href="/tags/面试/" target="_blank">
+                        <span class="chip bg-color">面试</span>
                     </a>
                     
-                    <a href="/tags/Java工具类/" target="_blank">
-                        <span class="chip bg-color">Java工具类</span>
+                    <a href="/tags/Mysql/" target="_blank">
+                        <span class="chip bg-color">Mysql</span>
+                    </a>
+                    
+                    <a href="/tags/exists与in/" target="_blank">
+                        <span class="chip bg-color">exists与in</span>
                     </a>
                     
                 </div>
@@ -903,30 +982,30 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/article/javainnerclass.html">
+                <a href="/article/springbootchain.html">
                     <div class="card-image">
                         
-                        <img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/featureimages/22.jpg" class="responsive-img" alt="重温Java基础（一）Java中的四种内部类">
+                        <img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/featureimages/28.jpg" class="responsive-img" alt="SpringBoot责任链与自定义注解：优雅解耦复杂业务">
                         
-                        <span class="card-title">重温Java基础（一）Java中的四种内部类</span>
+                        <span class="card-title">SpringBoot责任链与自定义注解：优雅解耦复杂业务</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            内部类在Java中有四种类型：成员内部类、静态内部类、局部内部类和匿名内部类。
+                            使用Spring Boot整合@Qualifier、自定义注解、责任链和策略模式，实现业务逻辑高度解耦。责任链模式将不同规则下的业务节点清晰分离，提升代码可读性。采用策略模式简化规则处理，带来更灵活的业务扩展。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2024-01-14
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2024-01-20
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java基础/" class="post-category" target="_blank">
-                                    Java基础
+                            <a href="/categories/SpringBoot/" class="post-category" target="_blank">
+                                    SpringBoot
                                 </a>
                             
                             
@@ -936,12 +1015,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java四大内部类/" target="_blank">
-                        <span class="chip bg-color">Java四大内部类</span>
+                    <a href="/tags/SpringBoot/" target="_blank">
+                        <span class="chip bg-color">SpringBoot</span>
                     </a>
                     
-                    <a href="/tags/Java基础/" target="_blank">
-                        <span class="chip bg-color">Java基础</span>
+                    <a href="/tags/责任链模式/" target="_blank">
+                        <span class="chip bg-color">责任链模式</span>
+                    </a>
+                    
+                    <a href="/tags/策略模式/" target="_blank">
+                        <span class="chip bg-color">策略模式</span>
                     </a>
                     
                 </div>
