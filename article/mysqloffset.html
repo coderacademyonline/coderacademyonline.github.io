@@ -12,7 +12,8 @@
 关注公众号【码农Academy】，每日技术干货马上就来！
 
 
-背景某B端公司有一张千万级的订单表需要导出全量数据，一次性查询所有数据在进行导出不现实，故采取分页查询导出，但是进行到一定深度分页之后（比如1000万行后）查询比较缓慢，需要优">
+背景假如有一张千万级的订单表，这张表没有采用分区分表，也没有使用ES等技术，分页查询进行到一定深度分页之后（比如1000万行后）查询比较缓慢，我们该如何进行优化？
+数据准备订单">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -437,7 +438,7 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2.1k
+                    2k
                 </div>
                 
 
@@ -464,7 +465,7 @@
 <p>关注公众号【码农Academy】，每日技术干货马上就来！</p>
 </blockquote>
 <p><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/medias/contact.jpg" alt="contact.jpg"></p>
-<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>某B端公司有一张千万级的订单表需要导出全量数据，一次性查询所有数据在进行导出不现实，故采取分页查询导出，但是进行到一定深度分页之后（比如1000万行后）查询比较缓慢，需要优化。首先这张表没有采用分区分表，也没有使用一些搜索引擎例如ES等技术栈。即所有的数据都在这一张表上。</p>
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>假如有一张千万级的订单表，这张表没有采用分区分表，也没有使用ES等技术，分页查询进行到一定深度分页之后（比如1000万行后）查询比较缓慢，我们该如何进行优化？</p>
 <h3 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h3><p>订单表结构如下：</p>
 <pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">CREATE</span> <span class="token keyword">TABLE</span> <span class="token punctuation">`</span>t_order<span class="token punctuation">`</span> <span class="token punctuation">(</span>  
     <span class="token punctuation">`</span>id<span class="token punctuation">`</span> <span class="token keyword">BIGINT</span> <span class="token punctuation">(</span> <span class="token number">20</span> <span class="token punctuation">)</span> UNSIGNED <span class="token operator">NOT</span> <span class="token boolean">NULL</span> <span class="token keyword">AUTO_INCREMENT</span> <span class="token keyword">COMMENT</span> <span class="token string">'自增主键'</span><span class="token punctuation">,</span>  
@@ -566,7 +567,7 @@ fake <span class="token operator">=</span> Faker<span class="token punctuation">
 <p>此时耗时3分2秒，耗时明显增加。执行计划如下：<br><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240123202248.png" alt="image.png"><br><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240123202322.png" alt="image.png"><br>由执行计划看，此时索引已经失效了。。。。</p>
 <p>我们继续执行sql，从第1000万行开始取100条数据：</p>
 <pre class="line-numbers language-sql"><code class="language-sql"><span class="token keyword">select</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> t_order <span class="token keyword">ORDER</span> <span class="token keyword">BY</span> create_time <span class="token keyword">desc</span> <span class="token keyword">LIMIT</span> <span class="token number">10000000</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-<p>此时耗时4分14秒，时间真实太长了，执行计划如下：<br><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240123203426.png" alt="image.png"></p>
+<p>此时耗时4分14秒，时间真是太长了，执行计划如下：<br><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240123203426.png" alt="image.png"></p>
 <p><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240123202846.png" alt="image.png"></p>
 <p>后面还有接近1000万条数据没有取出来，直接就废了。</p>
 <h3 id="原因分析"><a href="#原因分析" class="headerlink" title="原因分析"></a>原因分析</h3><p>当我们使用 <code>LIMIT offset, count</code> 查询语句进行深度分页查询时，例如 <code>LIMIT 10000000,100</code> ，会发生以下过程：</p>
@@ -591,9 +592,9 @@ fake <span class="token operator">=</span> Faker<span class="token punctuation">
 <span class="token keyword">SELECT</span> create_time <span class="token keyword">FROM</span> t_order <span class="token keyword">ORDER</span> <span class="token keyword">BY</span> create_time <span class="token keyword">desc</span> <span class="token keyword">LIMIT</span> <span class="token number">1000000</span><span class="token punctuation">,</span><span class="token number">1</span>
 <span class="token punctuation">)</span>
 <span class="token keyword">ORDER</span> <span class="token keyword">BY</span> create_time <span class="token keyword">desc</span> <span class="token keyword">LIMIT</span> <span class="token number">100</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>查询第100万时耗时556毫秒，效率提升327倍。</p>
+<p>查询第100万时耗时556毫秒。</p>
 <p>执行结果，执行计划<br><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240123203520.png" alt="image.png"><br><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240123203725.png" alt="image.png"><br>可以看出主查询以及子查询都使用到了索引，回表查询的数据记录数也大大减少。</p>
-<p>继续查询到第1000万行时耗时接近6秒，效率提升42倍。<br>执行结果，执行计划</p>
+<p>继续查询到第1000万行时耗时接近6秒。<br>执行结果，执行计划</p>
 <p><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240123203937.png" alt="image.png"></p>
 <p><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240123204350.png" alt="image.png"><br>可以看出主查询以及子查询都使用到了索引，回表查询的数据记录数也大大减少。</p>
 <p><mark style="background: #FF5582A6;">这种方式需要<code>create_time</code> 的分布是相对均匀的，否则可能会导致某个时间段内的数据较多，影响查询性能。</mark></p>
@@ -604,9 +605,9 @@ fake <span class="token operator">=</span> Faker<span class="token punctuation">
     <span class="token punctuation">)</span> tmp <span class="token keyword">ON</span> torder<span class="token punctuation">.</span>id <span class="token operator">=</span> tmp<span class="token punctuation">.</span>id 
 <span class="token keyword">ORDER</span> <span class="token keyword">BY</span>
     create_time <span class="token keyword">DESC</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>查询第100万时耗时260毫秒，效率提升 倍。<br>执行结果，执行计划。<br><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240123204450.png" alt="image.png"></p>
+<p>查询第100万时耗时260毫秒。<br>执行结果，执行计划。<br><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240123204450.png" alt="image.png"></p>
 <p><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240123204625.png" alt="image.png"></p>
-<p>继续查询到第1000万行时耗时接近2秒，效率提升127倍<br>执行结果，执行计划<br><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240123204711.png" alt="image.png"><br><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240123204815.png" alt="image.png"></p>
+<p>继续查询到第1000万行时耗时接近2秒<br>执行结果，执行计划<br><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240123204711.png" alt="image.png"><br><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240123204815.png" alt="image.png"></p>
 <p>这种方式要保证<code>INNER JOIN</code>使用了合适的索引。</p>
 <h4 id="SEARCH-AFTER"><a href="#SEARCH-AFTER" class="headerlink" title="SEARCH AFTER"></a>SEARCH AFTER</h4><p>每次查询都保留上次的最小的<code>create_time</code>，然后下次查询只查询比上一页的<code>create_time</code>小的数据。单表查询，并且使用索引，回表数据少，不需要子查询以及关联查询，查询效率高。类似ES的<code>SEARCH AFTER</code>的查询方式。</p>
 <pre class="line-numbers language-sql"><code class="language-sql"><span class="token comment" spellcheck="true">-- 我们模拟连续分页到第1000000页，最小的一条数据的create_time</span>
@@ -616,9 +617,9 @@ fake <span class="token operator">=</span> Faker<span class="token punctuation">
 <span class="token keyword">SELECT</span> <span class="token operator">*</span> <span class="token keyword">FROM</span> t_order  
 <span class="token keyword">WHERE</span> create_time <span class="token operator">&lt;=</span> <span class="token string">'2023-01-22 00:00:00'</span> 
 <span class="token keyword">ORDER</span> <span class="token keyword">BY</span> create_time <span class="token keyword">desc</span> <span class="token keyword">LIMIT</span> <span class="token number">100</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>查询第100万时耗时142毫秒，效率提升1281倍。</p>
+<p>查询第100万时耗时142毫秒。</p>
 <p>执行结果，执行计划<br><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240123204928.png" alt="image.png"><br><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240123205002.png" alt="image.png"></p>
-<p>继续查询到第1000万行时耗时244毫秒，效率提升1040倍</p>
+<p>继续查询到第1000万行时耗时244毫秒</p>
 <p>执行结果，执行计划<br><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240123210129.png" alt="image.png"></p>
 <p><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240123210351.png" alt="image.png"></p>
 <p><mark style="background: #FF5582A6;">当然该种方式缺点也很明显：只能支持连续分页，不能支持获取随意页的数据。</mark></p>
@@ -987,59 +988,49 @@ fake <span class="token operator">=</span> Faker<span class="token punctuation">
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
-            </div>
+                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/article/mysqloffset.html">
+                <a href="/article/javabigdecimal.html">
                     <div class="card-image">
                         
-                        <img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/featureimages/32.jpg" class="responsive-img" alt="面试官：Mysql千万级大表如何进行深度分页优化">
+                        <img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/featureimages/32.jpg" class="responsive-img" alt="聊一聊BigDecimal使用时的陷阱">
                         
-                        <span class="card-title">面试官：Mysql千万级大表如何进行深度分页优化</span>
+                        <span class="card-title">聊一聊BigDecimal使用时的陷阱</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            本文介绍了如何通过子查询优化深度分页查询，以减少回表操作带来的性能损耗。传统的深度分页查询往往会面临严重的性能问题，尤其在处理大量数据时更是如此。
+                            聊一聊关于使用BigDecimal时遇到的一些坑，例如：浮点数精度丢失、舍入误差、比较陷阱，除法运算
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2024-01-23
-                            </span>
+                        <span class="publish-date">
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2024-01-23
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Mysql/" class="post-category" target="_blank">
-                                    Mysql
+                            <a href="/categories/Java/" class="post-category" target="_blank">
+                                    Java
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Mysql/" target="_blank">
-                        <span class="chip bg-color">Mysql</span>
+                    <a href="/tags/Java/" target="_blank">
+                        <span class="chip bg-color">Java</span>
                     </a>
                     
-                    <a href="/tags/Mysql深度分页/" target="_blank">
-                        <span class="chip bg-color">Mysql深度分页</span>
-                    </a>
-                    
-                    <a href="/tags/Sql优化/" target="_blank">
-                        <span class="chip bg-color">Sql优化</span>
-                    </a>
-                    
-                    <a href="/tags/面试/" target="_blank">
-                        <span class="chip bg-color">面试</span>
+                    <a href="/tags/BigDecimal/" target="_blank">
+                        <span class="chip bg-color">BigDecimal</span>
                     </a>
                     
                 </div>
@@ -1269,7 +1260,7 @@ fake <span class="token operator">=</span> Faker<span class="token punctuation">
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">51.3k</span>
+            <span class="white-color">58.5k</span>
             
 
             <br>

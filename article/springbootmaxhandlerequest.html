@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="面试官：说一下Mysql中from多表跟join表的区别, Java，Spring，SpringBoot，SpringCloud，Elasticsearch，MQ，工作流，规则引擎">
+    <meta name="keywords" content="阿里二面：SpringBoot可以同时处理多少个请求？当场懵了。。。。, Java，Spring，SpringBoot，SpringCloud，Elasticsearch，MQ，工作流，规则引擎">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
@@ -12,7 +12,7 @@
 关注公众号【码农Academy】，每日技术干货马上就来！
 
 
-在日常的数据库查询中，我们常常需要同时涉及多个表的数据。然而，在处理多表查询时，我们可能会使用不同的语法来达到相同的目的。最近，我的一个同事向我提出了一个问题，他的查询语句使用">
+SpringBoot以其简洁高效的开发方式和强大的内嵌容器特性，为开发者提供了构建高性能后端服务的便利。然而，当面临高并发场景时，理解并合理配置Spring Boot应用以达到">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +20,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>面试官：说一下Mysql中from多表跟join表的区别 | 码农Academy的博客</title>
+    <title>阿里二面：SpringBoot可以同时处理多少个请求？当场懵了。。。。 | 码农Academy的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -270,13 +270,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/featureimages/19.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/featureimages/35.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        面试官：说一下Mysql中from多表跟join表的区别
+                        阿里二面：SpringBoot可以同时处理多少个请求？当场懵了。。。。
                     </div>
                 </div>
             </div>
@@ -387,12 +387,12 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/Mysql查询/" target="_blank">
-                            <span class="chip bg-color">Mysql查询</span>
+                        <a href="/tags/面试/" target="_blank">
+                            <span class="chip bg-color">面试</span>
                         </a>
                         
-                        <a href="/tags/Mysql面试/" target="_blank">
-                            <span class="chip bg-color">Mysql面试</span>
+                        <a href="/tags/SpringBoot/" target="_blank">
+                            <span class="chip bg-color">SpringBoot</span>
                         </a>
                         
                     </div>
@@ -403,8 +403,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/Mysql/" class="post-category" target="_blank">
-                            Mysql
+                        <a href="/categories/SpringBoot/" class="post-category" target="_blank">
+                            SpringBoot
                         </a>
                         
                     </div>
@@ -415,7 +415,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-01-12
+                    2024-01-25
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -429,14 +429,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.7k
+                    1.9k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    7 分
                 </div>
                 
                 
@@ -455,109 +455,87 @@
                 <blockquote>
 <p>关注公众号【码农Academy】，每日技术干货马上就来！</p>
 </blockquote>
-<p><img src="https://raw.githubusercontent.com/coderacademyonline/blogimage/master/contact.jpg" alt="contact.jpg"></p>
-<p>在日常的数据库查询中，我们常常需要同时涉及多个表的数据。然而，在处理多表查询时，我们可能会使用不同的语法来达到相同的目的。最近，我的一个同事向我提出了一个问题，他的查询语句使用了 <code>FROM</code> 多表的方式，而我通常更喜欢使用 <code>INNER JOIN</code>。他问：“这两种写法有什么区别吗？它们真的是等效的吗？”这个问题激发了我对这两种写法进行更深入思考的兴趣，我决定动手试试。</p>
-<p>在动手之前，我们先创建两张表<code>t_order</code>和<code>t_address</code>。</p>
-<pre class="line-numbers language-mysql"><code class="language-mysql">DROP TABLE IF EXISTS `t_order`;  
-CREATE TABLE `t_order`(  
- id                 bigint UNSIGNED AUTO_INCREMENT COMMENT '自增主键'  
-        PRIMARY KEY,  
- `order_no` varchar(16) NOT NULL DEFAULT '' COMMENT '订单编号',  
-`create_time`      datetime        NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',  
-) ENGINE = InnoDB  
-  AUTO_INCREMENT = 1  
-  DEFAULT CHARSET = utf8mb4 COMMENT ='测试订单表';  
-
-
-DROP TABLE IF EXISTS `t_address`;  
-CREATE TABLE `t_order`(  
- id                 bigint UNSIGNED AUTO_INCREMENT COMMENT '自增主键'  
-        PRIMARY KEY,  
- `order_id` bigint UNSIGNED NOT NULL DEFAULT 0 COMMENT '订单ID',  
- `address_no` varchar(16) NOT NULL DEFAULT '' COMMENT '地址编号',  
-`create_time`      datetime        NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',  
-) ENGINE = InnoDB  
-  AUTO_INCREMENT = 1  
-  DEFAULT CHARSET = utf8mb4 COMMENT ='测试订单地址表';<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/medias/contact.jpg" alt="contact.jpg"></p>
+<p>SpringBoot以其简洁高效的开发方式和强大的内嵌容器特性，为开发者提供了构建高性能后端服务的便利。然而，当面临高并发场景时，理解并合理配置Spring Boot应用以达到最佳的并发处理能力至关重要。在Spring Boot中，应用程序对HTTP请求的并发处理主要依赖于内嵌的Servlet容器（如Tomcat）。接下来我们以Tomcat为例谈谈这个问题。</p>
 <blockquote>
-<p>测试表，无任何业务含义。</p>
+<p>本文以SpringBoot2.7.0为例。</p>
 </blockquote>
-<h3 id="FROM-多表"><a href="#FROM-多表" class="headerlink" title="FROM 多表"></a><code>FROM</code> 多表</h3><p>在 SQL 查询中，使用 <code>FROM</code> 多表的方式是一种直接的表连接方法。通过在 <code>FROM</code> 子句中列出多个表，我们可以将这些表的行组合在一起，形成一个结果集。例如：</p>
-<pre class="line-numbers language-mysql"><code class="language-mysql">SELECT o.id,   
-       o.order_no,   
-       a.id,   
-       a.order_id,  
-       a.address_no  
-FROM t_order o,  
-     t_address a  
-WHERE o.id = a.order_id;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>上述查询使用逗号 <code>,</code> 将表 <code>table1</code> 和 <code>table2</code> 连接在一起，并通过 <code>WHERE</code> 子句指定了连接条件。这种写法看似简单直观，但在实际应用中可能引发一些潜在问题。如果没有明确指定连接条件，就有可能导致笛卡尔积的产生。笛卡尔积是指将一个表的每一行与另一个表的每一行组合在一起，形成一个庞大的结果集。这可能导致性能下降和不正确的查询结果。如下这种写法：</p>
-<pre class="line-numbers language-mysql"><code class="language-mysql">SELECT o.id,   
-       o.order_no,   
-       a.id,   
-       a.order_id,  
-       a.address_no  
-FROM t_order o,  
-     t_address a <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h3 id="INNER-JOIN"><a href="#INNER-JOIN" class="headerlink" title="INNER JOIN"></a><code>INNER JOIN</code></h3><p>相比于直接使用 <code>FROM</code> 多表，使用 <code>INNER JOIN</code> 提供了更为灵活、明确的连接方式，有助于避免潜在的问题并提升查询的可读性。让我们深入探讨 <code>INNER JOIN</code> 的作用和优势。<code>INNER JOIN</code> 是一种显式的连接语法，通过在 <code>FROM</code> 子句中使用 <code>INNER JOIN</code> 关键字明确指定连接条件。其语法如下：</p>
-<pre class="line-numbers language-mysql"><code class="language-mysql">SELECT o.id,  
-       o.order_no,  
-       a.id,  
-       a.order_id,  
-       a.address_no  
-FROM t_order o  
-INNER JOIN t_address a ON o.id = a.order_id;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>使用 <code>INNER JOIN</code> 的主要优势之一是明确指定连接条件。通过在 <code>ON</code> 子句中明确写出连接条件，我们避免了使用逗号 <code>,</code> 连接时可能忽略连接条件的风险。这样做有助于代码的可读性和维护性，减少了产生笛卡尔积的可能性。</p>
-<p>当然还有其他的<code>JOIN</code>，例如：<code>LEFT JOIN</code>和<code>RIGHT JOIN</code>。我们会在后续的文章中继续介绍。</p>
-<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p><strong>在Mysql中使用<code>FROM</code>查询多表和使用<code>INNER JOIN</code>连接,查询结果,查询效率是一样的。</strong></p>
-<h4 id="从执行顺序分析"><a href="#从执行顺序分析" class="headerlink" title="从执行顺序分析"></a>从执行顺序分析</h4><p>我们先来看一下Msql的<code>SELECT</code>语句的执行顺序：</p>
-<ol>
-<li><p><strong>FROM 子句：</strong> 从指定的表中获取数据。在这里，涉及到的是表 <code>a</code> 和 <code>b</code>。</p>
+<p>在接下来讲解Tomcat工作线程池之前，你可以先了解一下Java线程池的工作原理，请参考这篇文章：<a href="https://mp.weixin.qq.com/s/jasS6Sp7LcaLs4qkuvatpw" target="_blank" rel="noopener">Java线程池最全详解</a></p>
+<h3 id="请求处理"><a href="#请求处理" class="headerlink" title="请求处理"></a>请求处理</h3><p>我们的程序实际上是运行在Tomcat里的。所以SpringBoot可以处理多少请求，其实也就是看Tomcat可以处理多少请求。Tomcat的工作线程池负责接收并处理这些请求。在SpringBoot中关于Tomcat工作项城池的参数可以在<code>spring-boot-autoconfigure</code>的依赖包中的<code>spring-configuration-metadata.json</code>中有如下四个参数控制Tomcat的工作线程池：</p>
+<pre class="line-numbers language-json"><code class="language-json"><span class="token punctuation">{</span>
+    <span class="token punctuation">{</span>  
+      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"server.tomcat.threads.max"</span><span class="token punctuation">,</span>  
+      <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"java.lang.Integer"</span><span class="token punctuation">,</span>  
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Maximum amount of worker threads."</span><span class="token punctuation">,</span>  
+      <span class="token property">"sourceType"</span><span class="token operator">:</span> <span class="token string">"org.springframework.boot.autoconfigure.web.ServerProperties$Tomcat$Threads"</span><span class="token punctuation">,</span>  
+      <span class="token property">"defaultValue"</span><span class="token operator">:</span> <span class="token number">200</span>  
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>  
+    <span class="token punctuation">{</span>  
+      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"server.tomcat.threads.min-spare"</span><span class="token punctuation">,</span>  
+      <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"java.lang.Integer"</span><span class="token punctuation">,</span>  
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Minimum amount of worker threads."</span><span class="token punctuation">,</span>  
+      <span class="token property">"sourceType"</span><span class="token operator">:</span> <span class="token string">"org.springframework.boot.autoconfigure.web.ServerProperties$Tomcat$Threads"</span><span class="token punctuation">,</span>  
+      <span class="token property">"defaultValue"</span><span class="token operator">:</span> <span class="token number">10</span>  
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>  
+      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"server.tomcat.max-connections"</span><span class="token punctuation">,</span>  
+      <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"java.lang.Integer"</span><span class="token punctuation">,</span>  
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Maximum number of connections that the server accepts and processes at any given time. Once the limit has been reached, the operating system may still accept connections based on the \"acceptCount\" property."</span><span class="token punctuation">,</span>  
+      <span class="token property">"sourceType"</span><span class="token operator">:</span> <span class="token string">"org.springframework.boot.autoconfigure.web.ServerProperties$Tomcat"</span><span class="token punctuation">,</span>  
+      <span class="token property">"defaultValue"</span><span class="token operator">:</span> <span class="token number">8192</span>  
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token punctuation">{</span>  
+      <span class="token property">"name"</span><span class="token operator">:</span> <span class="token string">"server.tomcat.accept-count"</span><span class="token punctuation">,</span>  
+      <span class="token property">"type"</span><span class="token operator">:</span> <span class="token string">"java.lang.Integer"</span><span class="token punctuation">,</span>  
+      <span class="token property">"description"</span><span class="token operator">:</span> <span class="token string">"Maximum queue length for incoming connection requests when all possible request processing threads are in use."</span><span class="token punctuation">,</span>  
+      <span class="token property">"sourceType"</span><span class="token operator">:</span> <span class="token string">"org.springframework.boot.autoconfigure.web.ServerProperties$Tomcat"</span><span class="token punctuation">,</span>  
+      <span class="token property">"defaultValue"</span><span class="token operator">:</span> <span class="token number">100</span>  
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>我们来看一下这四个参数的含义：</p>
+<ul>
+<li><p>server.tomcat.threads.max：用于配置<code>Tomcat</code>内嵌服务器的工作线程池的最大工作线程数。工作线程用于处理接收到的HTTP请求，处理完毕后将返回到线程池中等待下一个请求。当并发请求数量小于等于 <code>threads.max</code> 时，<code>Tomcat</code>尽可能使用现有的工作线程来处理请求，如果并发请求数量超过了 <code>threads.max</code>，<code>Tomcat</code>不再创建新的工作线程，而是将请求放入队列等待。该值可以看做是一个临时工，如果并发请求的数量在<code>threads.min-spare</code>到<code>threads.max</code>之间，就会使用这些临时工线程进行处理。默认值为200。主要关注的是工作线程池，用于处理请求的线程数。适用于调整并发请求的处理能力。</p>
 </li>
-<li><p><strong>JOIN 操作：</strong> 如果查询中包含连接操作（如 <code>INNER JOIN</code> 或 <code>,</code> 符号表示的连接），则会执行连接操作。连接操作的目的是将来自不同表的行组合起来。</p>
+<li><p>server.tomcat.threads.min-spare：确定了工作线程池的最小空闲线程数量，即使没有请求需要处理，也会保持这些线程处于等待状态，以便快速响应新的请求。该值可以看做是一个长期工，如果并发请求数小于<code>min-spare</code>,就会使用这些线程去处理请求。默认值是10，即使没有活跃的请求，<code>Tomcat</code>也会保持至少 10 个空闲线程。</p>
 </li>
-<li><p><strong>ON 或 WHERE 子句：</strong> 在连接操作后，应用连接条件。如果是 <code>INNER JOIN</code>，连接条件通常包含在 <code>ON</code> 子句中。如果是逗号 <code>,</code> 符号表示的连接，连接条件在 <code>WHERE</code> 子句中。</p>
+<li><p>server.tomcat.max-connections：用于配置<code>Tomcat</code>内嵌服务器的连接池的最大连接数。即允许同时存在的最大连接数。这个连接数是针对整个连接池的，不仅仅是工作线程的数量。当并发请求数量导致服务器需要创建新的连接时，Tomcat 会检查连接池中的连接数是否已经达到了 <code>max-connections</code> 配置的最大值。如果已经达到最大值，新的连接请求将被放入等待队列中，直到有连接被释放。默认值8192。</p>
 </li>
-<li><p><strong>SELECT 子句：</strong> 选择要返回的列。在这里，使用 <code>SELECT *</code> 表示选择所有列。</p>
+<li><p>server.tomcat.accept-count：用于配置<code>Tomcat</code>连接器所允许的最大等待接受连接的请求数（即等待队列）。当所有线程都在处理其他请求时，新的连接请求将会排队等待。如果队列已满，额外的连接将被拒绝。默认值是100。</p>
 </li>
-<li><p><strong>GROUP BY 子句：</strong> 如果有 <code>GROUP BY</code> 子句，则按指定的列对结果进行分组。</p>
-</li>
-<li><p><strong>HAVING 子句：</strong> 如果有 <code>HAVING</code> 子句，则应用于分组后的结果。</p>
-</li>
-<li><p><strong>ORDER BY 子句：</strong> 如果有 <code>ORDER BY</code> 子句，则按指定的列对结果进行排序。</p>
-</li>
-<li><p><strong>LIMIT 子句：</strong> 如果有 <code>LIMIT</code> 子句，则限制返回的行数。</p>
-</li>
-</ol>
-<p>根据这个执行顺序，可以解释两个查询语句的等效性。在第一个查询 <code>SELECT o.*,a.* FROM t_order o INNER JOIN t_address a ON o.id = a.order_id</code> 中，连接条件是通过 <code>ON</code> 子句指定的；而在第二个查询 <code>SELECT o.*,a.* FROM t_order o,t_address a WHERE o.id = a.order_id</code> 中，连接条件则是通过 <code>WHERE</code> 子句指定的。然而，在执行时，MySQL 会在连接操作阶段考虑这两个条件，并选择合适的连接算法来执行连接操作。</p>
-<p>因此，尽管语法稍有不同，但在执行时，MySQL 解释这两个查询时会考虑连接条件，因此它们具有相同的功能。在实际执行中，MySQL 优化器会选择最有效的执行计划，确保得到相同的结果。</p>
-<h4 id="从执行计划分析"><a href="#从执行计划分析" class="headerlink" title="从执行计划分析"></a>从执行计划分析</h4><p>执行计划是由查询优化器生成的，它是描述查询引擎如何获取和处理数据的计划。优化器在生成执行计划时考虑多个因素，包括表的大小、索引情况、连接条件等，以确定最佳的执行计划。</p>
-<p>我们来执行一下通过<code>FROM</code>的方式的计划如下：<br><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240111174830.png" alt="image.png"></p>
-<p>接着我们再来看一下<code>INNER JOIN</code>的方式的计划：<br><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240111174940.png" alt="image.png"></p>
-<p>通过对比，我们发现两者在执行计划上并没有什么区别。</p>
-<h3 id="实例验证"><a href="#实例验证" class="headerlink" title="实例验证"></a>实例验证</h3><p>接文章开头创建的两张表，我们向t_order表中插入100w条数据，t_address表中插入10w条数据进行验证。</p>
-<p>我们开始执行<code>FROM</code>的方式的sql：</p>
-<pre class="line-numbers language-mysql"><code class="language-mysql">SELECT o.id,
-       o.order_no,
-       a.id,
-       a.order_id,
-       a.address_no
-FROM t_order o,
-     t_address a
-WHERE o.id = a.order_id  limit 0, 100000;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>执行结果：<br><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240111192515.png" alt="image.png"></p>
-<p>我们在执行一次<code>INNER JOIN</code>的方式的sql:</p>
-<pre class="line-numbers language-mysql"><code class="language-mysql">SELECT o.id,
-       o.order_no,
-       a.id,
-       a.order_id,
-       a.address_no
-FROM t_order o
-INNER JOIN t_address a ON o.id = a.order_id limit 0, 100000;<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p>执行结果：</p>
-<p><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240111192721.png" alt="image.png"><br>可以看出两者查询所花费的时间相差无几。再看一下两种方式的执行计划，也是一样的。</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>由上述我们可以看出在Mysql中使用<code>FROM</code>查询多表和使用<code>JOIN</code>连接，查询结果以及查询效率是一样的。</p>
-<p>但是我们最好还是使用 <code>INNER JOIN</code> ，它的写法更直观、更易于优化器理解，有助于生成更优化的执行计划。</p>
+</ul>
+<p>我们以饭馆的示例去说明这几个参数之间的关系：<br>我们把<code>Tomcat</code>比作一家热门的餐厅，每个顾客都是一个请求。餐厅里一直有一部分厨师一直待命，无论有没有顾客，确保随时能够处理点单。这部分厨师就是<strong>min-spare（长期工）</strong>,当餐厅遇到一些大的宴会时，餐厅老板就会从外面找过来一批厨师帮忙，这部分厨师就是临时工，<strong>临时工+长期工就是(max)</strong>。餐厅的座位就表示同时最大可以容纳啊就餐的顾客人数，即<strong>max-connections</strong>。假如某时餐厅生意火爆，餐厅的座位都坐满以后，此时餐厅就会想办法在餐厅门口放上一排座椅，可以让后来的顾客在这里等待，假如里面有顾客吃完，这时外面等待的顾客就可以进去用餐。如果餐厅门口的座椅也做满，再来的顾客就会离开。</p>
+<p><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240128225903.png" alt></p>
+<p>假如上述就是那家餐厅，2个绿色框代表长期工厨师即min-spare，3个红色框代表临时工厨师，共有5名厨师，即max数量，5个棕色的队列即餐厅椅子数量，即5个max-connections，餐厅最多可以容忍5名顾客吃饭，2个橘色队列代表门口等待区椅子数量，即2个accept-count。假如此时来了4个客人，那就可以区餐厅吃饭，如果来了7个客人，那么有5个客人进去吃饭，2个客人在门口等待，如果来了8个客人，那么有5个客人进去吃饭，2个客人在门口等待，剩下1个客人就会直接离开。</p>
+<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><p>我们创建一个SpringBoot项目，我们将上述四个参数分别修改为如下：</p>
+<pre class="line-numbers language-properties"><code class="language-properties"><span class="token attr-name">server.tomcat.accept-count</span><span class="token punctuation">=</span><span class="token attr-value">2  </span>
+<span class="token attr-name">server.tomcat.max-connections</span><span class="token punctuation">=</span><span class="token attr-value">5  </span>
+<span class="token attr-name">server.tomcat.threads.max</span><span class="token punctuation">=</span><span class="token attr-value">5  </span>
+<span class="token attr-name">server.tomcat.threads.min-spare</span><span class="token punctuation">=</span><span class="token attr-value">2</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<p>然后我们在定义一个接口，用于模拟客户端请求：</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@RestController</span>  
+<span class="token annotation punctuation">@RequestMapping</span><span class="token punctuation">(</span><span class="token string">"test"</span><span class="token punctuation">)</span>  
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">TestMaxRequestController</span> <span class="token punctuation">{</span>  
+
+    <span class="token annotation punctuation">@GetMapping</span><span class="token punctuation">(</span><span class="token string">"maxRequest"</span><span class="token punctuation">)</span>  
+    <span class="token annotation punctuation">@ResponseBody</span>  
+    <span class="token keyword">public</span> String <span class="token function">testMaxRequest</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token keyword">throws</span> InterruptedException <span class="token punctuation">{</span>  
+        System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"当前请求线程: "</span><span class="token operator">+</span>Thread<span class="token punctuation">.</span><span class="token function">currentThread</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getName</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+        Thread<span class="token punctuation">.</span><span class="token function">sleep</span><span class="token punctuation">(</span><span class="token number">2000</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  
+        <span class="token keyword">return</span> <span class="token string">"Hello World"</span><span class="token punctuation">;</span>  
+    <span class="token punctuation">}</span>  
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>我们启动项目，使用<code>JVisualVM</code>监测一下此时项目中的线程数为2个：</p>
+<p><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240128231335.png" alt="image.png"></p>
+<p>此时我们使用<code>Apifox</code>发起一个请求，观察线程数没有增长。我们在使用<code>Apifox</code>中模拟3个线程同时请求，发现此时线程数变成5个：<br><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240128232351.png" alt="image.png"></p>
+<p><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240129005649.png" alt></p>
+<p>我们继续增加线程数到7个，我们发现线程数还是5个，因最大线程数等于5个：</p>
+<p><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240128233213.png" alt="image.png"></p>
+<p>后台请求全部成功：<br><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240129005304.png" alt="image.png"></p>
+<p>我们继续增加线程数到8个，此时线城数依然是5个，设置请求超时时间为1秒，但是有一个请求失败：</p>
+<p><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240129010330.png" alt="image.png"></p>
+<p><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240129010103.png" alt="image.png"><br><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240129011159.png" alt="image.png"></p>
+<p>服务端只处理了7个请求：<br><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240129010447.png" alt="image.png"></p>
+<h3 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h3><p>SpringBoot可以同时处理多少个请求，需要看其内嵌的Sevlet处理线程的能力，以Tomcat为例，即Tomcat可以处理多少请求，这需要看配置文件中设置的<code>server.tomcat.accept-count</code>以及<code>server.tomcat.max-connections</code>的大小。Tomcat同时可以处理的请求为<code>server.tomcat.accept-count</code>加上 <code>server.tomcat.max-connections</code>。实际生产应用中我们需要根据服务器，硬件的配置等综合因素考虑后，调节这两个值，确保应用程序能够处理预期的并发量。</p>
 
             </div>
             <hr />
@@ -592,9 +570,9 @@ INNER JOIN t_address a ON o.id = a.order_id limit 0, 100000;<span aria-hidden="t
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《面试官：说一下Mysql中from多表跟join表的区别》
+                    《阿里二面：SpringBoot可以同时处理多少个请求？当场懵了。。。。》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/article/mysqlfromjoin.html" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/article/springbootmaxhandlerequest.html" property="cc:attributionName"
                rel="cc:attributionURL">
                 码农Academy
             </a> 采用
@@ -635,7 +613,7 @@ INNER JOIN t_address a ON o.id = a.order_id limit 0, 100000;<span aria-hidden="t
         repo: 'coderacademyonline.github.io',
         owner: 'coderacademyonline',
         admin: "coderacademyonline",
-        id: 'article/mysqlfromjoin.html',
+        id: 'article/springbootmaxhandlerequest.html',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -922,80 +900,24 @@ INNER JOIN t_address a ON o.id = a.order_id limit 0, 100000;<span aria-hidden="t
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/article/javapairtriple.html">
+                <a href="/article/springbootliteflowuse.html">
                     <div class="card-image">
                         
-                        <img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/featureimages/21.jpg" class="responsive-img" alt="Java编程的利器：Pair和Triple无缝解决多值返回问题，助力编写高效代码">
+                        <img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/featureimages/34.jpg" class="responsive-img" alt="SpringBoot+LiteFlow优雅解耦复杂核心业务">
                         
-                        <span class="card-title">Java编程的利器：Pair和Triple无缝解决多值返回问题，助力编写高效代码</span>
+                        <span class="card-title">SpringBoot+LiteFlow优雅解耦复杂核心业务</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Pair和Triple类是commons-lang3库提供的实用工具，可以方便地将多个值组合在一起，实现多个返回值的效果，提高了代码的可读性和可维护性，使得处理多值情景更加轻松。
+                            LiteFlow是一个轻量且强大的流程引擎框架，用于复杂业务逻辑的编排工作。它将业务逻辑拆分为独立组件，通过简洁的规则文件串联流程，实现业务逻辑的灵活配置与热加载。LiteFlow有助于解耦业务代码，提高复用率，降低维护成本。
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2024-01-13
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2024-01-26
                         </span>
-                        <span class="publish-author">
-                            
-                            <i class="fa fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/Java工具类/" class="post-category" target="_blank">
-                                    Java工具类
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/java/" target="_blank">
-                        <span class="chip bg-color">java</span>
-                    </a>
-                    
-                    <a href="/tags/代码工具类/" target="_blank">
-                        <span class="chip bg-color">代码工具类</span>
-                    </a>
-                    
-                    <a href="/tags/编程技巧/" target="_blank">
-                        <span class="chip bg-color">编程技巧</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/article/springbootcommonresponse.html">
-                    <div class="card-image">
-                        
-                        <img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/featureimages/16.jpg" class="responsive-img" alt="SpringBoot统一结果返回，统一异常处理，大牛都这么玩">
-                        
-                        <span class="card-title">SpringBoot统一结果返回，统一异常处理，大牛都这么玩</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            深入解析Spring Boot应用中的异常处理，涵盖全局与局部机制。从统一响应到详细错误日志，提供最佳实践。全局处理确保一致性，局部处理满足个性化需求。通过综合运用，优化应用稳定性和可维护性。
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2024-01-10
-                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
@@ -1015,12 +937,64 @@ INNER JOIN t_address a ON o.id = a.order_id limit 0, 100000;<span aria-hidden="t
                         <span class="chip bg-color">SpringBoot</span>
                     </a>
                     
-                    <a href="/tags/SpringBoot统一结果返回/" target="_blank">
-                        <span class="chip bg-color">SpringBoot统一结果返回</span>
+                    <a href="/tags/LiteFlow/" target="_blank">
+                        <span class="chip bg-color">LiteFlow</span>
                     </a>
                     
-                    <a href="/tags/SpringBoot统一异常处理/" target="_blank">
-                        <span class="chip bg-color">SpringBoot统一异常处理</span>
+                    <a href="/tags/流程引擎/" target="_blank">
+                        <span class="chip bg-color">流程引擎</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/article/javabigdecimal.html">
+                    <div class="card-image">
+                        
+                        <img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/featureimages/32.jpg" class="responsive-img" alt="聊一聊BigDecimal使用时的陷阱">
+                        
+                        <span class="card-title">聊一聊BigDecimal使用时的陷阱</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            聊一聊关于使用BigDecimal时遇到的一些坑，例如：浮点数精度丢失、舍入误差、比较陷阱，除法运算
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2024-01-23
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category" target="_blank">
+                                    Java
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/" target="_blank">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                    <a href="/tags/BigDecimal/" target="_blank">
+                        <span class="chip bg-color">BigDecimal</span>
                     </a>
                     
                 </div>

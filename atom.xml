@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.coderacademy.online/"/>
-  <updated>2024-01-23T13:21:37.012Z</updated>
+  <updated>2024-01-29T02:12:49.519Z</updated>
   <id>https://www.coderacademy.online/</id>
   
   <author>
@@ -17,11 +17,106 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>SpringBoot+LiteFlow优雅解耦复杂核心业务</title>
+    <link href="https://www.coderacademy.online/article/springbootliteflowuse.html"/>
+    <id>https://www.coderacademy.online/article/springbootliteflowuse.html</id>
+    <published>2024-01-26T07:15:15.000Z</published>
+    <updated>2024-01-29T02:12:49.519Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="SpringBoot" scheme="https://www.coderacademy.online/categories/SpringBoot/"/>
+    
+    
+      <category term="SpringBoot" scheme="https://www.coderacademy.online/tags/SpringBoot/"/>
+    
+      <category term="LiteFlow" scheme="https://www.coderacademy.online/tags/LiteFlow/"/>
+    
+      <category term="流程引擎" scheme="https://www.coderacademy.online/tags/%E6%B5%81%E7%A8%8B%E5%BC%95%E6%93%8E/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>阿里二面：SpringBoot可以同时处理多少个请求？当场懵了。。。。</title>
+    <link href="https://www.coderacademy.online/article/springbootmaxhandlerequest.html"/>
+    <id>https://www.coderacademy.online/article/springbootmaxhandlerequest.html</id>
+    <published>2024-01-25T15:22:23.000Z</published>
+    <updated>2024-01-30T02:08:34.789Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="SpringBoot" scheme="https://www.coderacademy.online/categories/SpringBoot/"/>
+    
+    
+      <category term="面试" scheme="https://www.coderacademy.online/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="SpringBoot" scheme="https://www.coderacademy.online/tags/SpringBoot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>聊一聊BigDecimal使用时的陷阱</title>
+    <link href="https://www.coderacademy.online/article/javabigdecimal.html"/>
+    <id>https://www.coderacademy.online/article/javabigdecimal.html</id>
+    <published>2024-01-23T15:22:21.000Z</published>
+    <updated>2024-01-29T02:12:49.519Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="https://www.coderacademy.online/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="https://www.coderacademy.online/tags/Java/"/>
+    
+      <category term="BigDecimal" scheme="https://www.coderacademy.online/tags/BigDecimal/"/>
+    
+  </entry>
+  
+  <entry>
     <title>面试官：Mysql千万级大表如何进行深度分页优化</title>
     <link href="https://www.coderacademy.online/article/mysqloffset.html"/>
     <id>https://www.coderacademy.online/article/mysqloffset.html</id>
     <published>2024-01-23T02:00:00.000Z</published>
-    <updated>2024-01-23T13:21:37.012Z</updated>
+    <updated>2024-01-24T02:51:22.341Z</updated>
     
     <summary type="html">
     

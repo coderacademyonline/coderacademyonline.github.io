@@ -1,3 +1,6 @@
+https://www.coderacademy.online/article/springbootliteflowuse.html
+https://www.coderacademy.online/article/springbootmaxhandlerequest.html
+https://www.coderacademy.online/article/javabigdecimal.html
 https://www.coderacademy.online/article/mysqloffset.html
 https://www.coderacademy.online/article/mysqlexistsin.html
 https://www.coderacademy.online/article/springbootchain.html
