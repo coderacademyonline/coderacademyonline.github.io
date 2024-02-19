@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.coderacademy.online/"/>
-  <updated>2024-02-18T06:41:06.541Z</updated>
+  <updated>2024-02-19T01:47:34.854Z</updated>
   <id>https://www.coderacademy.online/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>解锁Mysql中的JSON数据类型，怎一个爽字了得</title>
+    <link href="https://www.coderacademy.online/article/mysqljson.html"/>
+    <id>https://www.coderacademy.online/article/mysqljson.html</id>
+    <published>2024-02-18T05:49:15.000Z</published>
+    <updated>2024-02-19T01:47:34.854Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="MySql" scheme="https://www.coderacademy.online/categories/MySql/"/>
+    
+    
+      <category term="MySql" scheme="https://www.coderacademy.online/tags/MySql/"/>
+    
+      <category term="Mysql的JSON类型" scheme="https://www.coderacademy.online/tags/Mysql%E7%9A%84JSON%E7%B1%BB%E5%9E%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>华为二面：SpringBoot读取配置文件的原理是什么？加载顺序是什么？</title>
@@ -624,39 +655,6 @@
       <category term="SpringBoot Validation" scheme="https://www.coderacademy.online/tags/SpringBoot-Validation/"/>
     
       <category term="SpringBoot参数校验" scheme="https://www.coderacademy.online/tags/SpringBoot%E5%8F%82%E6%95%B0%E6%A0%A1%E9%AA%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>重温Java基础（三）之Java虚拟机类加载机制探究：生命周期、初始化、使用与验证</title>
-    <link href="https://www.coderacademy.online/article/jvmclassloader.html"/>
-    <id>https://www.coderacademy.online/article/jvmclassloader.html</id>
-    <published>2024-01-08T14:59:47.000Z</published>
-    <updated>2024-02-04T02:00:13.792Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-      <category term="Java核心基础" scheme="https://www.coderacademy.online/categories/Java%E6%A0%B8%E5%BF%83%E5%9F%BA%E7%A1%80/"/>
-    
-    
-      <category term="java" scheme="https://www.coderacademy.online/tags/java/"/>
-    
-      <category term="Java类加载" scheme="https://www.coderacademy.online/tags/Java%E7%B1%BB%E5%8A%A0%E8%BD%BD/"/>
-    
-      <category term="java核心基础" scheme="https://www.coderacademy.online/tags/java%E6%A0%B8%E5%BF%83%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   

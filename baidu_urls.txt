@@ -1,3 +1,4 @@
+https://www.coderacademy.online/article/mysqljson.html
 https://www.coderacademy.online/article/springbootloadconfigdata.html
 https://www.coderacademy.online/article/4749dca98aed.html
 https://www.coderacademy.online/article/javastreamapi.html
