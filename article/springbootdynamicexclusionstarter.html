@@ -4,7 +4,7 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="面试官：请说一下Mysql中count(1)、count(*)以及count(列)的区别？, Java，Spring，SpringBoot，SpringCloud，Elasticsearch，MQ，工作流，规则引擎">
+    <meta name="keywords" content="玩转SpringBoot：动态排除Starter配置，轻松部署, Java，Spring，SpringBoot，SpringCloud，Elasticsearch，MQ，工作流，规则引擎">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
     <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
@@ -12,7 +12,7 @@
 关注公众号【码农Academy】，每日技术干货马上就来！
 
 
-近期在Review项目代码时，发现同事们在查询MySQL行数时存在多样的方式，有的使用COUNT(1), 有的用COUNT(id), 还有人选择了COUNT(*)。这混杂的选择">
+引言在软件开发中，进行本地单元测试是一项常规且必要的任务。然而，在进行单元测试时，有时需要启动一些中间件服务，如Kafka、Elasticjob等。举例来说，我曾经遇到过一个问">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -20,7 +20,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>面试官：请说一下Mysql中count(1)、count(*)以及count(列)的区别？ | 码农Academy的博客</title>
+    <title>玩转SpringBoot：动态排除Starter配置，轻松部署 | 码农Academy的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -270,13 +270,13 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/featureimages/42.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        面试官：请说一下Mysql中count(1)、count(*)以及count(列)的区别？
+                        玩转SpringBoot：动态排除Starter配置，轻松部署
                     </div>
                 </div>
             </div>
@@ -387,16 +387,12 @@
                     
                     <div class="article-tag">
                         
-                        <a href="/tags/Mysql的count函数/" target="_blank">
-                            <span class="chip bg-color">Mysql的count函数</span>
+                        <a href="/tags/SpringBoot/" target="_blank">
+                            <span class="chip bg-color">SpringBoot</span>
                         </a>
                         
-                        <a href="/tags/Mysql/" target="_blank">
-                            <span class="chip bg-color">Mysql</span>
-                        </a>
-                        
-                        <a href="/tags/高性能mysql/" target="_blank">
-                            <span class="chip bg-color">高性能mysql</span>
+                        <a href="/tags/动态排除Starter配置/" target="_blank">
+                            <span class="chip bg-color">动态排除Starter配置</span>
                         </a>
                         
                     </div>
@@ -407,8 +403,8 @@
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                        <a href="/categories/Mysql/" class="post-category" target="_blank">
-                            Mysql
+                        <a href="/categories/SpringBoot/" class="post-category" target="_blank">
+                            SpringBoot
                         </a>
                         
                     </div>
@@ -419,7 +415,7 @@
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-01-06
+                    2024-02-19
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -433,14 +429,14 @@
                 
                 <div class="info-break-policy">
                     <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.1k
+                    1.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    13 分
+                    6 分
                 </div>
                 
                 
@@ -459,105 +455,84 @@
                 <blockquote>
 <p>关注公众号【码农Academy】，每日技术干货马上就来！</p>
 </blockquote>
-<p><img src="https://raw.githubusercontent.com/coderacademyonline/blogimage/master/contact.jpg" alt="contact.jpg"></p>
-<p>近期在Review项目代码时，发现同事们在查询MySQL行数时存在多样的方式，有的使用<code>COUNT(1)</code>, 有的用<code>COUNT(id)</code>, 还有人选择了<code>COUNT(*)</code>。这混杂的选择引发了我的思考。当然这三种count的方式也是众说纷纭，其中最大的分歧点就是<code>COUNT(*)</code>和<code>COUNT(1)</code>查询性能上，有人觉得<code>COUNT(*)</code>需要转换为<code>COUNT(1)</code>，所以<code>COUNT(1)</code>得速度更快。究竟这三种计数方式之间有何区别，它们的背后原理是怎样的呢？</p>
-<h3 id="COUNT-含义"><a href="#COUNT-含义" class="headerlink" title="COUNT()含义"></a>COUNT()含义</h3><p>在《高性能Mysql》一书第236页中是这么解释<code>COUNT</code>的作用的：</p>
+<p><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/medias/contact.jpg" alt="contact.jpg"></p>
+<h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h3><p>在软件开发中，进行本地单元测试是一项常规且必要的任务。然而，在进行单元测试时，有时需要启动一些中间件服务，如Kafka、Elasticjob等。举例来说，我曾经遇到过一个问题：项目中使用了<code>Redisson</code>锁，但由于<code>Redisson</code>版本较低，在Mac环境下偶尔会报错<code># RedisConnectionException: Unable to init enough connections amount</code>。鉴于升级版本带来的风险，以及问题仅在本地启动时出现，我决定在本地环境中排除<code>Redisson</code>的Starter，从而避免影响其他环境的配置。那么，我们应该如何做呢？</p>
 <blockquote>
-<p>COUNT()是一个特殊的函数，有两种非常不同的作用:它可以统计某个列值的数量，也可以统计行数。在统计列值时要求列值是非空的(不统计NULL)。如果在COUNT()的括号中指定了列或者列的表达式，则统计的就是这个表达式有值的结果数”。因为很多人对 NULL理解有问题，所以这里很容易产生误解。<br>COUNT()的另一个作用是统计结果集的行数。当MySOL确认括号内的表达式值不可能为空时，实际上就是在统计行数。最简单的就是当我们使用COUNT(<em>)的时候，这种情况下通配符</em>并不会像我们猜想的那样扩展成所有的列，实际上，它会忽略所有的列而直接统计所有的行数。<br>我们发现一个最常见的错误就是，在括号内指定了一个列却希望统计结果集的行数。如果希望知道的是结果集的行数，最好使用<code>COUNT(*)</code>，这样写意义清晰，性能也会很好</p>
+<p>我们以上篇介绍如何自定义Starter中的文章中示例<code>CoderAcademyStarter</code>为例。我们引入了这个starter。</p>
 </blockquote>
-<p>由此我们也可以大概总结<code>COUNT</code>函数的种方式如下：</p>
-<ul>
-<li><p><code>COUNT(1)</code>: 此查询返回的是结果集中的行数，不关心具体的列内容，因此使用常数1。<br>在很多数据库系统中，这种方式被优化为与 <code>SELECT COUNT(*)</code> 相同的性能水平，因为数据库引擎通常忽略括号内的内容。</p>
-</li>
-<li><p><code>COUNT(*)</code>：统计整个表的行数，不考虑是否有NULL值。<br>通常优于 <code>COUNT(id)</code>，因为它不需要关心具体的列，且现代数据库引擎会对其进行特殊优化。</p>
-</li>
-<li><p><code>COUNT(列)</code> ：统计指定列非空值的数量。需要考虑是否有NULL值<br>此种方式取决于列是否有索引。如果 列有索引，数据库引擎可能会利用索引进行快速计数。如果没有索引，或者有大量NULL值，性能可能较差，因为需要扫描整个表。</p>
-</li>
-</ul>
-<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><h4 id="1、Mysql5-7"><a href="#1、Mysql5-7" class="headerlink" title="1、Mysql5.7"></a>1、Mysql5.7</h4><p>在<a href="https://dev.mysql.com/doc/refman/5.7/en/aggregate-functions.html#function_count" target="_blank" rel="noopener">MySql 5.7官方文档</a>中是这么介绍<code>COUNT(expr)</code>函数的</p>
-<blockquote>
-<p><code>COUNT(expr)</code><br>Returns a count of the number of non-NULL values of expr in the rows retrieved by a SELECT statement. The result is a BIGINT value.<br>If there are no matching rows, <code>COUNT()</code>returns 0.<br><code></code>mysql&gt; SELECT student.student_name,COUNT(<em>)<br>       FROM student,course<br>       WHERE student.student_id=course.student_id<br>       GROUP BY student_name;<code></code><br>`COUNT(</em>)` is somewhat different in that it returns a count of the number of rows retrieved, whether or not they contain NULL values.</p>
-<p>For transactional storage engines such as InnoDB, storing an exact row count is problematic. Multiple transactions may be occurring at the same time, each of which may affect the count.</p>
-<p>InnoDB does not keep an internal count of rows in a table because concurrent transactions might “see” different numbers of rows at the same time. Consequently, <code>SELECT COUNT(*)</code> statements only count rows visible to the current transaction.</p>
-<p>Prior to MySQL 5.7.18, InnoDB processes <code>SELECT COUNT(*)</code> statements by scanning the clustered index. As of MySQL 5.7.18, InnoDB processes <code>SELECT COUNT(*)</code> statements by traversing the smallest available secondary index unless an index or optimizer hint directs the optimizer to use a different index. If a secondary index is not present, the clustered index is scanned.</p>
-<p>Processing <code>SELECT COUNT(*)</code> statements takes some time if index records are not entirely in the buffer pool. For a faster count, create a counter table and let your application update it according to the inserts and deletes it does. However, this method may not scale well in situations where thousands of concurrent transactions are initiating updates to the same counter table. If an approximate row count is sufficient, use SHOW TABLE STATUS.</p>
-<p>InnoDB handles <code>SELECT COUNT(*)</code> and <code>SELECT COUNT(1)</code> operations in the same way. There is no performance difference.</p>
-<p>For MyISAM tables, <code>COUNT(*)</code> is optimized to return very quickly if the SELECT retrieves from one table, no other columns are retrieved, and there is no WHERE clause. For example:<br><code>mysql&gt; SELECT COUNT(*) FROM student;</code><br>This optimization only applies to MyISAM tables, because an exact row count is stored for this storage engine and can be accessed very quickly. COUNT(1) is only subject to the same optimization if the first column is defined as NOT NULL.</p>
-</blockquote>
-<p>从官方文档中我们可以看出mysql官方对<code>COUNT</code>函数的解释：</p>
-<ul>
-<li><p><code>COUNT(expr)</code> 返回由 SELECT 语句检索的行中 _expr_ 的非 NULL 值的数量，结果为 BIGINT 值。如果没有匹配的行，<code>COUNT()</code> 返回 0。</p>
-</li>
-<li><p><code>COUNT(*)</code> 有所不同，它返回所检索的行数的计数，无论它们是否包含 NULL 值。</p>
-</li>
-<li><p>对于事务性存储引擎（如 InnoDB），存储准确的行数是有问题的。因为多个事务可能同时影响计数，InnoDB 不会保留表中行的内部计数。<code>SELECT COUNT(*)</code> 只会计算当前事务可见的行。</p>
-</li>
-<li><p>在 MySQL 5.7.18 之前，InnoDB 通过扫描聚集索引处理 <code>SELECT COUNT(*)</code> 语句。从 MySQL 5.7.18 开始，除非索引或优化器提示指示使用其他索引，InnoDB 会通过遍历最小的可用二级索引来处理 <code>SELECT COUNT(*)</code> 语句。如果没有二级索引，则将扫描聚集索引。</p>
-</li>
-<li><p>处理 <code>SELECT COUNT(*)</code> 语句可能花费一些时间，如果索引记录没有完全在缓冲池中。为了更快的计数，可以创建一个计数器表，并根据插入和删除操作进行更新。然而，在成千上万的并发事务更新同一计数器表的情况下，该方法可能无法很好地扩展。如果粗略的行数足够，可以使用<code>SHOW TABLE STATUS</code>。</p>
-</li>
-<li><p><strong>InnoDB 处理 <code>SELECT COUNT(*)</code> 和 <code>SELECT COUNT(1)</code> 操作的方式相同，没有性能差异。</strong></p>
-</li>
-<li><p>对于 MyISAM 表，<code>COUNT(\*)</code> 在从一个表中检索、没有检索其他列、没有 WHERE 子句的情况下可以快速返回，因为 MyISAM 存储了准确的行数。COUNT(1) 只有在第一列被定义为 NOT NULL 时才能进行相同的优化。</p>
-</li>
-</ul>
-<h4 id="2、Mysql-8-0"><a href="#2、Mysql-8-0" class="headerlink" title="2、Mysql 8.0"></a>2、Mysql 8.0</h4><p>在<a href="https://dev.mysql.com/doc/refman/8.0/en/aggregate-functions.html#function_count" target="_blank" rel="noopener">Mysql8.0的文档</a>中对<code>COUNT(expr)</code>的解释是这样</p>
-<blockquote>
-<p><code>COUNT(expr) [over_clause]</code></p>
-<p>Returns a count of the number of non-NULL values of expr in the rows retrieved by a SELECT statement. The result is a BIGINT value.</p>
-<p>If there are no matching rows, <code>COUNT()</code> returns 0.<code>COUNT(NULL)</code>returns 0.</p>
-<p>This function executes as a window function if over_clause is present. over_clause is as described in Section 12.20.2, “Window Function Concepts and Syntax”.</p>
-<p><code>mysql&gt; SELECT student.student_name,COUNT(*)
-       FROM student,course
-       WHERE student.student_id=course.student_id
-       GROUP BY student_name;</code><br><code>COUNT(*)</code>is somewhat different in that it returns a count of the number of rows retrieved, whether or not they contain NULL values.</p>
-<p>For transactional storage engines such as InnoDB, storing an exact row count is problematic. Multiple transactions may be occurring at the same time, each of which may affect the count.</p>
-<p>InnoDB does not keep an internal count of rows in a table because concurrent transactions might “see” different numbers of rows at the same time. Consequently, <code>SELECT COUNT(*)</code> statements only count rows visible to the current transaction.</p>
-<p>As of MySQL 8.0.13, <code>SELECT COUNT(*)</code> FROM tbl_name query performance for InnoDB tables is optimized for single-threaded workloads if there are no extra clauses such as WHERE or GROUP BY.</p>
-<p>InnoDB processes <code>SELECT COUNT(*)</code> statements by traversing the smallest available secondary index unless an index or optimizer hint directs the optimizer to use a different index. If a secondary index is not present, InnoDB processes SELECT COUNT(*) statements by scanning the clustered index.</p>
-<p>Processing <code>SELECT COUNT(*)</code> statements takes some time if index records are not entirely in the buffer pool. For a faster count, create a counter table and let your application update it according to the inserts and deletes it does. However, this method may not scale well in situations where thousands of concurrent transactions are initiating updates to the same counter table. If an approximate row count is sufficient, use SHOW TABLE STATUS.</p>
-<p>InnoDB handles <code>SELECT COUNT(*)</code> and <code>SELECT COUNT(1)</code> operations in the same way. There is no performance difference.</p>
-<p>For MyISAM tables, <code>COUNT(*)</code>is optimized to return very quickly if the SELECT retrieves from one table, no other columns are retrieved, and there is no WHERE clause. For example:</p>
-<p><code>mysql&gt; SELECT COUNT(*) FROM student;</code><br>This optimization only applies to MyISAM tables, because an exact row count is stored for this storage engine and can be accessed very quickly. COUNT(1) is only subject to the same optimization if the first column is defined as NOT NULL.</p>
-</blockquote>
-<p>从mysql8.0的文档中我们可以看出mysql8.0对<code>COUNT</code>的解释</p>
-<ul>
-<li><p><code>COUNT(expr)</code> 返回在由 SELECT 语句检索的行中 <code>_expr_</code> 的非 NULL 值的数量，结果为 BIGINT 值。如果没有匹配的行，<code>COUNT()</code> 返回 0。<code>COUNT(NULL)</code> 也返回 0。</p>
-</li>
-<li><p><code>COUNT(*)</code> 有所不同，它返回所检索的行数的计数，无论它们是否包含 NULL 值。</p>
-</li>
-<li><p>对于事务性存储引擎（如 InnoDB），存储准确的行数是有问题的，因为多个事务可能同时影响计数。InnoDB 不会保留表中行的内部计数。<code>SELECT COUNT(*)</code> 只计算当前事务可见的行。</p>
-</li>
-<li><p>在 MySQL 8.0.13 及以后版本，对于 InnoDB 表，执行 <code>SELECT COUNT(*) FROM tbl_name</code> 查询性能在没有额外子句（如 WHERE 或 GROUP BY）的情况下进行了优化，特别适用于单线程工作负载。</p>
-</li>
-<li><p>InnoDB 处理 <code>SELECT COUNT(*)</code> 语句的方式：</p>
-<ul>
-<li>通过遍历最小可用二级索引，除非指示使用其他索引。</li>
-<li>如果没有二级索引，InnoDB 通过扫描聚集索引来处理 <code>SELECT COUNT(*)</code> 语句。</li>
-</ul>
-</li>
-<li><p>处理 <code>SELECT COUNT(*)</code> 语句可能花费一些时间，如果索引记录没有完全在缓冲池中。为了更快的计数，可以创建一个计数器表，让应用程序根据插入和删除操作进行更新。但是，这种方法在数千个并发事务同时对同一计数器表进行更新的情况下可能不会很好地扩展。如果粗略的行数足够，可以使用 <code>SHOW TABLE STATUS</code>。</p>
-</li>
-<li><p><strong>InnoDB 对待 <code>SELECT COUNT(*)</code> 和 <code>SELECT COUNT(1)</code> 操作的方式相同，没有性能差异。</strong></p>
-</li>
-<li><p>对于 MyISAM 表，<code>COUNT(*)</code> 在从一个表中检索、没有检索其他列、没有 WHERE 子句的情况下可以快速返回，因为 MyISAM 存储了准确的行数。COUNT(1) 只有在第一列被定义为 NOT NULL 时才能进行相同的优化。</p>
-</li>
-</ul>
-<p>结合Mysql5.7与Mysql8.0的文档我们可以看出两个版本对<code>COUNT</code>的支持的差异：</p>
-<ul>
-<li><strong>MySQL 8.0 优化了 InnoDB 表的 <code>SELECT COUNT(*)</code> 查询性能：</strong> 在 MySQL 8.0.13 及以后版本，对于 InnoDB 表，执行 <code>SELECT COUNT(*)</code> 查询的性能进行了优化，特别适用于单线程工作负载。这是 MySQL 5.7 文档中未包含的新特性。</li>
-<li><strong>MyISAM 表的优化说明：</strong><br>   MySQL 8.0 文档中强调了 MyISAM 表在执行 <code>COUNT(*)</code> 时的优化情况，即在从一个表中检索、没有检索其他列、没有 WHERE 子句的情况下可以快速返回。MySQL 5.7 文档中也提到了 MyISAM 表的优化，但对于 <code>COUNT(*)</code> 的具体优化情况没有细节。</li>
-</ul>
-<p>MySQL 8.0 在性能优化方面对于 InnoDB 表的 <code>SELECT COUNT(*)</code> 查询进行了特别的关注，而且在 MyISAM 表的优化方面进行了详细的说明。其他方面，两个版本在<code>COUNT()</code>函数的解释和使用上基本保持一致。</p>
-<p>基于此我们明白，其实<code>COUNT(*)</code>和<code>COUNT(1)</code>其实是一样的，在性能上并没有差异。</p>
-<p>那这两种方式与<code>COUNT(列)</code>的差异呢？从以上《高性能Mysql》以及Mysql官方文档中我们知道，<code>COUNT(列)</code>是统计非空列的行数，它也会遍历整张表，然后会对列对应的值做非空判断，非空的字段进行个数累加。当然这是列为主键索引时的操作。如果列不为主键索引时，那么查询时还需要进行回表操作，再根据主键获取数据，此时无疑是增加了一次IO，在性能上其实是不如<code>COUNT(*)</code>和<code>COUNT(1)</code>的。那么我们就可以知道，按照效率来看，<strong><code>count(*)</code> = count(1) &gt; count(主键) &gt; count(非主键列)</strong>。</p>
-<h3 id="使用建议"><a href="#使用建议" class="headerlink" title="使用建议"></a>使用建议</h3><ul>
-<li><p>如果你想知道一张表的大概行数，我们可以直接使用<code>show table status</code>命令或者咱们使用的一些mysql客户端Navicat或者datagrip都可以办到。</p>
-</li>
-<li><p>如果你想获取一张表的确切行数时，我可以是优先使用<strong>使用 <code>COUNT(*)</code> 获取行数</strong>，这样写法清晰，性能较好，尤其对于 InnoDB 表的优化更为明显。我们要<strong>避免使用 <code>COUNT(列)</code> 统计行数</strong>，除非你真的需要统计该列非空值的数量，否则容易产生误解。</p>
-</li>
-</ul>
-<p>篇幅有限，深入验证将在后续文章中介绍。</p>
+<h3 id="Starter自动配置类的排除"><a href="#Starter自动配置类的排除" class="headerlink" title="Starter自动配置类的排除"></a>Starter自动配置类的排除</h3><p>在《SpringBoot如何自定义Starter》中，我们介绍了如何在<code>META-INF/spring.factories</code>文件中使用<code>org.springframework.boot.autoconfigure.EnableAutoConfiguration</code>来指定Starter的自动配置类。Spring Boot启动时会扫描所有已引入jar包中的<code>spring.factories</code>文件，并根据<code>EnableAutoConfiguration</code>键下的类来加载和执行相应的自动配置逻辑。当我们不希望应用启动时使用该Starter的功能时，就需要排除自动配置类。</p>
+<p>我们可以通过<code>spring.autoconfigure.exclude</code>属性排除<code>CoderAcademyStarter</code>的自动配置类：</p>
+<pre class="line-numbers language-properties"><code class="language-properties"><span class="token attr-name">spring.autoconfigure.exclude</span><span class="token punctuation">=</span><span class="token attr-value">com.springboot.starter.coderacademy.config.CoderAcademyAutoConfig</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<p><code>spring.autoconfigure.exclude</code>是Spring Boot中的一个属性，用于指定在自动配置过程中要排除的自动配置类。通过设置该属性，我们可以明确告知Spring Boot不要自动配置指定的类，即使它们满足自动配置的条件。当需要禁用特定的自动配置类时，可以在<code>application.properties</code>或<code>application.yml</code>中设置<code>spring.autoconfigure.exclude</code>属性，并提供要排除的自动配置类的完全限定类名。这样，Spring Boot在自动配置过程中将不会考虑这些类。</p>
+<p>此时，如果我们在使用<code>CoderAcademyService</code>时会出现错误:</p>
+<p><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240218173015.png" alt="image.png"></p>
+<h3 id="根据不同环境排除Starter自动配置类"><a href="#根据不同环境排除Starter自动配置类" class="headerlink" title="根据不同环境排除Starter自动配置类"></a>根据不同环境排除Starter自动配置类</h3><p>在日常开发中，我们通常需要针对不同的环境指定不同的配置。我们可以通过<code>spring.actice.profiles</code>属性来指定不同环境的配置文件的加载。例如，我们可以在本地指定<code>spring.actice.profiles=local</code>，然后创建一个<code>application-local.properties</code>的配置文件，在其中指定<code>spring.autoconfigure.exclude</code>。</p>
+<p>另外，我们还可以实现<code>ApplicationListener&lt;ApplicationContextInitializedEvent&gt;</code>接口，通过监听上下文初始化事件来根据环境变量的标识排除Starter的自动配置类。当Spring应用程序的<code>ApplicationContext</code>被初始化时，将触发<code>ApplicationContextInitializedEvent</code>事件。通常，在应用程序的上下文初始化过程中会先加载bean定义、执行后处理器等操作。因此，通过监听<code>ApplicationContextInitializedEvent</code>事件，我们可以在Spring容器初始化的早期阶段执行一些定制化的逻辑。</p>
+<p>我们可以通过实现<code>ApplicationListener&lt;ApplicationContextInitializedEvent&gt;</code>接口，根据一些环境变量的标识排除Starter的自动配置类。例如，我们可以定义一个<code>coderacademy.enable</code>的标识来决定是否扫描Starter。以下是一个示例：</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>boot<span class="token punctuation">.</span>context<span class="token punctuation">.</span>event<span class="token punctuation">.</span>ApplicationContextInitializedEvent<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>ApplicationListener<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>context<span class="token punctuation">.</span>annotation<span class="token punctuation">.</span>Configuration<span class="token punctuation">;</span>
+<span class="token keyword">import</span> org<span class="token punctuation">.</span>springframework<span class="token punctuation">.</span>core<span class="token punctuation">.</span>env<span class="token punctuation">.</span>ConfigurableEnvironment<span class="token punctuation">;</span>
+
+<span class="token annotation punctuation">@Configuration</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">EnvironmentHandler</span> <span class="token keyword">implements</span> <span class="token class-name">ApplicationListener</span><span class="token operator">&lt;</span>ApplicationContextInitializedEvent<span class="token operator">></span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Override</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">onApplicationEvent</span><span class="token punctuation">(</span>ApplicationContextInitializedEvent event<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        ConfigurableEnvironment environment <span class="token operator">=</span> event<span class="token punctuation">.</span><span class="token function">getApplicationContext</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getEnvironment</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>environment<span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token string">"coderacademy.enable"</span><span class="token punctuation">)</span> <span class="token operator">!=</span> null <span class="token operator">&amp;&amp;</span> <span class="token string">"false"</span><span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>environment<span class="token punctuation">.</span><span class="token function">getProperty</span><span class="token punctuation">(</span><span class="token string">"coderacademy.enable"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            System<span class="token punctuation">.</span><span class="token function">setProperty</span><span class="token punctuation">(</span><span class="token string">"spring.autoconfigure.exclude"</span><span class="token punctuation">,</span> <span class="token string">"com.springboot.starter.coderacademy.config.CoderAcademyAutoConfig"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>然后，在启动应用时，通过<code>-Dcoderacademy.enable=false</code>指定排除Starter的自动配置类。这种方式特别适用于本地启动应用时排除Starter或其他Bean的初始化。</p>
+<p>当然本地启动也可以直接通过<code>-Dspring.autoconfigure.exclude=com.springboot.starter.coderacademy.config.CoderAcademyAutoConfig</code>也可以满足排除Starter的配置。</p>
+<h3 id="自定义Starter-Bean排除"><a href="#自定义Starter-Bean排除" class="headerlink" title="自定义Starter Bean排除"></a>自定义Starter Bean排除</h3><p>在《SpringBoot如何自定义Starter》文中，我们还提到了一种调用方使用Starter的方式，我们可以不是用自动配置类的Starter，可以自定义配置的信息，在手动创建Starter对应的服务的Bean。例如：</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Data</span>
+<span class="token annotation punctuation">@Configuration</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StarterConfig</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Value</span><span class="token punctuation">(</span><span class="token string">"${springboot.coderacademy.name}"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> String staterMsg<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token keyword">public</span> CoderAcademyService <span class="token function">coderAcademyService</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        CoderAcademyConfig coderAcademyConfig <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CoderAcademyConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        coderAcademyConfig<span class="token punctuation">.</span><span class="token function">setUrl</span><span class="token punctuation">(</span>staterMsg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">CoderAcademyService</span><span class="token punctuation">(</span>coderAcademyConfig<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>对于这种情况，我们可以使用Spring Boot的注解<code>@ConditionalOnProperty</code>来控制是否创建Bean。<code>@ConditionalOnProperty</code>是一个条件注解，根据配置属性的值来决定是否应该创建一个Bean或应用某个配置。具体来说，<code>@ConditionalOnProperty</code>的<code>name</code>属性表示配置属性的名称，<code>havingValue</code>属性表示配置属性的期望值，默认为<code>true</code>，<code>matchIfMissing</code>属性表示当配置属性不存在时是否匹配条件，默认为<code>false</code>。</p>
+<p>因此，我们可以给<code>CoderAcademyService</code>的Bean添加<code>@ConditionalOnProperty</code>注解：</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Data</span>
+<span class="token annotation punctuation">@Configuration</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StarterConfig</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Value</span><span class="token punctuation">(</span><span class="token string">"${springboot.coderacademy.name}"</span><span class="token punctuation">)</span>
+    <span class="token keyword">private</span> String staterMsg<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@ConditionalOnProperty</span><span class="token punctuation">(</span>name <span class="token operator">=</span> <span class="token string">"coderacademy.enable"</span><span class="token punctuation">,</span> havingValue <span class="token operator">=</span> <span class="token string">"true"</span><span class="token punctuation">,</span> matchIfMissing <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token keyword">public</span> CoderAcademyService <span class="token function">coderAcademyService</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        CoderAcademyConfig coderAcademyConfig <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CoderAcademyConfig</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        coderAcademyConfig<span class="token punctuation">.</span><span class="token function">setUrl</span><span class="token punctuation">(</span>staterMsg<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">CoderAcademyService</span><span class="token punctuation">(</span>coderAcademyConfig<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>这样，我们在启动应用时可以通过<code>-Dcoderacademy.enable=false</code>变量来控制是否创建<code>CoderAcademyService</code>，而设置了<code>matchIfMissing=true</code>，即使其他环境没有该环境变量也不受影响。</p>
+<p>除了<code>@ConditionalOnProperty</code>之外，Spring Boot还提供了其他一些条件注解，用于根据不同的条件来决定是否应该创建Bean或者是否应该应用某个配置。一些常见的条件注解包括：</p>
+<ol>
+<li><code>@ConditionalOnClass</code>：当类路径中存在指定的类时，才会创建Bean或应用配置。</li>
+<li><code>@ConditionalOnMissingClass</code>：当类路径中不存在指定的类时，才会创建Bean或应用配置。</li>
+<li><code>@ConditionalOnBean</code>：当容器中存在指定的Bean时，才会创建Bean或应用配置。</li>
+<li><code>@ConditionalOnMissingBean</code>：当容器中不存在指定的Bean时，才会创建Bean或应用配置。</li>
+<li><code>@ConditionalOnExpression</code>：当满足SpEL表达式定义的条件时，才会创建Bean或应用配置。</li>
+<li><code>@ConditionalOnJava</code>：当JVM运行的Java版本符合指定条件时，才会创建Bean或应用配置。</li>
+<li><code>@ConditionalOnWebApplication</code>：当运行的环境是Web应用程序时，才会创建Bean或应用配置。</li>
+<li><code>@ConditionalOnNotWebApplication</code>：当运行的环境不是Web应用程序时，才会创建Bean或应用配置。</li>
+</ol>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>本文介绍了在Spring Boot项目中如何排除Starter自动配置类，以及根据不同环境动态排除配置的方法。通过<code>spring.autoconfigure.exclude</code>属性和条件注解如<code>@ConditionalOnProperty</code>，我们可以灵活控制Bean的创建和配置的应用，从而更好地适应不同的部署环境和需求。</p>
 
             </div>
             <hr />
@@ -592,9 +567,9 @@
             <br/>
             <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
                   property="dct:title" rel="dct:type">
-                    《面试官：请说一下Mysql中count(1)、count(*)以及count(列)的区别？》
+                    《玩转SpringBoot：动态排除Starter配置，轻松部署》
                 </span> 由
-            <a xmlns:cc="http://creativecommons.org/ns#" href="/article/1d31dad8.html" property="cc:attributionName"
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/article/springbootdynamicexclusionstarter.html" property="cc:attributionName"
                rel="cc:attributionURL">
                 码农Academy
             </a> 采用
@@ -635,7 +610,7 @@
         repo: 'coderacademyonline.github.io',
         owner: 'coderacademyonline',
         admin: "coderacademyonline",
-        id: 'article/1d31dad8.html',
+        id: 'article/springbootdynamicexclusionstarter.html',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -918,53 +893,51 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/article/7cd2c424.html">
+                <a href="/article/springbootdynamicexclusionstarter.html">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="Java工具类（二）之深入Guava集合操作">
+                        <img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/featureimages/42.jpg" class="responsive-img" alt="玩转SpringBoot：动态排除Starter配置，轻松部署">
                         
-                        <span class="card-title">Java工具类（二）之深入Guava集合操作</span>
+                        <span class="card-title">玩转SpringBoot：动态排除Starter配置，轻松部署</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            深入了解Google Guava库的集合操作功能，本文介绍了其强大的特性，包括不可变集合和高效工具类。通过实例演示，为Java开发者提供全面的集合操作解决方案
+                            学习如何在Spring Boot项目中排除Starter自动配置类，根据不同环境动态排除配置，灵活控制Bean的创建和配置的应用。
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2024-01-07
-                        </span>
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2024-02-19
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java工具类/" class="post-category" target="_blank">
-                                    Java工具类
+                            <a href="/categories/SpringBoot/" class="post-category" target="_blank">
+                                    SpringBoot
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/java/" target="_blank">
-                        <span class="chip bg-color">java</span>
+                    <a href="/tags/SpringBoot/" target="_blank">
+                        <span class="chip bg-color">SpringBoot</span>
                     </a>
                     
-                    <a href="/tags/Guava/" target="_blank">
-                        <span class="chip bg-color">Guava</span>
-                    </a>
-                    
-                    <a href="/tags/Guava集合操作/" target="_blank">
-                        <span class="chip bg-color">Guava集合操作</span>
+                    <a href="/tags/动态排除Starter配置/" target="_blank">
+                        <span class="chip bg-color">动态排除Starter配置</span>
                     </a>
                     
                 </div>
@@ -978,30 +951,30 @@
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/article/2d9d416b.html">
+                <a href="/article/mysqljson.html">
                     <div class="card-image">
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="重温Java基础（二）之Java线程池最全详解">
+                        <img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/featureimages/40.jpg" class="responsive-img" alt="解锁Mysql中的JSON数据类型，怎一个爽字了得">
                         
-                        <span class="card-title">重温Java基础（二）之Java线程池最全详解</span>
+                        <span class="card-title">解锁Mysql中的JSON数据类型，怎一个爽字了得</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Java线程池是多线程编程中的重要工具，能够有效管理和复用线程，提高系统性能和资源利用率。本文深入探讨了线程池的基础概念、工作原理、参数配置、自定义以及使用示例，并强调了注意事项。
+                            面对数据结构的复杂多变，解锁使用MySql的JSON数据类型，灵活处理非结构化或半结构化数据的存储和处理。
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2024-01-04
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2024-02-18
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java核心基础/" class="post-category" target="_blank">
-                                    Java核心基础
+                            <a href="/categories/MySql/" class="post-category" target="_blank">
+                                    MySql
                                 </a>
                             
                             
@@ -1011,16 +984,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/Java/" target="_blank">
-                        <span class="chip bg-color">Java</span>
+                    <a href="/tags/MySql/" target="_blank">
+                        <span class="chip bg-color">MySql</span>
                     </a>
                     
-                    <a href="/tags/Java线程池/" target="_blank">
-                        <span class="chip bg-color">Java线程池</span>
-                    </a>
-                    
-                    <a href="/tags/自定义线程池/" target="_blank">
-                        <span class="chip bg-color">自定义线程池</span>
+                    <a href="/tags/Mysql的JSON类型/" target="_blank">
+                        <span class="chip bg-color">Mysql的JSON类型</span>
                     </a>
                     
                 </div>
