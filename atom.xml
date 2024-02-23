@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.coderacademy.online/"/>
-  <updated>2024-02-22T07:27:41.371Z</updated>
+  <updated>2024-02-23T02:02:26.084Z</updated>
   <id>https://www.coderacademy.online/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>求求你别再用OkHttp调用API接口了，快来试试这款HTTP客户端库吧</title>
+    <link href="https://www.coderacademy.online/article/retrofit2.html"/>
+    <id>https://www.coderacademy.online/article/retrofit2.html</id>
+    <published>2024-02-22T09:30:41.000Z</published>
+    <updated>2024-02-23T02:02:26.084Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="https://www.coderacademy.online/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="https://www.coderacademy.online/tags/Java/"/>
+    
+      <category term="Retrofit2" scheme="https://www.coderacademy.online/tags/Retrofit2/"/>
+    
+      <category term="网络请求" scheme="https://www.coderacademy.online/tags/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/"/>
+    
+  </entry>
   
   <entry>
     <title>玩转SpringBoot：动态排除Starter配置，轻松部署</title>
@@ -196,9 +229,9 @@
       <category term="Java" scheme="https://www.coderacademy.online/categories/Java/"/>
     
     
-      <category term="Java" scheme="https://www.coderacademy.online/tags/Java/"/>
-    
       <category term="面试" scheme="https://www.coderacademy.online/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="Java" scheme="https://www.coderacademy.online/tags/Java/"/>
     
       <category term="Integer缓存机制" scheme="https://www.coderacademy.online/tags/Integer%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6/"/>
     
@@ -262,9 +295,9 @@
       <category term="SpringBoot" scheme="https://www.coderacademy.online/categories/SpringBoot/"/>
     
     
-      <category term="面试" scheme="https://www.coderacademy.online/tags/%E9%9D%A2%E8%AF%95/"/>
-    
       <category term="SpringBoot" scheme="https://www.coderacademy.online/tags/SpringBoot/"/>
+    
+      <category term="面试" scheme="https://www.coderacademy.online/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
@@ -620,39 +653,6 @@
       <category term="Mysql查询" scheme="https://www.coderacademy.online/tags/Mysql%E6%9F%A5%E8%AF%A2/"/>
     
       <category term="Mysql面试" scheme="https://www.coderacademy.online/tags/Mysql%E9%9D%A2%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SpringBoot统一结果返回，统一异常处理，大牛都这么玩</title>
-    <link href="https://www.coderacademy.online/article/springbootcommonresponse.html"/>
-    <id>https://www.coderacademy.online/article/springbootcommonresponse.html</id>
-    <published>2024-01-10T06:19:57.000Z</published>
-    <updated>2024-01-20T03:20:10.122Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-      <category term="SpringBoot" scheme="https://www.coderacademy.online/categories/SpringBoot/"/>
-    
-    
-      <category term="SpringBoot" scheme="https://www.coderacademy.online/tags/SpringBoot/"/>
-    
-      <category term="SpringBoot统一结果返回" scheme="https://www.coderacademy.online/tags/SpringBoot%E7%BB%9F%E4%B8%80%E7%BB%93%E6%9E%9C%E8%BF%94%E5%9B%9E/"/>
-    
-      <category term="SpringBoot统一异常处理" scheme="https://www.coderacademy.online/tags/SpringBoot%E7%BB%9F%E4%B8%80%E5%BC%82%E5%B8%B8%E5%A4%84%E7%90%86/"/>
     
   </entry>
   

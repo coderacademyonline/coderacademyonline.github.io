@@ -374,6 +374,28 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
     
     
     <div class="carousel-item amber white-text carousel-post bg-cover"
+            style="background-image: url('/medias/featureimages/5.jpg');">
+        <div class="container">
+            <div class="row">
+                <div class="col s10 offset-s1">
+                    <div class="title center-align">Java工具类（一）之Guava操作字符串</div>
+                    <div class="description center-align">
+                    
+                        本文深度剖析Guava库的字符串处理工具，从基础的判空和拆分到高级的不可变字符串。详解Splitter、Joiner和CharMatcher等工具的使用，强调Guava在大规模数据处理上的性能优势。通过实例和性能考虑，引导开发者充分利用Guava，提高代码效率和可维护性。
+                    
+                    </div>
+                    <div class="cover-btns">
+                        <a href="/article/8fd2c424.html" class="waves-effect waves-light btn" target="_blank">
+                            <i class="icon fa fa-eye fa-fw"></i>阅读更多
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="carousel-item amber white-text carousel-post bg-cover"
             style="background-image: url('https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/featureimages/24.jpg');">
         <div class="container">
             <div class="row">
@@ -408,28 +430,6 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
                     </div>
                     <div class="cover-btns">
                         <a href="/article/7fd1e424.html" class="waves-effect waves-light btn" target="_blank">
-                            <i class="icon fa fa-eye fa-fw"></i>阅读更多
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-    
-    <div class="carousel-item amber white-text carousel-post bg-cover"
-            style="background-image: url('/medias/featureimages/5.jpg');">
-        <div class="container">
-            <div class="row">
-                <div class="col s10 offset-s1">
-                    <div class="title center-align">Java工具类（一）之Guava操作字符串</div>
-                    <div class="description center-align">
-                    
-                        本文深度剖析Guava库的字符串处理工具，从基础的判空和拆分到高级的不可变字符串。详解Splitter、Joiner和CharMatcher等工具的使用，强调Guava在大规模数据处理上的性能优势。通过实例和性能考虑，引导开发者充分利用Guava，提高代码效率和可维护性。
-                    
-                    </div>
-                    <div class="cover-btns">
-                        <a href="/article/8fd2c424.html" class="waves-effect waves-light btn" target="_blank">
                             <i class="icon fa fa-eye fa-fw"></i>阅读更多
                         </a>
                     </div>
@@ -665,6 +665,60 @@ $(function () {
     <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
         <div class="row article-row">
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/article/retrofit2.html" target="_blank">
+                        <div class="card-image">
+                            
+                            <img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/featureimages/43.jpg" class="responsive-img" alt="求求你别再用OkHttp调用API接口了，快来试试这款HTTP客户端库吧">
+                            
+                            <span class="card-title">求求你别再用OkHttp调用API接口了，快来试试这款HTTP客户端库吧</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                            Retrofit是一个基于OkHttp的高效网络库，通过将HTTP请求转化为接口调用，极大地简化了Java应用与RESTful API的交互。它利用注解定义API、处理同步异步请求，并自动完成JSON数据转换。此外，Retrofit具备高度扩展性，可集成RxJava等库应对复杂网络场景。
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2024-02-22
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Java/" class="post-category" target="_blank">
+                                    Java
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/Java/" target="_blank">
+                            <span class="chip bg-color">Java</span>
+                        </a>
+                        
+                        <a href="/tags/Retrofit2/" target="_blank">
+                            <span class="chip bg-color">Retrofit2</span>
+                        </a>
+                        
+                        <a href="/tags/网络请求/" target="_blank">
+                            <span class="chip bg-color">网络请求</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
@@ -953,12 +1007,12 @@ $(function () {
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/Java/" target="_blank">
-                            <span class="chip bg-color">Java</span>
-                        </a>
-                        
                         <a href="/tags/面试/" target="_blank">
                             <span class="chip bg-color">面试</span>
+                        </a>
+                        
+                        <a href="/tags/Java/" target="_blank">
+                            <span class="chip bg-color">Java</span>
                         </a>
                         
                         <a href="/tags/Integer缓存机制/" target="_blank">
@@ -1061,12 +1115,12 @@ $(function () {
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/面试/" target="_blank">
-                            <span class="chip bg-color">面试</span>
-                        </a>
-                        
                         <a href="/tags/SpringBoot/" target="_blank">
                             <span class="chip bg-color">SpringBoot</span>
+                        </a>
+                        
+                        <a href="/tags/面试/" target="_blank">
+                            <span class="chip bg-color">面试</span>
                         </a>
                         
                     </div>
@@ -1228,64 +1282,6 @@ $(function () {
                 </div>
             </div>
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/article/mysqloffset.html" target="_blank">
-                        <div class="card-image">
-                            
-                            <img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/featureimages/32.jpg" class="responsive-img" alt="面试官：Mysql千万级大表如何进行深度分页优化">
-                            
-                            <span class="card-title">面试官：Mysql千万级大表如何进行深度分页优化</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                            本文介绍了如何通过子查询优化深度分页查询，以减少回表操作带来的性能损耗。传统的深度分页查询往往会面临严重的性能问题，尤其在处理大量数据时更是如此。
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2024-01-23
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Mysql/" class="post-category" target="_blank">
-                                    Mysql
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/Mysql/" target="_blank">
-                            <span class="chip bg-color">Mysql</span>
-                        </a>
-                        
-                        <a href="/tags/Mysql深度分页/" target="_blank">
-                            <span class="chip bg-color">Mysql深度分页</span>
-                        </a>
-                        
-                        <a href="/tags/Sql优化/" target="_blank">
-                            <span class="chip bg-color">Sql优化</span>
-                        </a>
-                        
-                        <a href="/tags/面试/" target="_blank">
-                            <span class="chip bg-color">面试</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
         </div>
     </article>
 
@@ -1323,7 +1319,7 @@ $(function () {
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">92.6k</span>
+            <span class="white-color">98.9k</span>
             
 
             <br>
