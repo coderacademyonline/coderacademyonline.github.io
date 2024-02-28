@@ -1,9 +1,11 @@
+https://www.coderacademy.online/article/springbootasync.html
 https://www.coderacademy.online/article/retrofit2.html
 https://www.coderacademy.online/article/springbootdynamicexclusionstarter.html
 https://www.coderacademy.online/article/mysqljson.html
 https://www.coderacademy.online/article/springbootloadconfigdata.html
 https://www.coderacademy.online/article/4749dca98aed.html
 https://www.coderacademy.online/article/javastreamapi.html
+https://www.coderacademy.online/article/mybatistypehandler.html
 https://www.coderacademy.online/article/null.html
 https://www.coderacademy.online/article/springbootliteflowuse.html
 https://www.coderacademy.online/article/springbootmaxhandlerequest.html
@@ -24,5 +26,5 @@ https://www.coderacademy.online/article/jvmclassloader.html
 https://www.coderacademy.online/article/7cd2c424.html
 https://www.coderacademy.online/article/1d31dad8.html
 https://www.coderacademy.online/article/2d9d416b.html
-https://www.coderacademy.online/article/8fd2c424.html
 https://www.coderacademy.online/article/7fd1e424.html
+https://www.coderacademy.online/article/8fd2c424.html

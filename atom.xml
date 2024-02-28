@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.coderacademy.online/"/>
-  <updated>2024-02-23T02:02:26.084Z</updated>
+  <updated>2024-02-28T02:11:08.099Z</updated>
   <id>https://www.coderacademy.online/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>提升Spring Boot应用性能的秘密武器：揭秘@Async注解的实用技巧</title>
+    <link href="https://www.coderacademy.online/article/springbootasync.html"/>
+    <id>https://www.coderacademy.online/article/springbootasync.html</id>
+    <published>2024-02-27T00:07:55.000Z</published>
+    <updated>2024-02-28T02:11:08.099Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="SpringBoot" scheme="https://www.coderacademy.online/categories/SpringBoot/"/>
+    
+    
+      <category term="SpringBoot" scheme="https://www.coderacademy.online/tags/SpringBoot/"/>
+    
+      <category term="异步方法" scheme="https://www.coderacademy.online/tags/%E5%BC%82%E6%AD%A5%E6%96%B9%E6%B3%95/"/>
+    
+      <category term="并发" scheme="https://www.coderacademy.online/tags/%E5%B9%B6%E5%8F%91/"/>
+    
+  </entry>
   
   <entry>
     <title>求求你别再用OkHttp调用API接口了，快来试试这款HTTP客户端库吧</title>
@@ -205,6 +238,39 @@
   </entry>
   
   <entry>
+    <title>自定义Mybatis的TypeHandler，轻松应对Mysql的JSON类型</title>
+    <link href="https://www.coderacademy.online/article/mybatistypehandler.html"/>
+    <id>https://www.coderacademy.online/article/mybatistypehandler.html</id>
+    <published>2024-01-31T05:51:10.000Z</published>
+    <updated>2024-02-26T01:43:48.120Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="Mybatis" scheme="https://www.coderacademy.online/categories/Mybatis/"/>
+    
+    
+      <category term="Mybatis" scheme="https://www.coderacademy.online/tags/Mybatis/"/>
+    
+      <category term="自定义TypeHandler" scheme="https://www.coderacademy.online/tags/%E8%87%AA%E5%AE%9A%E4%B9%89TypeHandler/"/>
+    
+      <category term="MySql的JSON类型数据处理" scheme="https://www.coderacademy.online/tags/MySql%E7%9A%84JSON%E7%B1%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"/>
+    
+  </entry>
+  
+  <entry>
     <title>聊一聊Integer的缓存机制问题</title>
     <link href="https://www.coderacademy.online/article/null.html"/>
     <id>https://www.coderacademy.online/article/null.html</id>
@@ -295,9 +361,9 @@
       <category term="SpringBoot" scheme="https://www.coderacademy.online/categories/SpringBoot/"/>
     
     
-      <category term="SpringBoot" scheme="https://www.coderacademy.online/tags/SpringBoot/"/>
-    
       <category term="面试" scheme="https://www.coderacademy.online/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="SpringBoot" scheme="https://www.coderacademy.online/tags/SpringBoot/"/>
     
   </entry>
   
@@ -423,11 +489,11 @@
     
       <category term="Mysql" scheme="https://www.coderacademy.online/tags/Mysql/"/>
     
+      <category term="面试" scheme="https://www.coderacademy.online/tags/%E9%9D%A2%E8%AF%95/"/>
+    
       <category term="Mysql深度分页" scheme="https://www.coderacademy.online/tags/Mysql%E6%B7%B1%E5%BA%A6%E5%88%86%E9%A1%B5/"/>
     
       <category term="Sql优化" scheme="https://www.coderacademy.online/tags/Sql%E4%BC%98%E5%8C%96/"/>
-    
-      <category term="面试" scheme="https://www.coderacademy.online/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
@@ -522,9 +588,9 @@
       <category term="Java工具类" scheme="https://www.coderacademy.online/categories/Java%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
     
     
-      <category term="Java工具类" scheme="https://www.coderacademy.online/tags/Java%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
-    
       <category term="MapStruct" scheme="https://www.coderacademy.online/tags/MapStruct/"/>
+    
+      <category term="Java工具类" scheme="https://www.coderacademy.online/tags/Java%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
     
   </entry>
   
@@ -589,70 +655,6 @@
       <category term="Java四大内部类" scheme="https://www.coderacademy.online/tags/Java%E5%9B%9B%E5%A4%A7%E5%86%85%E9%83%A8%E7%B1%BB/"/>
     
       <category term="Java基础" scheme="https://www.coderacademy.online/tags/Java%E5%9F%BA%E7%A1%80/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Java编程的利器：Pair和Triple无缝解决多值返回问题，助力编写高效代码</title>
-    <link href="https://www.coderacademy.online/article/javapairtriple.html"/>
-    <id>https://www.coderacademy.online/article/javapairtriple.html</id>
-    <published>2024-01-13T01:30:36.000Z</published>
-    <updated>2024-01-15T01:56:58.109Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-      <category term="Java工具类" scheme="https://www.coderacademy.online/categories/Java%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
-    
-    
-      <category term="java" scheme="https://www.coderacademy.online/tags/java/"/>
-    
-      <category term="代码工具类" scheme="https://www.coderacademy.online/tags/%E4%BB%A3%E7%A0%81%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
-    
-      <category term="编程技巧" scheme="https://www.coderacademy.online/tags/%E7%BC%96%E7%A8%8B%E6%8A%80%E5%B7%A7/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>面试官：说一下Mysql中from多表跟join表的区别</title>
-    <link href="https://www.coderacademy.online/article/mysqlfromjoin.html"/>
-    <id>https://www.coderacademy.online/article/mysqlfromjoin.html</id>
-    <published>2024-01-11T17:04:06.000Z</published>
-    <updated>2024-01-15T01:56:58.109Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-      <category term="Mysql" scheme="https://www.coderacademy.online/categories/Mysql/"/>
-    
-    
-      <category term="Mysql查询" scheme="https://www.coderacademy.online/tags/Mysql%E6%9F%A5%E8%AF%A2/"/>
-    
-      <category term="Mysql面试" scheme="https://www.coderacademy.online/tags/Mysql%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
