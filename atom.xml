@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.coderacademy.online/"/>
-  <updated>2024-02-28T02:11:08.099Z</updated>
+  <updated>2024-03-07T01:33:49.986Z</updated>
   <id>https://www.coderacademy.online/</id>
   
   <author>
@@ -15,6 +15,103 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>阿里二面：如何定位&amp;避免死锁？连着两个面试问到了！</title>
+    <link href="https://www.coderacademy.online/article/javadeadlock.html"/>
+    <id>https://www.coderacademy.online/article/javadeadlock.html</id>
+    <published>2024-03-02T06:01:04.000Z</published>
+    <updated>2024-03-07T01:33:49.986Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="https://www.coderacademy.online/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="https://www.coderacademy.online/tags/Java/"/>
+    
+      <category term="并发编程" scheme="https://www.coderacademy.online/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="死锁" scheme="https://www.coderacademy.online/tags/%E6%AD%BB%E9%94%81/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>美团一面：Java中线程有哪几种状态？</title>
+    <link href="https://www.coderacademy.online/article/javathreadstate.html"/>
+    <id>https://www.coderacademy.online/article/javathreadstate.html</id>
+    <published>2024-02-29T14:41:53.000Z</published>
+    <updated>2024-03-07T01:33:25.449Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="https://www.coderacademy.online/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="https://www.coderacademy.online/tags/Java/"/>
+    
+      <category term="多线程状态" scheme="https://www.coderacademy.online/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81/"/>
+    
+      <category term="并发编程" scheme="https://www.coderacademy.online/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>玩转SpringBoot：SpringBoot的几种定时任务实现方式</title>
+    <link href="https://www.coderacademy.online/article/springbootscheduled.html"/>
+    <id>https://www.coderacademy.online/article/springbootscheduled.html</id>
+    <published>2024-02-28T06:07:55.000Z</published>
+    <updated>2024-03-07T01:33:39.299Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="SpringBoot" scheme="https://www.coderacademy.online/categories/SpringBoot/"/>
+    
+    
+      <category term="SpringBoot" scheme="https://www.coderacademy.online/tags/SpringBoot/"/>
+    
+      <category term="定时任务" scheme="https://www.coderacademy.online/tags/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/"/>
+    
+  </entry>
   
   <entry>
     <title>提升Spring Boot应用性能的秘密武器：揭秘@Async注解的实用技巧</title>
@@ -560,101 +657,6 @@
       <category term="责任链模式" scheme="https://www.coderacademy.online/tags/%E8%B4%A3%E4%BB%BB%E9%93%BE%E6%A8%A1%E5%BC%8F/"/>
     
       <category term="策略模式" scheme="https://www.coderacademy.online/tags/%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>乖乖，咱不用BeanUtil.copy了，咱试试这款神级工具（超详细）</title>
-    <link href="https://www.coderacademy.online/article/mapstruct.html"/>
-    <id>https://www.coderacademy.online/article/mapstruct.html</id>
-    <published>2024-01-16T11:57:08.000Z</published>
-    <updated>2024-01-19T01:42:17.904Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-      <category term="Java工具类" scheme="https://www.coderacademy.online/categories/Java%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
-    
-    
-      <category term="MapStruct" scheme="https://www.coderacademy.online/tags/MapStruct/"/>
-    
-      <category term="Java工具类" scheme="https://www.coderacademy.online/tags/Java%E5%B7%A5%E5%85%B7%E7%B1%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>推荐几款IDEA插件，助你玩转Mybatis开发</title>
-    <link href="https://www.coderacademy.online/article/ideamybatisplugins.html"/>
-    <id>https://www.coderacademy.online/article/ideamybatisplugins.html</id>
-    <published>2024-01-15T14:50:00.000Z</published>
-    <updated>2024-01-20T03:21:52.291Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;欢迎老铁来到我的博客，扫码下图关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-      <category term="IDEA插件" scheme="https://www.coderacademy.online/categories/IDEA%E6%8F%92%E4%BB%B6/"/>
-    
-    
-      <category term="IDEA" scheme="https://www.coderacademy.online/tags/IDEA/"/>
-    
-      <category term="IDEA插件" scheme="https://www.coderacademy.online/tags/IDEA%E6%8F%92%E4%BB%B6/"/>
-    
-      <category term="MyBatis插件" scheme="https://www.coderacademy.online/tags/MyBatis%E6%8F%92%E4%BB%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>重温Java基础（一）Java中的四种内部类</title>
-    <link href="https://www.coderacademy.online/article/javainnerclass.html"/>
-    <id>https://www.coderacademy.online/article/javainnerclass.html</id>
-    <published>2024-01-14T15:38:36.000Z</published>
-    <updated>2024-02-18T06:38:53.028Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-      <category term="Java基础" scheme="https://www.coderacademy.online/categories/Java%E5%9F%BA%E7%A1%80/"/>
-    
-    
-      <category term="Java四大内部类" scheme="https://www.coderacademy.online/tags/Java%E5%9B%9B%E5%A4%A7%E5%86%85%E9%83%A8%E7%B1%BB/"/>
-    
-      <category term="Java基础" scheme="https://www.coderacademy.online/tags/Java%E5%9F%BA%E7%A1%80/"/>
     
   </entry>
   

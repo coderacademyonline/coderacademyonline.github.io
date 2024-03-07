@@ -1,3 +1,6 @@
+https://www.coderacademy.online/article/javadeadlock.html
+https://www.coderacademy.online/article/javathreadstate.html
+https://www.coderacademy.online/article/springbootscheduled.html
 https://www.coderacademy.online/article/springbootasync.html
 https://www.coderacademy.online/article/retrofit2.html
 https://www.coderacademy.online/article/springbootdynamicexclusionstarter.html
@@ -26,5 +29,5 @@ https://www.coderacademy.online/article/jvmclassloader.html
 https://www.coderacademy.online/article/7cd2c424.html
 https://www.coderacademy.online/article/1d31dad8.html
 https://www.coderacademy.online/article/2d9d416b.html
-https://www.coderacademy.online/article/7fd1e424.html
 https://www.coderacademy.online/article/8fd2c424.html
+https://www.coderacademy.online/article/7fd1e424.html
