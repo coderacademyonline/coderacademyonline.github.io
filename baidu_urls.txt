@@ -1,5 +1,6 @@
 https://www.coderacademy.online/article/javadeadlock.html
 https://www.coderacademy.online/article/javathreadstate.html
+https://www.coderacademy.online/article/mysqlsqladvanced.html
 https://www.coderacademy.online/article/springbootscheduled.html
 https://www.coderacademy.online/article/springbootasync.html
 https://www.coderacademy.online/article/retrofit2.html
