@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.coderacademy.online/"/>
-  <updated>2024-03-07T01:33:49.986Z</updated>
+  <updated>2024-03-14T05:11:35.469Z</updated>
   <id>https://www.coderacademy.online/</id>
   
   <author>
@@ -15,6 +15,130 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>阿里二面：Kafka中如何保证消息的顺序性？这周被问到两次了</title>
+    <link href="https://www.coderacademy.online/article/kafkasequentialmessages.html"/>
+    <id>https://www.coderacademy.online/article/kafkasequentialmessages.html</id>
+    <published>2024-03-11T14:35:25.000Z</published>
+    <updated>2024-03-14T05:11:35.469Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="消息队列" scheme="https://www.coderacademy.online/categories/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
+    
+    
+      <category term="架构之道" scheme="https://www.coderacademy.online/tags/%E6%9E%B6%E6%9E%84%E4%B9%8B%E9%81%93/"/>
+    
+      <category term="面试" scheme="https://www.coderacademy.online/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="Kafka" scheme="https://www.coderacademy.online/tags/Kafka/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>求求你别再用COUNT(*)判断数据存不存在了</title>
+    <link href="https://www.coderacademy.online/article/mysqldataexists.html"/>
+    <id>https://www.coderacademy.online/article/mysqldataexists.html</id>
+    <published>2024-03-07T16:09:00.000Z</published>
+    <updated>2024-03-19T01:54:48.654Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="MySql" scheme="https://www.coderacademy.online/categories/MySql/"/>
+    
+    
+      <category term="MySql" scheme="https://www.coderacademy.online/tags/MySql/"/>
+    
+      <category term="Sql优化" scheme="https://www.coderacademy.online/tags/Sql%E4%BC%98%E5%8C%96/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>还在用Calendar操作Date？Java8都弃用了，还不知道它的这款强大的工具吗？</title>
+    <link href="https://www.coderacademy.online/article/null.html"/>
+    <id>https://www.coderacademy.online/article/null.html</id>
+    <published>2024-03-07T11:53:51.000Z</published>
+    <updated>2024-03-12T12:22:08.463Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>腾讯二面：如何保证接口幂等性？高并发下的接口幂等性如何实现？</title>
+    <link href="https://www.coderacademy.online/article/springbootidempotent.html"/>
+    <id>https://www.coderacademy.online/article/springbootidempotent.html</id>
+    <published>2024-03-06T14:36:16.000Z</published>
+    <updated>2024-03-07T08:58:21.738Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="SpringBoot" scheme="https://www.coderacademy.online/categories/SpringBoot/"/>
+    
+    
+      <category term="SpringBoot" scheme="https://www.coderacademy.online/tags/SpringBoot/"/>
+    
+      <category term="架构之道" scheme="https://www.coderacademy.online/tags/%E6%9E%B6%E6%9E%84%E4%B9%8B%E9%81%93/"/>
+    
+      <category term="面试" scheme="https://www.coderacademy.online/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="接口幂等" scheme="https://www.coderacademy.online/tags/%E6%8E%A5%E5%8F%A3%E5%B9%82%E7%AD%89/"/>
+    
+  </entry>
   
   <entry>
     <title>阿里二面：如何定位&amp;避免死锁？连着两个面试问到了！</title>
@@ -109,9 +233,9 @@
     
       <category term="MySql" scheme="https://www.coderacademy.online/tags/MySql/"/>
     
-      <category term="Sql优化" scheme="https://www.coderacademy.online/tags/Sql%E4%BC%98%E5%8C%96/"/>
-    
       <category term="Sql进阶" scheme="https://www.coderacademy.online/tags/Sql%E8%BF%9B%E9%98%B6/"/>
+    
+      <category term="Sql优化" scheme="https://www.coderacademy.online/tags/Sql%E4%BC%98%E5%8C%96/"/>
     
   </entry>
   
@@ -527,136 +651,6 @@
       <category term="空指针异常" scheme="https://www.coderacademy.online/tags/%E7%A9%BA%E6%8C%87%E9%92%88%E5%BC%82%E5%B8%B8/"/>
     
       <category term="NullPointerException" scheme="https://www.coderacademy.online/tags/NullPointerException/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>聊一聊BigDecimal使用时的陷阱</title>
-    <link href="https://www.coderacademy.online/article/javabigdecimal.html"/>
-    <id>https://www.coderacademy.online/article/javabigdecimal.html</id>
-    <published>2024-01-23T15:22:21.000Z</published>
-    <updated>2024-01-29T02:12:49.519Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-      <category term="Java" scheme="https://www.coderacademy.online/categories/Java/"/>
-    
-    
-      <category term="Java" scheme="https://www.coderacademy.online/tags/Java/"/>
-    
-      <category term="BigDecimal" scheme="https://www.coderacademy.online/tags/BigDecimal/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>华为二面：SpringBoot如何自定义Starter？</title>
-    <link href="https://www.coderacademy.online/article/springbootcustomstarter.html"/>
-    <id>https://www.coderacademy.online/article/springbootcustomstarter.html</id>
-    <published>2024-01-23T15:08:50.000Z</published>
-    <updated>2024-02-18T06:41:17.133Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-      <category term="SpringBoot" scheme="https://www.coderacademy.online/categories/SpringBoot/"/>
-    
-    
-      <category term="SpringBoot" scheme="https://www.coderacademy.online/tags/SpringBoot/"/>
-    
-      <category term="自定义Starter" scheme="https://www.coderacademy.online/tags/%E8%87%AA%E5%AE%9A%E4%B9%89Starter/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>面试官：Mysql千万级大表如何进行深度分页优化</title>
-    <link href="https://www.coderacademy.online/article/mysqloffset.html"/>
-    <id>https://www.coderacademy.online/article/mysqloffset.html</id>
-    <published>2024-01-23T02:00:00.000Z</published>
-    <updated>2024-01-24T02:51:22.341Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-      <category term="Mysql" scheme="https://www.coderacademy.online/categories/Mysql/"/>
-    
-    
-      <category term="Mysql" scheme="https://www.coderacademy.online/tags/Mysql/"/>
-    
-      <category term="Mysql深度分页" scheme="https://www.coderacademy.online/tags/Mysql%E6%B7%B1%E5%BA%A6%E5%88%86%E9%A1%B5/"/>
-    
-      <category term="Sql优化" scheme="https://www.coderacademy.online/tags/Sql%E4%BC%98%E5%8C%96/"/>
-    
-      <category term="面试" scheme="https://www.coderacademy.online/tags/%E9%9D%A2%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>面试官：Mysql中EXISTS与IN的使用有哪些差异</title>
-    <link href="https://www.coderacademy.online/article/mysqlexistsin.html"/>
-    <id>https://www.coderacademy.online/article/mysqlexistsin.html</id>
-    <published>2024-01-22T09:50:00.000Z</published>
-    <updated>2024-01-22T09:31:25.413Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;欢迎老铁来到我的博客，扫码下图关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-      <category term="Mysql" scheme="https://www.coderacademy.online/categories/Mysql/"/>
-    
-    
-      <category term="Mysql" scheme="https://www.coderacademy.online/tags/Mysql/"/>
-    
-      <category term="面试" scheme="https://www.coderacademy.online/tags/%E9%9D%A2%E8%AF%95/"/>
-    
-      <category term="exists与in" scheme="https://www.coderacademy.online/tags/exists%E4%B8%8Ein/"/>
     
   </entry>
   
