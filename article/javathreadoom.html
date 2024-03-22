@@ -432,7 +432,7 @@
         <span class="token punctuation">}</span>
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <blockquote>
-<p>关于弱引用的知识点，请参考：</p>
+<p>关于弱引用的知识点，请参考：<a href="https://mp.weixin.qq.com/s?__biz=MzkyNzYzMTY0MA==&mid=2247484175&idx=1&sn=54d9a58aeff35e3eafa45ed2c10995cc&chksm=c2245378f553da6ec9708c3cb453ffc12395fa9a4bcca7709f45204102e081a422035bec624b#rd" target="_blank" rel="noopener">美团一面：说一说Java中的四种引用类型？</a></p>
 </blockquote>
 <p>而<code>Entry</code>数组中<code>Entry</code>对象的下标位置是通过<code>ThreadLocal</code>的<code>threadLocalHashCode</code>计算出来的。</p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">private</span> <span class="token function">ThreadLocalMap</span><span class="token punctuation">(</span>ThreadLocalMap parentMap<span class="token punctuation">)</span> <span class="token punctuation">{</span>
@@ -481,7 +481,7 @@
 <p><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240315012056.png" alt="image.png"></p>
 <p>在使用线程池处理任务时，每一个线程都会关联一个独立的<code>ThreadLocalMap</code>对象，用于存储线程本地变量。由于线程池中的核心线程在完成任务后不会被销毁，而是保持活动状态等待接收新的任务，这意味着核心线程与其内部持有的<code>ThreadLocalMap</code>对象之间始终保持着强引用关系。因此，只要核心线程存活，其所对应的<code>ThreadLocal</code>对象和<code>ThreadLocalMap</code>不会被垃圾收集器（GC）自动回收，此时就会存在内存泄露的风险。</p>
 <blockquote>
-<p>关于Java中的线程池参数以及原理，请参考：</p>
+<p>关于Java中的线程池参数以及原理，请参考：<a href="https://mp.weixin.qq.com/s?__biz=MzkyNzYzMTY0MA==&mid=2247483691&idx=1&sn=d337d486b2862f82b682a602756befcf&chksm=c224515cf553d84a88438a9be4209ec3a3fe34512af4e1e2624460df682863f90fd3f881c166#rd" target="_blank" rel="noopener">Java线程池最全讲解</a></p>
 </blockquote>
 <h3 id="出现内存泄露的根本原因"><a href="#出现内存泄露的根本原因" class="headerlink" title="出现内存泄露的根本原因"></a>出现内存泄露的根本原因</h3><p>由上述<code>ThreadLocalMap</code>的结构图以及<code>ThreadLocalMap</code>的源码中，我们知道<code>ThreadLocalMap</code>中包含一个<code>Entry</code>数组，而<code>Entry</code>数组中的每一个元素就是<code>Entry</code>对象，<code>Entry</code>对象中存储的Key就是<code>ThreadLocal</code>对象，而value就是要存储的数据。其中，<code>Entry</code>对象中的Key属于弱引用。</p>
 <pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">static</span> <span class="token keyword">class</span> <span class="token class-name">ThreadLocalMap</span> <span class="token punctuation">{</span>
@@ -498,7 +498,7 @@
 <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>而对于弱引用<code>WeakReference</code>，在引用的对象使用完毕之后，即使内存足够，GC也会对其进行回收。</p>
 <blockquote>
-<p>关于弱引用的知识点，请参考：</p>
+<p>关于弱引用的知识点，请参考：<a href="https://mp.weixin.qq.com/s?__biz=MzkyNzYzMTY0MA==&mid=2247484175&idx=1&sn=54d9a58aeff35e3eafa45ed2c10995cc&chksm=c2245378f553da6ec9708c3cb453ffc12395fa9a4bcca7709f45204102e081a422035bec624b#rd" target="_blank" rel="noopener">美团一面：说一说Java中的四种引用类型？</a></p>
 </blockquote>
 <p><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240315222242.png" alt="image.png"></p>
 <p>当<code>Entry</code>对象中的Key被GC自动回收后，对应的<code>ThreadLocal</code>被GC回收掉了，变成了null，但是<code>ThreadLocal</code>对应的value值依然被<code>Entry</code>引用，不能被GC自动回收。这样就造成了内存泄漏的风险。<br><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240315222830.png" alt="image.png"></p>
