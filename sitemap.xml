@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.coderacademy.online/article/java22.html</loc>
+    
+    <lastmod>2024-03-21T07:18:43.835Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.coderacademy.online/article/mysqldataexists.html</loc>
     
     <lastmod>2024-03-19T01:54:48.654Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.coderacademy.online/article/javathreadoom.html</loc>
+    
+    <lastmod>2024-03-19T01:44:24.683Z</lastmod>
     
   </url>
   
@@ -16,9 +30,23 @@
   </url>
   
   <url>
+    <loc>https://www.coderacademy.online/article/javareference.html</loc>
+    
+    <lastmod>2024-03-14T05:11:08.893Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.coderacademy.online/article/null.html</loc>
     
     <lastmod>2024-03-12T12:22:08.463Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.coderacademy.online/article/springbootstatemachine.html</loc>
+    
+    <lastmod>2024-03-12T01:50:21.776Z</lastmod>
     
   </url>
   
@@ -149,7 +177,7 @@
   </url>
   
   <url>
-    <loc>https://www.coderacademy.online/article/2d9d416b.html</loc>
+    <loc>https://www.coderacademy.online/article/null.html</loc>
     
     <lastmod>2024-02-04T02:00:13.791Z</lastmod>
     
@@ -163,7 +191,7 @@
   </url>
   
   <url>
-    <loc>https://www.coderacademy.online/article/null.html</loc>
+    <loc>https://www.coderacademy.online/article/2d9d416b.html</loc>
     
     <lastmod>2024-02-04T02:00:13.791Z</lastmod>
     

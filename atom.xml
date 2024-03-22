@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.coderacademy.online/"/>
-  <updated>2024-03-14T05:11:35.469Z</updated>
+  <updated>2024-03-21T07:18:43.835Z</updated>
   <id>https://www.coderacademy.online/</id>
   
   <author>
@@ -15,6 +15,107 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Java22重磅发布！！！！卷不动了，真的卷不动了。。。。</title>
+    <link href="https://www.coderacademy.online/article/java22.html"/>
+    <id>https://www.coderacademy.online/article/java22.html</id>
+    <published>2024-03-21T04:43:54.000Z</published>
+    <updated>2024-03-21T07:18:43.835Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="https://www.coderacademy.online/categories/Java/"/>
+    
+    
+      <category term="Java" scheme="https://www.coderacademy.online/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>阿里二面：谈谈ThreadLocal的内存泄漏问题？问麻了。。。。</title>
+    <link href="https://www.coderacademy.online/article/javathreadoom.html"/>
+    <id>https://www.coderacademy.online/article/javathreadoom.html</id>
+    <published>2024-03-13T15:10:49.000Z</published>
+    <updated>2024-03-19T01:44:24.683Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="https://www.coderacademy.online/categories/Java/"/>
+    
+    
+      <category term="面试" scheme="https://www.coderacademy.online/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="Java" scheme="https://www.coderacademy.online/tags/Java/"/>
+    
+      <category term="多线程" scheme="https://www.coderacademy.online/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+      <category term="ThreadLocal" scheme="https://www.coderacademy.online/tags/ThreadLocal/"/>
+    
+      <category term="内存泄漏" scheme="https://www.coderacademy.online/tags/%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>美团一面：说一说Java中的四种引用类型？</title>
+    <link href="https://www.coderacademy.online/article/javareference.html"/>
+    <id>https://www.coderacademy.online/article/javareference.html</id>
+    <published>2024-03-13T15:08:37.000Z</published>
+    <updated>2024-03-14T05:11:08.893Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="https://www.coderacademy.online/categories/Java/"/>
+    
+    
+      <category term="面试" scheme="https://www.coderacademy.online/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="Java" scheme="https://www.coderacademy.online/tags/Java/"/>
+    
+      <category term="Java基础" scheme="https://www.coderacademy.online/tags/Java%E5%9F%BA%E7%A1%80/"/>
+    
+      <category term="Java引用类型" scheme="https://www.coderacademy.online/tags/Java%E5%BC%95%E7%94%A8%E7%B1%BB%E5%9E%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>阿里二面：Kafka中如何保证消息的顺序性？这周被问到两次了</title>
@@ -41,9 +142,9 @@
       <category term="消息队列" scheme="https://www.coderacademy.online/categories/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/"/>
     
     
-      <category term="架构之道" scheme="https://www.coderacademy.online/tags/%E6%9E%B6%E6%9E%84%E4%B9%8B%E9%81%93/"/>
-    
       <category term="面试" scheme="https://www.coderacademy.online/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="架构之道" scheme="https://www.coderacademy.online/tags/%E6%9E%B6%E6%9E%84%E4%B9%8B%E9%81%93/"/>
     
       <category term="Kafka" scheme="https://www.coderacademy.online/tags/Kafka/"/>
     
@@ -130,13 +231,46 @@
       <category term="SpringBoot" scheme="https://www.coderacademy.online/categories/SpringBoot/"/>
     
     
+      <category term="面试" scheme="https://www.coderacademy.online/tags/%E9%9D%A2%E8%AF%95/"/>
+    
       <category term="SpringBoot" scheme="https://www.coderacademy.online/tags/SpringBoot/"/>
     
       <category term="架构之道" scheme="https://www.coderacademy.online/tags/%E6%9E%B6%E6%9E%84%E4%B9%8B%E9%81%93/"/>
     
-      <category term="面试" scheme="https://www.coderacademy.online/tags/%E9%9D%A2%E8%AF%95/"/>
-    
       <category term="接口幂等" scheme="https://www.coderacademy.online/tags/%E6%8E%A5%E5%8F%A3%E5%B9%82%E7%AD%89/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spring状态机（FSM），让订单状态流转如丝般顺滑</title>
+    <link href="https://www.coderacademy.online/article/springbootstatemachine.html"/>
+    <id>https://www.coderacademy.online/article/springbootstatemachine.html</id>
+    <published>2024-03-05T14:28:11.000Z</published>
+    <updated>2024-03-12T01:50:21.776Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="SpringBoot" scheme="https://www.coderacademy.online/categories/SpringBoot/"/>
+    
+    
+      <category term="SpringBoot" scheme="https://www.coderacademy.online/tags/SpringBoot/"/>
+    
+      <category term="Spring状态机" scheme="https://www.coderacademy.online/tags/Spring%E7%8A%B6%E6%80%81%E6%9C%BA/"/>
+    
+      <category term="架构之道" scheme="https://www.coderacademy.online/tags/%E6%9E%B6%E6%9E%84%E4%B9%8B%E9%81%93/"/>
     
   </entry>
   
@@ -200,9 +334,9 @@
     
       <category term="Java" scheme="https://www.coderacademy.online/tags/Java/"/>
     
-      <category term="多线程状态" scheme="https://www.coderacademy.online/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81/"/>
-    
       <category term="并发编程" scheme="https://www.coderacademy.online/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="多线程状态" scheme="https://www.coderacademy.online/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81/"/>
     
   </entry>
   
@@ -521,136 +655,6 @@
       <category term="自定义TypeHandler" scheme="https://www.coderacademy.online/tags/%E8%87%AA%E5%AE%9A%E4%B9%89TypeHandler/"/>
     
       <category term="MySql的JSON类型数据处理" scheme="https://www.coderacademy.online/tags/MySql%E7%9A%84JSON%E7%B1%BB%E5%9E%8B%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>聊一聊Integer的缓存机制问题</title>
-    <link href="https://www.coderacademy.online/article/null.html"/>
-    <id>https://www.coderacademy.online/article/null.html</id>
-    <published>2024-01-28T17:16:18.000Z</published>
-    <updated>2024-02-04T02:00:13.791Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-      <category term="Java" scheme="https://www.coderacademy.online/categories/Java/"/>
-    
-    
-      <category term="面试" scheme="https://www.coderacademy.online/tags/%E9%9D%A2%E8%AF%95/"/>
-    
-      <category term="Java" scheme="https://www.coderacademy.online/tags/Java/"/>
-    
-      <category term="Integer缓存机制" scheme="https://www.coderacademy.online/tags/Integer%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>SpringBoot+LiteFlow优雅解耦复杂核心业务</title>
-    <link href="https://www.coderacademy.online/article/springbootliteflowuse.html"/>
-    <id>https://www.coderacademy.online/article/springbootliteflowuse.html</id>
-    <published>2024-01-26T07:15:15.000Z</published>
-    <updated>2024-01-29T02:12:49.519Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-      <category term="SpringBoot" scheme="https://www.coderacademy.online/categories/SpringBoot/"/>
-    
-    
-      <category term="SpringBoot" scheme="https://www.coderacademy.online/tags/SpringBoot/"/>
-    
-      <category term="LiteFlow" scheme="https://www.coderacademy.online/tags/LiteFlow/"/>
-    
-      <category term="流程引擎" scheme="https://www.coderacademy.online/tags/%E6%B5%81%E7%A8%8B%E5%BC%95%E6%93%8E/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>阿里二面：SpringBoot可以同时处理多少个请求？当场懵了。。。。</title>
-    <link href="https://www.coderacademy.online/article/springbootmaxhandlerequest.html"/>
-    <id>https://www.coderacademy.online/article/springbootmaxhandlerequest.html</id>
-    <published>2024-01-25T15:22:23.000Z</published>
-    <updated>2024-01-30T05:04:28.009Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-      <category term="SpringBoot" scheme="https://www.coderacademy.online/categories/SpringBoot/"/>
-    
-    
-      <category term="SpringBoot" scheme="https://www.coderacademy.online/tags/SpringBoot/"/>
-    
-      <category term="面试" scheme="https://www.coderacademy.online/tags/%E9%9D%A2%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>聊一聊日常开发中如何优雅的避免那无处不在的空指针异常</title>
-    <link href="https://www.coderacademy.online/article/javanpe.html"/>
-    <id>https://www.coderacademy.online/article/javanpe.html</id>
-    <published>2024-01-23T15:23:45.000Z</published>
-    <updated>2024-02-04T02:00:13.792Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-      <category term="Java" scheme="https://www.coderacademy.online/categories/Java/"/>
-    
-    
-      <category term="Java" scheme="https://www.coderacademy.online/tags/Java/"/>
-    
-      <category term="空指针异常" scheme="https://www.coderacademy.online/tags/%E7%A9%BA%E6%8C%87%E9%92%88%E5%BC%82%E5%B8%B8/"/>
-    
-      <category term="NullPointerException" scheme="https://www.coderacademy.online/tags/NullPointerException/"/>
     
   </entry>
   
