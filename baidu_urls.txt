@@ -1,4 +1,5 @@
 https://www.coderacademy.online/article/java22.html
+https://www.coderacademy.online/article/javalockcategory.html
 https://www.coderacademy.online/article/javathreadoom.html
 https://www.coderacademy.online/article/javareference.html
 https://www.coderacademy.online/article/kafkasequentialmessages.html
@@ -7,6 +8,7 @@ https://www.coderacademy.online/article/null.html
 https://www.coderacademy.online/article/springbootidempotent.html
 https://www.coderacademy.online/article/springbootstatemachine.html
 https://www.coderacademy.online/article/javadeadlock.html
+https://www.coderacademy.online/article/javastopthread.html
 https://www.coderacademy.online/article/javathreadstate.html
 https://www.coderacademy.online/article/mysqlsqladvanced.html
 https://www.coderacademy.online/article/springbootscheduled.html

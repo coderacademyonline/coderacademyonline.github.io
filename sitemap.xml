@@ -23,6 +23,13 @@
   </url>
   
   <url>
+    <loc>https://www.coderacademy.online/article/javalockcategory.html</loc>
+    
+    <lastmod>2024-03-19T01:44:24.683Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.coderacademy.online/article/kafkasequentialmessages.html</loc>
     
     <lastmod>2024-03-14T05:11:35.469Z</lastmod>
@@ -82,6 +89,13 @@
     <loc>https://www.coderacademy.online/article/javathreadstate.html</loc>
     
     <lastmod>2024-03-07T01:33:25.449Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.coderacademy.online/article/javastopthread.html</loc>
+    
+    <lastmod>2024-03-04T01:06:25.781Z</lastmod>
     
   </url>
   
@@ -156,14 +170,14 @@
   </url>
   
   <url>
-    <loc>https://www.coderacademy.online/article/7fd1e424.html</loc>
+    <loc>https://www.coderacademy.online/article/jvmclassloader.html</loc>
     
     <lastmod>2024-02-04T02:00:13.792Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://www.coderacademy.online/article/jvmclassloader.html</loc>
+    <loc>https://www.coderacademy.online/article/7fd1e424.html</loc>
     
     <lastmod>2024-02-04T02:00:13.792Z</lastmod>
     
@@ -324,7 +338,7 @@
   </url>
   
   <url>
-    <loc>https://www.coderacademy.online/archives/index.html</loc>
+    <loc>https://www.coderacademy.online/tags/index.html</loc>
     
     <lastmod>2021-07-29T12:54:42.000Z</lastmod>
     
@@ -338,7 +352,7 @@
   </url>
   
   <url>
-    <loc>https://www.coderacademy.online/tags/index.html</loc>
+    <loc>https://www.coderacademy.online/archives/index.html</loc>
     
     <lastmod>2021-07-29T12:54:42.000Z</lastmod>
     
