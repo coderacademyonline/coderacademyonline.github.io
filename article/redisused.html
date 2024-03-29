@@ -1,0 +1,1827 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta name="keywords" content="美团一面：项目中使用过Redis吗？我说用Redis做缓存。他对我哦了一声, Java，Spring，SpringBoot，SpringCloud，Elasticsearch，MQ，工作流，规则引擎">
+    <meta name="baidu-site-verification" content="fmlEuI34ir">
+    <meta name="google-site-verification" content="yCy2azpds5XSuGZvis6OuA-XIGF5GuGpYRAaGfD6o48">
+    <meta name="360-site-verification" content="b7c11a830ef90fd1464ad6206bb7b6e7">
+    <meta name="description" content="
+关注公众号【码农Academy】，每日技术干货马上就来！
+
+
+引言Redis，作为一种开源的、基于内存且支持持久化的键值存储系统，以其卓越的性能、丰富灵活的数据结构和高度可扩展性在全球范围内广受欢迎。Redis不仅提供了一种简单直观的方式">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>美团一面：项目中使用过Redis吗？我说用Redis做缓存。他对我哦了一声 | 码农Academy的博客</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    <style type="text/css">
+        
+    </style>
+
+    <script src="/libs/jquery/jquery-2.2.0.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?ce84511d3df71640a9378a69f6293044";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
+    
+        <script>
+            (function(){
+                var bp = document.createElement('script');
+                var curProtocol = window.location.protocol.split(':')[0];
+                if (curProtocol === 'https') {
+                    bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+                }
+                else {
+                    bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+                }
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(bp, s);
+            })();
+        </script>
+    
+
+    <script>
+        (function(){
+        var src = "https://jspassport.ssl.qhimg.com/11.0.1.js?d182b3f28525f2db83acfaaf6e696dba";
+        document.write('<script src="' + src + '" id="sozz"><\/script>');
+        })();
+    </script>
+
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+<body>
+
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">码农Academy的博客</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fa fa-navicon"></i></a>
+<ul class="right">
+    
+    <li class="hide-on-med-and-down">
+        <a href="/" class="waves-effect waves-light">
+            
+            <i class="fa fa-home"></i>
+            
+            <span>首页</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/tags" class="waves-effect waves-light">
+            
+            <i class="fa fa-tags"></i>
+            
+            <span>标签</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/categories" class="waves-effect waves-light">
+            
+            <i class="fa fa-bookmark"></i>
+            
+            <span>分类</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/archives" class="waves-effect waves-light">
+            
+            <i class="fa fa-archive"></i>
+            
+            <span>归档</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/about" class="waves-effect waves-light">
+            
+            <i class="fa fa-user-circle-o"></i>
+            
+            <span>关于</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/friends" class="waves-effect waves-light">
+            
+            <i class="fa fa-address-book"></i>
+            
+            <span>友情链接</span>
+        </a>
+    </li>
+    
+    <li class="hide-on-med-and-down">
+        <a href="/contact" class="waves-effect waves-light">
+            
+            <i class="fa fa-comments"></i>
+            
+            <span>留言板</span>
+        </a>
+    </li>
+    
+    <li>
+        <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+            <i id="searchIcon" class="fa fa-search" title="搜索"></i>
+        </a>
+    </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">码农Academy的博客</div>
+        <div class="logo-desc">
+            
+            专注分享Java技术干货，包括Java基础、Spring Boot、Spring Cloud、Mysql、Redis、Elasticsearch、中间件、架构设计、面试题、程序员攻略等
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li>
+            <a href="/" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-home"></i>
+                
+                首页
+            </a>
+        </li>
+        
+        <li>
+            <a href="/tags" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-tags"></i>
+                
+                标签
+            </a>
+        </li>
+        
+        <li>
+            <a href="/categories" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-bookmark"></i>
+                
+                分类
+            </a>
+        </li>
+        
+        <li>
+            <a href="/archives" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-archive"></i>
+                
+                归档
+            </a>
+        </li>
+        
+        <li>
+            <a href="/about" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-user-circle-o"></i>
+                
+                关于
+            </a>
+        </li>
+        
+        <li>
+            <a href="/friends" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-address-book"></i>
+                
+                友情链接
+            </a>
+        </li>
+        
+        <li>
+            <a href="/contact" class="waves-effect waves-light">
+                
+                <i class="fa fa-fw fa-comments"></i>
+                
+                留言板
+            </a>
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+<script src="/libs/cryptojs/crypto-js.min.js"></script>
+<script>
+    (function() {
+        let pwd = '';
+        if (pwd && pwd.length > 0) {
+            if (pwd !== CryptoJS.SHA256(prompt('请输入访问本文章的密码')).toString(CryptoJS.enc.Hex)) {
+                alert('密码错误，将返回主页！');
+                location.href = '/';
+            }
+        }
+    })();
+</script>
+
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/featureimages/32.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        美团一面：项目中使用过Redis吗？我说用Redis做缓存。他对我哦了一声
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<main class="container content">
+
+    
+    <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                        <a href="/tags/面试/" target="_blank">
+                            <span class="chip bg-color">面试</span>
+                        </a>
+                        
+                        <a href="/tags/Redis/" target="_blank">
+                            <span class="chip bg-color">Redis</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fa fa-bookmark fa-fw icon-category"></i>
+                        
+                        <a href="/categories/Redis/" class="post-category" target="_blank">
+                            Redis
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                <div class="post-date info-break-policy">
+                    <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2024-03-27
+                </div>
+
+                <div class="post-author info-break-policy">
+                    <i class="fa fa-user-o fa-fw"></i>作者:&nbsp;&nbsp;
+                    
+                    码农Academy
+                    
+                </div>
+
+                
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    7.4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    29 分
+                </div>
+                
+                
+
+                
+                <div id="busuanzi_container_page_pv" class="info-break-policy">
+                    <i class="fa fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                    <span id="busuanzi_value_page_pv"></span>
+                </div>
+                
+            </div>
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <blockquote>
+<p>关注公众号【码农Academy】，每日技术干货马上就来！</p>
+</blockquote>
+<p><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/medias/contact.jpg" alt="contact.jpg"></p>
+<h3 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h3><p>Redis，作为一种开源的、基于内存且支持持久化的键值存储系统，以其卓越的性能、丰富灵活的数据结构和高度可扩展性在全球范围内广受欢迎。Redis不仅提供了一种简单直观的方式来存储和检索数据，更因其支持数据结构如字符串、哈希、列表、集合、有序集合等多种类型，使得其在众多场景下表现出强大的适用性和灵活性。</p>
+<p>Redis的核心特点包括：</p>
+<ol>
+<li><strong>高性能</strong>：基于内存操作，读写速度极快，特别适用于对性能要求高的实时应用。</li>
+</ol>
+<blockquote>
+<p>关于Redis高性能的原因，请参考：<a href="https://mp.weixin.qq.com/s?__biz=MzkyNzYzMTY0MA==&mid=2247484198&idx=1&sn=32b0992f1b7d9862e2c983f9cb2e633f&chksm=c2245351f553da472f19d57c7d7dfa56c58e8ea4a9e814fc2d4a8fadf72afeadae4b0b0bec35#rd" target="_blank" rel="noopener">京东二面：Redis为什么快？我说Redis是纯内存操作的，然后他对我笑了笑。。。。。。</a></p>
+</blockquote>
+<ol start="2">
+<li><strong>数据持久化</strong>：支持RDB和AOF两种持久化方式，确保即使在服务器重启后也能恢复数据。</li>
+<li><strong>分布式的特性</strong>：通过主从复制、哨兵模式或集群模式，Redis可以轻松地构建高可用和可扩展的服务。</li>
+<li><strong>丰富的数据结构</strong>：提供了多种数据结构支持，便于开发人员根据实际需求进行数据建模和处理。</li>
+</ol>
+<p>Redis的广泛应用跨越了多个行业和技术领域，诸如网站加速、缓存服务、会话管理、实时统计、排行榜、消息队列、分布式锁、社交网络功能、限流控制等。本文将深入探讨Redis在这些场景下的具体应用方法及其背后的工作原理，旨在帮助开发者更好地理解和掌握Redis，以应对各种复杂的业务需求，并充分发挥其潜能。同时，我们也将关注如何在实践中平衡Redis的性能、安全性、一致性等方面的挑战，为实际项目带来更高的价值。</p>
+<h3 id="数据缓存"><a href="#数据缓存" class="headerlink" title="数据缓存"></a>数据缓存</h3><p>在高并发访问的场景下，数据库经常成为系统的瓶颈。Redis因其内存存储、读取速度快的特点，常被用作数据库查询结果的缓存层，有效降低数据库负载，提高整体系统的响应速度。这也是我们使用场景频率最高的一个。</p>
+<p>通常我们选择使用String类型来存储数据库查询结果，如单个实体对象的JSON序列化形式。</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Service</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">ProductService</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> RedisTemplate<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Product<span class="token operator">></span> redisTemplate<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// 使用@Cacheable注解进行缓存</span>
+    <span class="token annotation punctuation">@Cacheable</span><span class="token punctuation">(</span>value <span class="token operator">=</span> <span class="token string">"productCache"</span><span class="token punctuation">,</span> key <span class="token operator">=</span> <span class="token string">"#id"</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> Product <span class="token function">getProductById</span><span class="token punctuation">(</span>String id<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 此处是从数据库或其他数据源获取商品的方法</span>
+        <span class="token comment" spellcheck="true">// 在实际场景中，如果缓存命中，则不会执行下面的数据库查询逻辑</span>
+        <span class="token keyword">return</span> <span class="token function">getProductFromDatabase</span><span class="token punctuation">(</span>id<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>而使用Redis作为缓存使用时，有一些特别需要注意的事项：</p>
+<ol>
+<li><strong>缓存穿透</strong>：当查询的数据在数据库和缓存中均不存在时，可能会导致大量的无效请求直接打到数据库。可通过布隆过滤器预防缓存穿透。</li>
+<li><strong>缓存雪崩</strong>：若大量缓存在同一时刻失效，所有请求都会涌向数据库，造成瞬时压力过大。可通过设置合理的过期时间分散、预加载或采用Redis集群等方式避免。</li>
+<li><strong>缓存一致性</strong>：当数据库数据发生变化时，需要及时更新缓存，避免数据不一致。可以采用主动更新策略（如监听数据库binlog）或被动更新策略（如在读取时判断数据新鲜度）。</li>
+</ol>
+<p>而对于数据缓存，我们常使用的业务场景如热点数据存储、全页缓存等。</p>
+<h3 id="会话管理"><a href="#会话管理" class="headerlink" title="会话管理"></a>会话管理</h3><p>在说会话管理之前，我们来简单介绍一下<code>Spring Session</code>。<br>Spring Session 是 Spring Framework 的一个项目，旨在简化分布式应用程序中的会话管理。在传统的基于 Servlet 的应用程序中，会话管理是通过 HttpSession 接口实现的，但在分布式环境中，每个节点上的 HttpSession 不能简单地共享，因此需要一种机制来管理会话并确保会话在集群中的一致性。</p>
+<p>Spring Session 提供了一种简单的方法来解决这个问题，它将会话数据从容器（如 Tomcat 或 Jetty）中分离出来，并存储在外部数据存储（如 Redis、MongoDB、JDBC 等）中。这样，不同节点上的应用程序实例可以共享相同的会话数据，实现分布式环境下的会话管理。</p>
+<p>所以在Web应用中，Redis用于会话管理时，可以取代传统基于服务器内存或Cookie的会话存储方案。通过将会话数据序列化后存储为Redis中的键值对，实现跨多个服务器实例的会话共享。</p>
+<pre class="line-numbers language-xml"><code class="language-xml"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependency</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>groupId</span><span class="token punctuation">></span></span>org.springframework.session<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>groupId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>artifactId</span><span class="token punctuation">></span></span>spring-session-data-redis<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>artifactId</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>version</span><span class="token punctuation">></span></span>3.2.0<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>version</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>dependency</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>然后我们在启动类中，使用<code>@EnableRedisHttpSession</code>启用Redis作为会话存储。</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Configuration</span>
+<span class="token annotation punctuation">@EnableRedisHttpSession</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RedisSessionConfig</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Bean</span>
+    <span class="token keyword">public</span> RedisConnectionFactory <span class="token function">connectionFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 这里假设你已经在application.properties或application.yml中配置了Redis的信息</span>
+        <span class="token comment" spellcheck="true">// 根据实际情况填写Redis服务器地址、端口等信息</span>
+        <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">LettuceConnectionFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>以上是一个简单的<code>Spring Session</code>使用<code>Redis</code>进行会话管理的示例代码。通过这种方式，我们可以轻松地在分布式环境中管理会话，并确保会话数据的一致性和可靠性。如果需要了解一些具体的用法，请自行参考<code>Spring Session</code>。</p>
+<h3 id="排行榜与计分板"><a href="#排行榜与计分板" class="headerlink" title="排行榜与计分板"></a>排行榜与计分板</h3><p>有序集合（Sorted Sets）是Redis的一种强大数据结构，可以用来实现动态排行榜，每个成员都有一个分数，按分数排序。有序集合中的每一个成员都有一个分数（score），成员依据其分数进行排序，且成员本身是唯一的。</p>
+<p>当需要给某个用户增加积分或改变其排名时，可以使用<code>ZADD</code>命令向有序集合中添加或更新成员及其分数。例如，<code>ZADD leaderboard score member</code>，这里的<code>ranking</code>是有序集合的名称，<code>score</code>是用户的积分值，<code>member</code>是用户ID。</p>
+<p>查询排行榜时，可以使用<code>ZRANGE</code>命令获取指定范围内的成员及其分数，例如，<code>ZRANGE ranking 0 -1 WITHSCORES</code>，这条命令会返回集合中所有的成员及其对应的分数，按照分数从低到高排序。</p>
+<p>若要按照分数从高到低显示排行榜，使用<code>ZREVRANGE</code>命令，如<code>ZREVRANGE ranking 0 -1 WITHSCORES</code>。</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Service</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RankingService</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> RedisTemplate<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">></span> redisTemplate<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">addToRanking</span><span class="token punctuation">(</span>String playerName<span class="token punctuation">,</span> <span class="token keyword">int</span> score<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        redisTemplate<span class="token punctuation">.</span><span class="token function">opsForZSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token string">"ranking"</span><span class="token punctuation">,</span> playerName<span class="token punctuation">,</span> score<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> List<span class="token operator">&lt;</span>RankingInfo<span class="token operator">></span> <span class="token function">getRanking</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        List<span class="token operator">&lt;</span>RankingInfo<span class="token operator">></span> rankingInfos <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ArrayList</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Set<span class="token operator">&lt;</span>ZSetOperations<span class="token punctuation">.</span>TypedTuple<span class="token operator">&lt;</span>String<span class="token operator">>></span> rankingSet <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForZSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">rangeWithScores</span><span class="token punctuation">(</span><span class="token string">"ranking"</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span>ZSetOperations<span class="token punctuation">.</span>TypedTuple<span class="token operator">&lt;</span>String<span class="token operator">></span> tuple <span class="token operator">:</span> rankingSet<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            RankingInfo rankingInfo <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">RankingInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            rankingInfo<span class="token punctuation">.</span><span class="token function">setPlayerName</span><span class="token punctuation">(</span>tuple<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            rankingInfo<span class="token punctuation">.</span><span class="token function">setScore</span><span class="token punctuation">(</span>tuple<span class="token punctuation">.</span><span class="token function">getScore</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">intValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            rankingInfos<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>rankingInfo<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            System<span class="token punctuation">.</span>out<span class="token punctuation">.</span><span class="token function">println</span><span class="token punctuation">(</span><span class="token string">"playerName: "</span> <span class="token operator">+</span> tuple<span class="token punctuation">.</span><span class="token function">getValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">", score: "</span> <span class="token operator">+</span> tuple<span class="token punctuation">.</span><span class="token function">getScore</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">intValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> rankingInfos<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>我们模拟请求，往redis中填入一些数据，在获取排行榜：</p>
+<p><img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/blogcontent/20240327163807.png" alt="image.png"><br>在实际场景中，有序集合非常适合处理实时动态变化的排行榜数据，比如京东的月度销量榜单、商品按时间的上新排行榜等，因为它的更新和查询操作都是原子性的，并且能高效地支持按分数排序的操作。</p>
+<h3 id="计数器与统计"><a href="#计数器与统计" class="headerlink" title="计数器与统计"></a>计数器与统计</h3><p>Redis的原子性操作如<code>INCR</code>和<code>DECR</code>可以用于计数，确保在高并发环境下的计数准确性。比如在流量统计、电商网站商品的浏览量、视频网站视频的播放数赞等场景的应用。</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Service</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">CounterService</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> RedisTemplate<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">></span> redisTemplate<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">incrementLikeCount</span><span class="token punctuation">(</span>String postId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        redisTemplate<span class="token punctuation">.</span><span class="token function">opsForValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">increment</span><span class="token punctuation">(</span>postId <span class="token operator">+</span> <span class="token string">":likes"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">decrementLikeCount</span><span class="token punctuation">(</span>String postId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        redisTemplate<span class="token punctuation">.</span><span class="token function">opsForValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">decrement</span><span class="token punctuation">(</span>postId <span class="token operator">+</span> <span class="token string">":likes"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">long</span> <span class="token function">getLikeCount</span><span class="token punctuation">(</span>String postId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        String value <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>postId <span class="token operator">+</span> <span class="token string">":likes"</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> StringUtils<span class="token punctuation">.</span><span class="token function">isBlank</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span> <span class="token operator">?</span> <span class="token number">0</span> <span class="token operator">:</span> Long<span class="token punctuation">.</span><span class="token function">parseLong</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>在使用Redis实现点赞，统计等功能时一定要考虑设置计数值的最大值或最小值限制，以及过期策略。</p>
+<h3 id="分布式锁"><a href="#分布式锁" class="headerlink" title="分布式锁"></a>分布式锁</h3><h4 id="分布式锁-1"><a href="#分布式锁-1" class="headerlink" title="分布式锁"></a>分布式锁</h4><p>Redis的<code>SETNX</code>（设置并检查是否存在）和<code>EXPIRE</code>命令组合可以实现分布式锁，因其操作时原子性的，所以可以确保在分布式环境下同一资源只能被一个客户端修改。</p>
+<p>使用 Redis 实现分布式锁通常会使用 Redis 的 SETNX 命令。这个命令用于设置一个键的值，如果这个键不存在的话，它会设置成功并返回 1，如果这个键已经存在，则设置失败并返回 0。结合 Redis 的 EXPIRE 命令，可以为这个键设置一个过期时间，确保即使获取锁的客户端异常退出，锁也会在一段时间后自动释放。</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Component</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">DistributedLock</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> RedisTemplate<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">></span> redisTemplate<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">acquireLock</span><span class="token punctuation">(</span>String lockKey<span class="token punctuation">,</span> String requestId<span class="token punctuation">,</span> <span class="token keyword">long</span> expireTime<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Boolean result <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setIfAbsent</span><span class="token punctuation">(</span>lockKey<span class="token punctuation">,</span> requestId<span class="token punctuation">,</span> expireTime<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> result <span class="token operator">!=</span> null <span class="token operator">&amp;&amp;</span> result<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">releaseLock</span><span class="token punctuation">(</span>String lockKey<span class="token punctuation">,</span> String requestId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        String value <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>lockKey<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>value <span class="token operator">!=</span> null <span class="token operator">&amp;&amp;</span> value<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>requestId<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            redisTemplate<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span>lockKey<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>使用分布式锁时，务必确保在加锁和解锁操作之间处理完临界区代码，否则可能出现死锁。并且要注意锁定超时时间应当合理设置，以避免锁定资源长时间无法释放。</p>
+<blockquote>
+<p>关于分布式锁，推荐使用一些第三方的分布式锁框架，例如Redisson</p>
+</blockquote>
+<h4 id="全局ID"><a href="#全局ID" class="headerlink" title="全局ID"></a>全局ID</h4><p>在全局ID生成的场景中，我们可以使用 Redis 的原子递增操作来实现。通过对 Redis 中的一个特定的 key 进行原子递增操作，可以确保生成的ID是唯一的。</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Component</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UniqueIdGenerator</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> RedisTemplate<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">></span> redisTemplate<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">long</span> <span class="token function">generateUniqueId</span><span class="token punctuation">(</span>String key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">increment</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="库存扣减"><a href="#库存扣减" class="headerlink" title="库存扣减"></a>库存扣减</h4><p>在扣减库存的场景中，我们可以使用 Redis 的原子递减操作来实现。将库存数量存储在 Redis 的一个特定key中（例如仓库编码:SKU），然后通过递减操作来实现库存的扣减。这样可以保证在高并发情况下，库存扣减的原子性。</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Component</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">StockService</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> RedisTemplate<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">></span> redisTemplate<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/**商品库存的key*/</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> String STOCK_PREFIX <span class="token operator">=</span> <span class="token string">"stock:%s:%s"</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 扣减库存
+     * @param warehouseCode
+     * @param productId
+     * @param quantity
+     * @return
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">decreaseStock</span><span class="token punctuation">(</span>String warehouseCode<span class="token punctuation">,</span> String productId<span class="token punctuation">,</span> <span class="token keyword">long</span> quantity<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        String key <span class="token operator">=</span> String<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>STOCK_PREFIX<span class="token punctuation">,</span> warehouseCode<span class="token punctuation">,</span> productId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        Long stock <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">decrement</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> quantity<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> stock <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h4 id="秒杀"><a href="#秒杀" class="headerlink" title="秒杀"></a>秒杀</h4><p>在秒杀场景中，使用Lua脚本。Lua 脚本可以在 Redis 服务器端原子性地执行多个命令，这样可以避免在多个命令之间出现竞态条件。</p>
+<p>我们使用Lua脚本来检查库存是否足够并进行扣减操作。如果库存足够，则减少库存并返回 true；如果库存不足，则直接返回 false。通过 Lua 脚本的原子性执行，可以确保在高并发情况下，库存扣减操作的正确性和一致性。</p>
+<p>我们先定义一个扣减库存的lua脚本，使用Lua脚本一次性执行获取库存、判断库存是否充足以及扣减库存这三个操作，确保了操作的原子性</p>
+<pre class="line-numbers language-lua"><code class="language-lua"><span class="token comment" spellcheck="true">-- 获取Lua脚本参数：商品ID和要购买的数量</span>
+<span class="token keyword">local</span> productId <span class="token operator">=</span> KEYS<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+<span class="token keyword">local</span> amount <span class="token operator">=</span> <span class="token function">tonumber</span><span class="token punctuation">(</span>ARGV<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">-- 获取当前库存</span>
+<span class="token keyword">local</span> currentStock <span class="token operator">=</span> <span class="token function">tonumber</span><span class="token punctuation">(</span>redis<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token string">'GET'</span><span class="token punctuation">,</span> <span class="token string">'seckill:product:'</span><span class="token operator">..</span>productId<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">-- 判断库存是否充足</span>
+<span class="token keyword">if</span> currentStock <span class="token operator">&lt;=</span> <span class="token number">0</span> <span class="token keyword">or</span> currentStock <span class="token operator">&lt;</span> amount <span class="token keyword">then</span>
+    <span class="token keyword">return</span> <span class="token number">0</span>
+<span class="token keyword">end</span>
+
+<span class="token comment" spellcheck="true">-- 扣减库存</span>
+redis<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token string">'DECRBY'</span><span class="token punctuation">,</span> <span class="token string">'seckill:product:'</span><span class="token operator">..</span>productId<span class="token punctuation">,</span> amount<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">-- 返回成功标志</span>
+<span class="token keyword">return</span> <span class="token number">1</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>然后在秒杀服务中使用Redis的<code>DefaultRedisScript</code>执行lua脚本，完成秒杀</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Component</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">SeckillService</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> RedisTemplate<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">></span> redisTemplate<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 初始化RedisScript对象
+     */</span>
+    <span class="token keyword">private</span> <span class="token keyword">final</span> DefaultRedisScript<span class="token operator">&lt;</span>Long<span class="token operator">></span> seckillScript <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DefaultRedisScript</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">{</span>
+        seckillScript<span class="token punctuation">.</span><span class="token function">setLocation</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">ClassPathResource</span><span class="token punctuation">(</span><span class="token string">"rate_limiter.lua"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        seckillScript<span class="token punctuation">.</span><span class="token function">setResultType</span><span class="token punctuation">(</span>Long<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">seckillyLua</span><span class="token punctuation">(</span>String productId<span class="token punctuation">,</span> <span class="token keyword">int</span> amount<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 设置Lua脚本参数</span>
+        List<span class="token operator">&lt;</span>String<span class="token operator">></span> keys <span class="token operator">=</span> Collections<span class="token punctuation">.</span><span class="token function">singletonList</span><span class="token punctuation">(</span>productId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        List<span class="token operator">&lt;</span>String<span class="token operator">></span> args <span class="token operator">=</span> Collections<span class="token punctuation">.</span><span class="token function">singletonList</span><span class="token punctuation">(</span>Integer<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span>amount<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">// 执行Lua脚本</span>
+        Long result <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span>seckillScript<span class="token punctuation">,</span> keys<span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">// 如果执行结果为1，表示秒杀成功</span>
+        <span class="token keyword">return</span> Objects<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>result<span class="token punctuation">,</span> 1L<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>关于秒杀场景，我们也可以使用<code>WATCH</code>命令监视库存键，然后尝试获取并扣减库存。如果在<code>WATCH</code>之后、<code>EXEC</code>之前库存发生了变化，<code>exec</code>方法会返回<code>null</code>，此时我们取消<code>WATCH</code>并重新尝试整个流程，直到成功扣减库存为止。这样就实现了基于Redis乐观锁的秒杀场景，有效防止了超卖现象。</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token comment" spellcheck="true">/**
+     * 秒杀方法
+     * @param productId 商品ID
+     * @param amount 要购买的数量
+     * @return 秒杀成功与否
+     */</span>
+    <span class="token annotation punctuation">@Transactional</span><span class="token punctuation">(</span>rollbackFor <span class="token operator">=</span> Exception<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span>
+    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">seckilByWatch</span><span class="token punctuation">(</span>String productId<span class="token punctuation">,</span> <span class="token keyword">int</span> amount<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 乐观锁事务操作</span>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token comment" spellcheck="true">// WATCH指令监控库存键</span>
+            redisTemplate<span class="token punctuation">.</span><span class="token function">watch</span><span class="token punctuation">(</span><span class="token string">"stock:"</span> <span class="token operator">+</span> productId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment" spellcheck="true">// 获取当前库存</span>
+            String currentStockStr <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span><span class="token string">"stock:"</span> <span class="token operator">+</span> productId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>currentStockStr <span class="token operator">==</span> null<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment" spellcheck="true">// 库存不存在，可能是商品已售罄或异常情况</span>
+                <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+            <span class="token keyword">int</span> currentStock <span class="token operator">=</span> Integer<span class="token punctuation">.</span><span class="token function">parseInt</span><span class="token punctuation">(</span>currentStockStr<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment" spellcheck="true">// 判断库存是否充足</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span>currentStock <span class="token operator">&lt;</span> amount<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token comment" spellcheck="true">// 库存不足，取消WATCH并退出循环</span>
+                redisTemplate<span class="token punctuation">.</span><span class="token function">unwatch</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+
+            <span class="token comment" spellcheck="true">// 开启Redis事务</span>
+            redisTemplate<span class="token punctuation">.</span><span class="token function">multi</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment" spellcheck="true">// 执行扣减库存操作</span>
+            redisTemplate<span class="token punctuation">.</span><span class="token function">opsForValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">decrement</span><span class="token punctuation">(</span><span class="token string">"stock:"</span> <span class="token operator">+</span> productId<span class="token punctuation">,</span> amount<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment" spellcheck="true">// 执行其他与秒杀相关的操作，如增加订单、更新用户余额等...</span>
+
+            <span class="token comment" spellcheck="true">// 提交事务，如果在此期间库存被其他客户端修改，则exec返回null</span>
+            List<span class="token operator">&lt;</span>Object<span class="token operator">></span> results <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">exec</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+            <span class="token comment" spellcheck="true">// 如果事务执行成功，跳出循环</span>
+            <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>results<span class="token punctuation">.</span><span class="token function">isEmpty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+                <span class="token keyword">return</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+            <span class="token punctuation">}</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="消息队列与发布-订阅"><a href="#消息队列与发布-订阅" class="headerlink" title="消息队列与发布/订阅"></a>消息队列与发布/订阅</h3><p>Redis的发布/订阅（Pub/Sub）模式，可以实现一个简单的消息队列。发布/订阅模式允许消息的发布者（发布消息）和订阅者（接收消息）之间解耦，消息的发布者不需要知道消息的接收者是谁，从而实现了一对多的消息传递。</p>
+<p>首先我们需要定义一个消息监听器，我们可以实现这个借口并实现其中的方法来处理接收到的消息。这样可以根据具体的业务需求来定义消息的处理逻辑。</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token keyword">public</span> <span class="token keyword">interface</span> <span class="token class-name">MessageListener</span> <span class="token punctuation">{</span>
+    <span class="token keyword">void</span> <span class="token function">onMessage</span><span class="token punctuation">(</span>String channel<span class="token punctuation">,</span> String message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>然后我们就可以定义消息的生产者以及消费者。<code>publish</code> 方法用于向指定频道发布消息，我们使用 RedisTemplate 的 <code>convertAndSend</code> 方法来发送消息到指定的频道。<br>而<code>subscribe</code>方法用于订阅指定的频道，并设置消息监听器。当有消息发布到指定的频道时，消息监听器会收到消息并进行处理。</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Component</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">MessageQueue</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> RedisTemplate<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">></span> redisTemplate<span class="token punctuation">;</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">publish</span><span class="token punctuation">(</span>String channel<span class="token punctuation">,</span> String message<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        redisTemplate<span class="token punctuation">.</span><span class="token function">convertAndSend</span><span class="token punctuation">(</span>channel<span class="token punctuation">,</span> message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">subscribe</span><span class="token punctuation">(</span>String channel<span class="token punctuation">,</span> MessageListener listener<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        redisTemplate<span class="token punctuation">.</span><span class="token function">getConnectionFactory</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getConnection</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">subscribe</span><span class="token punctuation">(</span><span class="token punctuation">(</span>message<span class="token punctuation">,</span> pattern<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">{</span>
+            listener<span class="token punctuation">.</span><span class="token function">onMessage</span><span class="token punctuation">(</span>channel<span class="token punctuation">,</span> message<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span><span class="token punctuation">,</span> channel<span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>使用Redis的发布订阅模式实现一个轻量级的队列时要注意：Pub/Sub是非持久化的，一旦消息发布，没有订阅者接收的话，消息就会丢失。还有就是Pub/Sub不适合大规模的消息堆积场景，因为它不保证消息顺序和重复消费，更适合实时广播型消息推送。</p>
+<h3 id="社交网络"><a href="#社交网络" class="headerlink" title="社交网络"></a>社交网络</h3><p>在社交网络中，Redis可以利用集合(Set)、哈希(Hash)和有序集合(Sorted Set)等数据结构构建用户关系图谱。</p>
+<p>使用哈希（Hash）数据结构存储用户的个人资料信息，每个用户对应一个哈希表，其中包含用户的各种属性，比如用户名、年龄、性别等。</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Component</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RelationshipGraphService</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> RedisTemplate<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">></span> redisTemplate<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/**用户资料*/</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> String USER_PROFILE_PREFIX <span class="token operator">=</span> <span class="token string">"user_profile:"</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 存储用户个人资料
+     * @param userId
+     * @param profile
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setUserProfile</span><span class="token punctuation">(</span>String userId<span class="token punctuation">,</span> Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">></span> profile<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        String key <span class="token operator">=</span> USER_PROFILE_PREFIX <span class="token operator">+</span> userId<span class="token punctuation">;</span>
+        redisTemplate<span class="token punctuation">.</span><span class="token function">opsForHash</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">putAll</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> profile<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 获取用户个人资料
+     * @param userId
+     * @return
+     */</span>
+    <span class="token keyword">public</span> Map<span class="token operator">&lt;</span>Object<span class="token punctuation">,</span> Object<span class="token operator">></span> <span class="token function">getUserProfile</span><span class="token punctuation">(</span>String userId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        String key <span class="token operator">=</span> USER_PROFILE_PREFIX <span class="token operator">+</span> userId<span class="token punctuation">;</span>
+        <span class="token keyword">return</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForHash</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">entries</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>使用集合（Set）数据结构来存储用户的好友关系。每个用户都有一个集合，其中包含了他的所有好友的用户ID。</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Component</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RelationshipGraphService</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> RedisTemplate<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">></span> redisTemplate<span class="token punctuation">;</span>
+
+     <span class="token comment" spellcheck="true">/**用户好友*/</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> String FRIENDS_PREFIX <span class="token operator">=</span> <span class="token string">"friends:"</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 添加好友关系
+     * @param userId
+     * @param friendId
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">addFriend</span><span class="token punctuation">(</span>String userId<span class="token punctuation">,</span> String friendId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        String key <span class="token operator">=</span> FRIENDS_PREFIX <span class="token operator">+</span> userId<span class="token punctuation">;</span>
+        redisTemplate<span class="token punctuation">.</span><span class="token function">opsForSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> friendId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 获取用户的所有好友
+     * @param userId
+     * @return
+     */</span>
+    <span class="token keyword">public</span> Set<span class="token operator">&lt;</span>String<span class="token operator">></span> <span class="token function">getFriends</span><span class="token punctuation">(</span>String userId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        String key <span class="token operator">=</span> FRIENDS_PREFIX <span class="token operator">+</span> userId<span class="token punctuation">;</span>
+        <span class="token keyword">return</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">members</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>同理，我们还可以实现点赞的业务场景</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Service</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">LikeService</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> RedisTemplate<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">></span> redisTemplate<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 点赞
+     * @param objectId
+     * @param userId
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">like</span><span class="token punctuation">(</span>String objectId<span class="token punctuation">,</span> String userId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 将点赞人放入zset中</span>
+        redisTemplate<span class="token punctuation">.</span><span class="token function">opsForSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token function">getLikeKey</span><span class="token punctuation">(</span>objectId<span class="token punctuation">)</span><span class="token punctuation">,</span> userId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 取消点赞
+     * @param objectId
+     * @param userId
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">unlike</span><span class="token punctuation">(</span>String objectId<span class="token punctuation">,</span> String userId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 减少点赞人数</span>
+        redisTemplate<span class="token punctuation">.</span><span class="token function">opsForSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">remove</span><span class="token punctuation">(</span><span class="token function">getLikeKey</span><span class="token punctuation">(</span>objectId<span class="token punctuation">)</span><span class="token punctuation">,</span> userId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 是否点赞
+     * @param objectId
+     * @param userId
+     * @return
+     */</span>
+    <span class="token keyword">public</span> Boolean <span class="token function">isLiked</span><span class="token punctuation">(</span>String objectId<span class="token punctuation">,</span> String userId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">isMember</span><span class="token punctuation">(</span><span class="token function">getLikeKey</span><span class="token punctuation">(</span>objectId<span class="token punctuation">)</span><span class="token punctuation">,</span> userId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 获取点赞数
+     * @param objectId
+     * @return
+     */</span>
+    <span class="token keyword">public</span> Long <span class="token function">getLikeCount</span><span class="token punctuation">(</span>String objectId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+       <span class="token keyword">return</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token function">getLikeKey</span><span class="token punctuation">(</span>objectId<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 获取所有点赞的用户
+     * @param objectId
+     * @return
+     */</span>
+    <span class="token keyword">public</span> Set<span class="token operator">&lt;</span>String<span class="token operator">></span> <span class="token function">getLikedUsers</span><span class="token punctuation">(</span>String objectId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">members</span><span class="token punctuation">(</span><span class="token function">getLikeKey</span><span class="token punctuation">(</span>objectId<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">private</span> String <span class="token function">getLikeKey</span><span class="token punctuation">(</span>String objectId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token string">"likes:"</span> <span class="token operator">+</span> objectId<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>使用有序集合（Sorted Set）数据结构来存储用户的关注者列表。有序集合中的成员是关注者的用户ID，而分数可以是关注时间或者其他指标，比如活跃度。</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Component</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RelationshipGraphService</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> RedisTemplate<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">></span> redisTemplate<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/**用户关注者*/</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> String FOLLOWERS_PREFIX <span class="token operator">=</span> <span class="token string">"followers:"</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 添加关注者
+     * @param userId
+     * @param followerId
+     * @param score
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">addFollower</span><span class="token punctuation">(</span>String userId<span class="token punctuation">,</span> String followerId<span class="token punctuation">,</span> <span class="token keyword">double</span> score<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        String key <span class="token operator">=</span> FOLLOWERS_PREFIX <span class="token operator">+</span> userId<span class="token punctuation">;</span>
+        redisTemplate<span class="token punctuation">.</span><span class="token function">opsForZSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> followerId<span class="token punctuation">,</span> score<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 获取用户的关注者列表（按照关注时间排序）
+     * @param userId
+     * @return
+     */</span>
+    <span class="token keyword">public</span> Set<span class="token operator">&lt;</span>String<span class="token operator">></span> <span class="token function">getFollowers</span><span class="token punctuation">(</span>String userId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        String key <span class="token operator">=</span> FOLLOWERS_PREFIX <span class="token operator">+</span> userId<span class="token punctuation">;</span>
+        <span class="token keyword">return</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForZSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">range</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>除此之外，我们还可以实现可能认识的人，共同好友等业务场景。</p>
+<h3 id="限流与速率控制"><a href="#限流与速率控制" class="headerlink" title="限流与速率控制"></a>限流与速率控制</h3><p>Redis可以精确地实施限流策略，如使用INCR命令结合Lua脚本实现滑动窗口限流。</p>
+<p>创建一个Lua脚本，该脚本负责检查在一定时间段内请求次数是否超过限制。</p>
+<pre class="line-numbers language-lua"><code class="language-lua"><span class="token comment" spellcheck="true">-- rate_limiter.lua</span>
+<span class="token keyword">local</span> key <span class="token operator">=</span> KEYS<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+<span class="token keyword">local</span> limit <span class="token operator">=</span> <span class="token function">tonumber</span><span class="token punctuation">(</span>ARGV<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+<span class="token keyword">local</span> timeWindow <span class="token operator">=</span> <span class="token function">tonumber</span><span class="token punctuation">(</span>ARGV<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">-- 时间窗口，例如单位为秒</span>
+
+<span class="token comment" spellcheck="true">-- 获取当前时间戳</span>
+<span class="token keyword">local</span> currentTime <span class="token operator">=</span> redis<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token string">'TIME'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>
+
+<span class="token comment" spellcheck="true">-- 获取最近timeWindow秒内的请求次数</span>
+<span class="token keyword">local</span> count <span class="token operator">=</span> redis<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token string">'ZCOUNT'</span><span class="token punctuation">,</span> key <span class="token operator">..</span> <span class="token string">':requests'</span><span class="token punctuation">,</span> currentTime <span class="token operator">-</span> timeWindow<span class="token punctuation">,</span> currentTime<span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">-- 如果未超过限制，则累加请求次数，并返回true</span>
+<span class="token keyword">if</span> count <span class="token operator">&lt;</span> limit <span class="token keyword">then</span>
+  redis<span class="token punctuation">.</span><span class="token function">call</span><span class="token punctuation">(</span><span class="token string">'ZADD'</span><span class="token punctuation">,</span> key <span class="token operator">..</span> <span class="token string">':requests'</span><span class="token punctuation">,</span> currentTime<span class="token punctuation">,</span> currentTime<span class="token punctuation">)</span>
+  <span class="token keyword">return</span> <span class="token number">1</span>
+<span class="token keyword">else</span>
+  <span class="token keyword">return</span> <span class="token number">0</span>
+<span class="token keyword">end</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>限流服务中Redis使用<code>DefaultRedisScript</code>执行Lua脚本</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Component</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">RateLimiter</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> RedisTemplate<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">></span> redisTemplate<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/**限流Key*/</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> String TATE_LIMITER_KEY <span class="token operator">=</span> <span class="token string">"rate-limit:%s"</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/**规定的时间窗口内允许的最大请求数量*/</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> Integer LIMIT <span class="token operator">=</span> <span class="token number">100</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/**限流策略的时间窗口长度，单位是秒*/</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> Integer TIME_WINDOW <span class="token operator">=</span> <span class="token number">60</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 初始化RedisScript对象
+     */</span>
+    <span class="token keyword">private</span> <span class="token keyword">final</span> DefaultRedisScript<span class="token operator">&lt;</span>Long<span class="token operator">></span> rateLimiterScript <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">DefaultRedisScript</span><span class="token operator">&lt;</span><span class="token operator">></span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">{</span>
+        rateLimiterScript<span class="token punctuation">.</span><span class="token function">setLocation</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">ClassPathResource</span><span class="token punctuation">(</span><span class="token string">"rate_limiter.lua"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        rateLimiterScript<span class="token punctuation">.</span><span class="token function">setResultType</span><span class="token punctuation">(</span>Long<span class="token punctuation">.</span><span class="token keyword">class</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+
+    <span class="token comment" spellcheck="true">/**
+     * 限流方法 1分钟内最多100次请求
+     * @param userId
+     * @return
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">allowRequest</span><span class="token punctuation">(</span>String userId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        String key <span class="token operator">=</span> String<span class="token punctuation">.</span><span class="token function">format</span><span class="token punctuation">(</span>TATE_LIMITER_KEY<span class="token punctuation">,</span> userId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        List<span class="token operator">&lt;</span>String<span class="token operator">></span> keys <span class="token operator">=</span> Collections<span class="token punctuation">.</span><span class="token function">singletonList</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        List<span class="token operator">&lt;</span>String<span class="token operator">></span> args <span class="token operator">=</span> Arrays<span class="token punctuation">.</span><span class="token function">asList</span><span class="token punctuation">(</span>String<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span>LIMIT<span class="token punctuation">)</span><span class="token punctuation">,</span> String<span class="token punctuation">.</span><span class="token function">valueOf</span><span class="token punctuation">(</span>TIME_WINDOW<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">// 执行Lua脚本</span>
+        Long result <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span>rateLimiterScript<span class="token punctuation">,</span> keys<span class="token punctuation">,</span> args<span class="token punctuation">)</span><span class="token punctuation">;</span>
+
+        <span class="token comment" spellcheck="true">// 结果为1表示允许请求，0表示请求被限流</span>
+        <span class="token keyword">return</span> Objects<span class="token punctuation">.</span><span class="token function">equals</span><span class="token punctuation">(</span>result<span class="token punctuation">,</span> 1L<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="位运算与位图应用"><a href="#位运算与位图应用" class="headerlink" title="位运算与位图应用"></a>位运算与位图应用</h3><p>Redis的位图（BitMap）是一种特殊的数据结构，它允许我们在单一的字符串键（String Key）中存储一系列二进制位（bits），每个位对应一个布尔值（0或1），并通过偏移量（offset）来定位和操作这些位。位图极大地节省了存储空间，尤其适合于大规模数据的标记、统计和筛选场景。</p>
+<p>在位图中，每一位相当于一个标识符，例如可以用来表示用户是否在线、商品是否有库存、用户是否已读邮件等。相对于传统的键值对存储。位图可以非常快速地统计满足特定条件的元素个数，如统计在线用户数、激活用户数等。</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Service</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">UserOnlineStatusService</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> RedisTemplate<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">></span> redisTemplate<span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> String ONLINE_STATUS_KEY <span class="token operator">=</span> <span class="token string">"online_status"</span><span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> String RETENTION_RATE_KEY_PREFIX <span class="token operator">=</span> <span class="token string">"retention_rate:"</span><span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> String DAILY_ACTIVITY_KEY_PREFIX <span class="token operator">=</span> <span class="token string">"daily_activity:"</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 设置用户在线状态为在线
+     * @param userId
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setUserOnline</span><span class="token punctuation">(</span><span class="token keyword">long</span> userId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        redisTemplate<span class="token punctuation">.</span><span class="token function">opsForValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setBit</span><span class="token punctuation">(</span>ONLINE_STATUS_KEY<span class="token punctuation">,</span> userId<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 设置用户在线状态为离线
+     * @param userId
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">setUserOffline</span><span class="token punctuation">(</span><span class="token keyword">long</span> userId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        redisTemplate<span class="token punctuation">.</span><span class="token function">opsForValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setBit</span><span class="token punctuation">(</span>ONLINE_STATUS_KEY<span class="token punctuation">,</span> userId<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 获取用户在线状态
+     * @param userId
+     * @return
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">boolean</span> <span class="token function">isUserOnline</span><span class="token punctuation">(</span><span class="token keyword">long</span> userId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getBit</span><span class="token punctuation">(</span>ONLINE_STATUS_KEY<span class="token punctuation">,</span> userId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 统计在线用户数量
+     * @return
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">long</span> <span class="token function">countOnlineUsers</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span>  <span class="token function">getCount</span><span class="token punctuation">(</span>ONLINE_STATUS_KEY<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 记录用户的留存情况
+     * @param userId
+     * @param daysAgo
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">recordUserRetention</span><span class="token punctuation">(</span><span class="token keyword">long</span> userId<span class="token punctuation">,</span> <span class="token keyword">int</span> daysAgo<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        String key <span class="token operator">=</span> RETENTION_RATE_KEY_PREFIX <span class="token operator">+</span> LocalDate<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">minusDays</span><span class="token punctuation">(</span>daysAgo<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        redisTemplate<span class="token punctuation">.</span><span class="token function">opsForValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setBit</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> userId<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 获取指定日期的留存率
+     * @param daysAgo
+     * @return
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">double</span> <span class="token function">getRetentionRate</span><span class="token punctuation">(</span><span class="token keyword">int</span> daysAgo<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        String key <span class="token operator">=</span> RETENTION_RATE_KEY_PREFIX <span class="token operator">+</span> LocalDate<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">minusDays</span><span class="token punctuation">(</span>daysAgo<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">long</span> totalUsers <span class="token operator">=</span> <span class="token function">countOnlineUsers</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">long</span> retainedUsers <span class="token operator">=</span> <span class="token function">getCount</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">double</span><span class="token punctuation">)</span> retainedUsers <span class="token operator">/</span> totalUsers <span class="token operator">*</span> <span class="token number">100</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 记录用户的每日活跃情况
+     * @param userId
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">recordUserDailyActivity</span><span class="token punctuation">(</span><span class="token keyword">long</span> userId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        String key <span class="token operator">=</span> DAILY_ACTIVITY_KEY_PREFIX <span class="token operator">+</span> LocalDate<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        redisTemplate<span class="token punctuation">.</span><span class="token function">opsForValue</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">setBit</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> userId<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 获取指定日期的活跃用户数量
+     * @param date
+     * @return
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">long</span> <span class="token function">countDailyActiveUsers</span><span class="token punctuation">(</span>LocalDate date<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        String key <span class="token operator">=</span> DAILY_ACTIVITY_KEY_PREFIX <span class="token operator">+</span> date<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> <span class="token function">getCount</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 获取最近几天每天的活跃用户数量列表
+     * @param days
+     * @return
+     */</span>
+    <span class="token keyword">public</span> List<span class="token operator">&lt;</span>Long<span class="token operator">></span> <span class="token function">getDailyActiveUsers</span><span class="token punctuation">(</span><span class="token keyword">int</span> days<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        LocalDate currentDate <span class="token operator">=</span> LocalDate<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        List<span class="token operator">&lt;</span>Long<span class="token operator">></span> results <span class="token operator">=</span> Lists<span class="token punctuation">.</span><span class="token function">newArrayList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> days<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            LocalDate date <span class="token operator">=</span> currentDate<span class="token punctuation">.</span><span class="token function">minusDays</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+            String key <span class="token operator">=</span> DAILY_ACTIVITY_KEY_PREFIX <span class="token operator">+</span> date<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            results<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span><span class="token function">getCount</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+        <span class="token keyword">return</span> results<span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 获取key下的数量
+     * @param key
+     * @return
+     */</span>
+    <span class="token keyword">private</span> <span class="token keyword">long</span> <span class="token function">getCount</span><span class="token punctuation">(</span>String key<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> <span class="token punctuation">(</span><span class="token keyword">long</span><span class="token punctuation">)</span> redisTemplate<span class="token punctuation">.</span><span class="token function">execute</span><span class="token punctuation">(</span><span class="token punctuation">(</span>RedisCallback<span class="token operator">&lt;</span>Long<span class="token operator">></span><span class="token punctuation">)</span> connection <span class="token operator">-</span><span class="token operator">></span> connection<span class="token punctuation">.</span><span class="token function">bitCount</span><span class="token punctuation">(</span>key<span class="token punctuation">.</span><span class="token function">getBytes</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="最新列表"><a href="#最新列表" class="headerlink" title="最新列表"></a>最新列表</h3><p>Redis的List（列表）是一个基于双向链表实现的数据结构，允许我们在列表头部（左端）和尾部（右端）进行高效的插入和删除操作。<br><code>LPUSH</code>命令：全称是<code>LIST PUSH LEFT</code>，用于将一个或多个值插入到列表的最左边（头部），在这里用于将最新生成的内容ID推送到列表顶部，保证列表中始终是最新的内容排在前面。</p>
+<p><code>LTRIM</code>命令用于修剪列表，保留指定范围内的元素，从而限制列表的长度。在这个场景中，每次添加新ID后都会执行<code>LTRIM</code>操作，只保留最近的N个ID，确保列表始终保持固定长度，即只包含最新的内容ID。</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Service</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">LatestListService</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> RedisTemplate<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">></span> redisTemplate<span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> String LATEST_LIST_KEY <span class="token operator">=</span> <span class="token string">"latest_list"</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 添加最新内容ID到列表头部
+     * @param contentId 内容ID
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">addLatestContent</span><span class="token punctuation">(</span>String contentId<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        ListOperations<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">></span> listOps <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        listOps<span class="token punctuation">.</span><span class="token function">leftPush</span><span class="token punctuation">(</span>LATEST_LIST_KEY<span class="token punctuation">,</span> contentId<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token comment" spellcheck="true">// 限制列表最多存储N个ID，假设N为100</span>
+        listOps<span class="token punctuation">.</span><span class="token function">trim</span><span class="token punctuation">(</span>LATEST_LIST_KEY<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">99</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 获取最新的N个内容ID
+     * @param count 要获取的数量，默认为10
+     * @return 最新的内容ID列表
+     */</span>
+    <span class="token keyword">public</span> List<span class="token operator">&lt;</span>String<span class="token operator">></span> <span class="token function">getLatestContentIds</span><span class="token punctuation">(</span><span class="token keyword">int</span> count<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        ListOperations<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">></span> listOps <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForList</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> listOps<span class="token punctuation">.</span><span class="token function">range</span><span class="token punctuation">(</span>LATEST_LIST_KEY<span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> count <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="抽奖"><a href="#抽奖" class="headerlink" title="抽奖"></a>抽奖</h3><p>借助Redis的Set数据结构以及其内置的<code>Spop</code>命令，我们能够高效且随机地选定抽奖获胜者。Set作为一种不允许包含重复成员的数据集合，其特性天然适用于防止抽奖过程中出现重复参与的情况，确保每位参与者仅拥有一个有效的抽奖资格。</p>
+<p>由于Set内部元素的排列不具备确定性，这意味着在对集合执行随机获取操作时，每一次选取都将独立且不可预测，这与抽奖活动中所要求的随机公平原则高度契合。</p>
+<p>Redis的<code>Spop</code>命令允许我们在单个原子操作下，不仅随机选取，还会从Set中移除指定数量（默认为1）的元素。这一原子操作机制尤为关键，在高并发环境下，即便有多个请求同时进行抽奖，<code>Spop</code>也能够确保同一时刻只有一个请求能成功获取并移除一个元素，有效避免了重复选择同一位参与者作为获奖者的可能性。</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Service</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">LotteryService</span> <span class="token punctuation">{</span>
+
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> RedisTemplate<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">></span> redisTemplate<span class="token punctuation">;</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> String PARTICIPANTS_SET_KEY <span class="token operator">=</span> <span class="token string">"lottery:participants"</span><span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 添加参与者到抽奖名单
+     * @param participant 参与者ID
+     */</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">joinLottery</span><span class="token punctuation">(</span>String participant<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        redisTemplate<span class="token punctuation">.</span><span class="token function">opsForSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>PARTICIPANTS_SET_KEY<span class="token punctuation">,</span> participant<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 抽取一名幸运儿
+     * @return 幸运儿ID
+     */</span>
+    <span class="token keyword">public</span> String <span class="token function">drawWinner</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token comment" spellcheck="true">// 使用Spop命令随机抽取一个参与者</span>
+        <span class="token keyword">return</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span>PARTICIPANTS_SET_KEY<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">/**
+     * 抽取N个幸运儿
+     * @param count 抽取数量
+     * @return 幸运儿ID列表
+     */</span>
+    <span class="token keyword">public</span> List<span class="token operator">&lt;</span>String<span class="token operator">></span> <span class="token function">drawWinners</span><span class="token punctuation">(</span><span class="token keyword">int</span> count<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">return</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForSet</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span>PARTICIPANTS_SET_KEY<span class="token punctuation">,</span> count<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="Stream类型"><a href="#Stream类型" class="headerlink" title="Stream类型"></a>Stream类型</h3><p>Redis Stream作为一种自Redis 5.0起引入的高级数据结构，专为存储和处理有序且持久的消息流而设计。可视作一个分布式的、具备持久特性的消息队列，通过唯一的键名来标识每个Stream，其中容纳了多个携带时间戳和唯一标识符的消息实体。</p>
+<p>每条存储于Stream中的消息都具有全球唯一的message ID，该ID内嵌时间戳和序列编号，旨在确保即使在复杂的集群部署中仍能保持消息的严格时序性。这些消息内容会持久存储在Redis中，确保即使服务器重启也能安全恢复。</p>
+<p>生产者利用<code>XADD</code>指令将新消息添加到Stream中，而消费者则通过<code>XREAD</code>或针对多消费者组场景优化的<code>XREADGROUP</code>命令来读取并处理消息。<code>XREADGROUP</code>尤其擅长处理多消费者组间的公平分配和持久订阅，确保消息的公正、有序送达各个消费者。</p>
+<p>Stream核心特性之一是支持消费者组机制，消费者组内的不同消费者可独立地消费消息，并通过<code>XACK</code>命令确认已消费的消息，从而实现了消息的持久化消费和至少一次（at-least-once）交付保证。当消息量超出消费者处理能力时，未处理的消息可在Stream中积压，直到达到预设的最大容量限制。此外，还能设定消息的有效期（TTL），逾期未被消费的消息将自动剔除。即使在网络传输过程中消息遭受损失，亦可通过message ID保障消息的幂等性重新投递。尽管网络条件可能导致消息到达消费者的时间顺序与生产者发出的顺序有所偏差，但Stream机制确保了每个消息在其内在的时间上下文中依然保持着严格的顺序关系。</p>
+<p>Redis Stream作为一个集消息持久化、多消费者公平竞争、消息追溯和排序等功能于一体的强大消息队列工具，已在日志采集、实时数据分析、活动追踪等诸多领域展现出卓越的适用性和价值。</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Component</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">LogCollector</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> String LOGS_STREAM_KEY <span class="token operator">=</span> <span class="token string">"logs"</span><span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> String GROUP_NAME <span class="token operator">=</span> <span class="token string">"log_consumers"</span><span class="token punctuation">;</span>
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> String CONSUMER_NAME <span class="token operator">=</span> <span class="token string">"log_consumer"</span><span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> RedisTemplate<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Object<span class="token operator">></span> redisTemplate<span class="token punctuation">;</span>
+
+    <span class="token comment" spellcheck="true">// 发送日志事件至 Redis Stream</span>
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">sendLogEvent</span><span class="token punctuation">(</span>String message<span class="token punctuation">,</span> Map<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">></span> attributes<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        StreamOperations<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Object<span class="token punctuation">,</span> Object<span class="token operator">></span> streamOperations <span class="token operator">=</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        RecordId messageId <span class="token operator">=</span> streamOperations<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>StreamRecords<span class="token punctuation">.</span><span class="token function">newRecord</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">ofStrings</span><span class="token punctuation">(</span>attributes<span class="token punctuation">)</span>
+                <span class="token punctuation">.</span><span class="token function">withStreamKey</span><span class="token punctuation">(</span>LOGS_STREAM_KEY<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment" spellcheck="true">// 实时消费日志事件</span>
+    <span class="token keyword">public</span> StreamRecords<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">></span> <span class="token function">consumeLogs</span><span class="token punctuation">(</span><span class="token keyword">int</span> batchSize<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Consumer consumer <span class="token operator">=</span> Consumer<span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span>CONSUMER_NAME<span class="token punctuation">,</span> GROUP_NAME<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        StreamOffset<span class="token operator">&lt;</span>String<span class="token operator">></span> offset <span class="token operator">=</span> StreamOffset<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>LOGS_STREAM_KEY<span class="token punctuation">,</span> ReadOffset<span class="token punctuation">.</span><span class="token function">lastConsumed</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        StreamReadOptions<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> String<span class="token operator">></span> readOptions <span class="token operator">=</span> StreamReadOptions<span class="token punctuation">.</span><span class="token function">empty</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">count</span><span class="token punctuation">(</span>batchSize<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> redisTemplate<span class="token punctuation">.</span><span class="token function">opsForStream</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">read</span><span class="token punctuation">(</span>readOptions<span class="token punctuation">,</span> StreamOffset<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span>LOGS_STREAM_KEY<span class="token punctuation">,</span> ReadOffset<span class="token punctuation">.</span><span class="token function">lastConsumed</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> consumer<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="GEO类型"><a href="#GEO类型" class="headerlink" title="GEO类型"></a>GEO类型</h3><p>Redis的GEO数据类型自3.2版本起引入，专为存储和高效操作含有经纬度坐标的地理位置信息而设计。开发人员利用这一类型可以轻松管理地理位置数据，同时兼顾内存效率和响应速度。</p>
+<p>利用<code>GEOADD</code>命令，可以将带有精确经纬度坐标的数据点归档至指定键名下的集合中。</p>
+<p>可借助<code>GEOPOS</code>命令获取某一成员的具体经纬度坐标。</p>
+<p>通过<code>GEODIST</code>命令，可以准确计算任意两个地理位置成员之间的地球表面距离，支持多种计量单位，包括米、千米、英里和英尺。</p>
+<p>使用<code>GEORADIUS</code>命令，系统可以根据指定的经纬度中心点及半径范围检索出处于该区域内的所有成员地理位置。</p>
+<p><code>GEORADIUSBYMEMBER</code>命令也用于范围查询，但其查询依据是选定成员自身的位置，以此为圆心划定搜索范围。</p>
+<p>GEO类型在许多场景下都非常有用，例如移动应用中的附近好友查找、商店位置搜索、物流配送中的最近司机调度等。</p>
+<pre class="line-numbers language-java"><code class="language-java"><span class="token annotation punctuation">@Service</span>
+<span class="token keyword">public</span> <span class="token keyword">class</span> <span class="token class-name">FriendService</span> <span class="token punctuation">{</span>
+
+    <span class="token keyword">private</span> <span class="token keyword">static</span> <span class="token keyword">final</span> String FRIEND_LOCATIONS_KEY <span class="token operator">=</span> <span class="token string">"friend_locations"</span><span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> RedisTemplate<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> Object<span class="token operator">></span> redisTemplate<span class="token punctuation">;</span>
+
+    <span class="token annotation punctuation">@Autowired</span>
+    <span class="token keyword">private</span> GeoOperations<span class="token operator">&lt;</span>String<span class="token punctuation">,</span> FriendLocation<span class="token operator">></span> geoOperations<span class="token punctuation">;</span> <span class="token comment" spellcheck="true">// 自动装配GeoOperations</span>
+
+    <span class="token keyword">public</span> <span class="token keyword">void</span> <span class="token function">saveFriendLocation</span><span class="token punctuation">(</span>FriendLocation location<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        geoOperations<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>FRIEND_LOCATIONS_KEY<span class="token punctuation">,</span> location<span class="token punctuation">.</span><span class="token function">getLongitude</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> location<span class="token punctuation">.</span><span class="token function">getLatitude</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> location<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">public</span> List<span class="token operator">&lt;</span>FriendLocation<span class="token operator">></span> <span class="token function">findFriendsNearby</span><span class="token punctuation">(</span><span class="token keyword">double</span> myLongitude<span class="token punctuation">,</span> <span class="token keyword">double</span> myLatitude<span class="token punctuation">,</span> Distance radius<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        Circle circle <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Circle</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Point</span><span class="token punctuation">(</span>myLongitude<span class="token punctuation">,</span> myLatitude<span class="token punctuation">)</span><span class="token punctuation">,</span> radius<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">return</span> geoOperations<span class="token punctuation">.</span><span class="token function">radius</span><span class="token punctuation">(</span>FRIEND_LOCATIONS_KEY<span class="token punctuation">,</span> circle<span class="token punctuation">,</span> Metric<span class="token punctuation">.</span>KILOMETERS<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getContent</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>Redis作为一款高性能、内存型的NoSQL数据库，凭借其丰富的数据结构、极高的读写速度以及灵活的数据持久化策略，在现代分布式系统中扮演着至关重要的角色。它的关键价值体现在以下几个方面：</p>
+<ol>
+<li><p>缓存优化：Redis将频繁访问的数据存储在内存中，显著减少了数据库的读取压力，提升了系统的整体性能和响应速度。</p>
+</li>
+<li><p>分布式支持：通过主从复制、哨兵和集群模式，Redis实现了高度可扩展性和高可用性，满足大规模分布式系统的需求。</p>
+</li>
+<li><p>数据结构多样性：Redis支持字符串、哈希、列表、集合、有序集合、Bitmaps、HyperLogLog、Geo等多样化的数据结构，为多种应用场景提供了便利，如排行榜、社交关系、消息队列、计数器、限速器等。</p>
+</li>
+<li><p>实时处理与分析：随着Redis 5.0引入Stream数据结构，使得Redis在日志收集、实时分析、物联网数据流处理等方面有了更多的可能性。</p>
+</li>
+<li><p>地理位置服务：GEO类型提供了便捷的空间索引和距离计算功能，使得Redis能够在电商、出行、社交等领域提供附近地点搜索、路线规划等服务。</p>
+</li>
+</ol>
+
+            </div>
+            <hr />
+
+            
+
+            <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    <div class="social-share" data-disabled="qzone" data-wechat-qrcode-helper="<p>微信里点“发现”->“扫一扫”二维码便可查看分享。</p>"></div>
+    
+</div>
+
+<script src="/libs/share/js/social-share.min.js"></script>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        <p class="reprint-tip">
+            <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;
+            <span>转载规则</span>
+        </p>
+        
+            <div class="center-align">
+                <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                    <img alt=""
+                         style="border-width:0"
+                         src="https://i.creativecommons.org/l/by/4.0/88x31.png"/>
+                </a>
+            </div>
+            <br/>
+            <span xmlns:dct="http://purl.org/dc/terms/" href="http://purl.org/dc/dcmitype/Text"
+                  property="dct:title" rel="dct:type">
+                    《美团一面：项目中使用过Redis吗？我说用Redis做缓存。他对我哦了一声》
+                </span> 由
+            <a xmlns:cc="http://creativecommons.org/ns#" href="/article/redisused.html" property="cc:attributionName"
+               rel="cc:attributionURL">
+                码农Academy
+            </a> 采用
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/deed.zh">
+                知识共享署名 4.0 国际许可协议
+            </a>进行许可。
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+        </div>
+    </div>
+
+    
+    <link rel="stylesheet" href="/libs/gitalk/gitalk.css">
+<link rel="stylesheet" href="/css/my-gitalk.css">
+
+<div class="card gitalk-card" data-aos="fade-up">
+    <div id="gitalk-container" class="card-content"></div>
+</div>
+
+<script src="/libs/gitalk/gitalk.min.js"></script>
+<script>
+    let gitalk = new Gitalk({
+        clientID: '查教程获取',
+        clientSecret: '查教程获取',
+        repo: 'coderacademyonline.github.io',
+        owner: 'coderacademyonline',
+        admin: "coderacademyonline",
+        id: 'article/redisused.html',
+        distractionFreeMode: false  // Facebook-like distraction free mode
+    });
+
+    gitalk.render('gitalk-container');
+</script>
+    
+
+    
+
+    
+
+    
+
+    
+    <style>
+    .valine-card {
+        margin: 1.5rem auto;
+    }
+
+    .valine-card .card-content {
+        padding: 20px 20px 5px 20px;
+    }
+
+    #vcomments input[type=text],
+    #vcomments input[type=email],
+    #vcomments input[type=url],
+    #vcomments textarea {
+        box-sizing: border-box;
+    }
+
+    #vcomments p {
+        margin: 2px 2px 10px;
+        font-size: 1.05rem;
+        line-height: 1.78rem;
+    }
+
+    #vcomments blockquote p {
+        text-indent: 0.2rem;
+    }
+
+    #vcomments a {
+        padding: 0 2px;
+        color: #42b983;
+        font-weight: 500;
+        text-decoration: underline;
+    }
+
+    #vcomments img {
+        max-width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    #vcomments ol li {
+        list-style-type: decimal;
+    }
+
+    #vcomments ol,
+    ul {
+        display: block;
+        padding-left: 2em;
+        word-spacing: 0.05rem;
+    }
+
+    #vcomments ul li,
+    ol li {
+        display: list-item;
+        line-height: 1.8rem;
+        font-size: 1rem;
+    }
+
+    #vcomments ul li {
+        list-style-type: disc;
+    }
+
+    #vcomments ul ul li {
+        list-style-type: circle;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    #vcomments table, th, td {
+        border: 0;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments h1 {
+        font-size: 1.85rem;
+        font-weight: bold;
+        line-height: 2.2rem;
+    }
+
+    #vcomments h2 {
+        font-size: 1.65rem;
+        font-weight: bold;
+        line-height: 1.9rem;
+    }
+
+    #vcomments h3 {
+        font-size: 1.45rem;
+        font-weight: bold;
+        line-height: 1.7rem;
+    }
+
+    #vcomments h4 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    #vcomments h5 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        line-height: 1.4rem;
+    }
+
+    #vcomments h6 {
+        font-size: 1rem;
+        line-height: 1.3rem;
+    }
+
+    #vcomments p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+
+    #vcomments hr {
+        margin: 12px 0;
+        border: 0;
+        border-top: 1px solid #ccc;
+    }
+
+    #vcomments blockquote {
+        margin: 15px 0;
+        border-left: 5px solid #42b983;
+        padding: 1rem 0.8rem 0.3rem 0.8rem;
+        color: #666;
+        background-color: rgba(66, 185, 131, .1);
+    }
+
+    #vcomments pre {
+        font-family: monospace, monospace;
+        padding: 1.2em;
+        margin: .5em 0;
+        background: #272822;
+        overflow: auto;
+        border-radius: 0.3em;
+        tab-size: 4;
+    }
+
+    #vcomments code {
+        font-family: monospace, monospace;
+        padding: 1px 3px;
+        font-size: 0.92rem;
+        color: #e96900;
+        background-color: #f8f8f8;
+        border-radius: 2px;
+    }
+
+    #vcomments pre code {
+        font-family: monospace, monospace;
+        padding: 0;
+        color: #e8eaf6;
+        background-color: #272822;
+    }
+
+    #vcomments pre[class*="language-"] {
+        padding: 1.2em;
+        margin: .5em 0;
+    }
+
+    #vcomments code[class*="language-"],
+    pre[class*="language-"] {
+        color: #e8eaf6;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+
+    #vcomments b,
+    strong {
+        font-weight: bold;
+    }
+
+    #vcomments dfn {
+        font-style: italic;
+    }
+
+    #vcomments small {
+        font-size: 85%;
+    }
+
+    #vcomments cite {
+        font-style: normal;
+    }
+
+    #vcomments mark {
+        background-color: #fcf8e3;
+        padding: .2em;
+    }
+
+    #vcomments table, th, td {
+        padding: 12px 13px;
+        border: 1px solid #dfe2e5;
+    }
+
+    table tr:nth-child(2n), thead {
+        background-color: #fafafa;
+    }
+
+    #vcomments table th {
+        background-color: #f2f2f2;
+        min-width: 80px;
+    }
+
+    #vcomments table td {
+        min-width: 80px;
+    }
+
+    #vcomments [type="checkbox"]:not(:checked), [type="checkbox"]:checked {
+        position: inherit;
+        margin-left: -1.3rem;
+        margin-right: 0.4rem;
+        margin-top: -1px;
+        vertical-align: middle;
+        left: unset;
+        visibility: visible;
+    }
+</style>
+
+<div class="card valine-card" data-aos="fade-up">
+    <div id="vcomments" class="card-content"></div>
+</div>
+
+<script src="/libs/valine/av-min.js"></script>
+<script src="/libs/valine/Valine.min.js"></script>
+<!-- <script src="//unpkg.com/valine@latest/dist/Valine.min.js"></script> -->
+
+<script>
+    new Valine({
+        el: '#vcomments',
+        appId: '查教程获取',
+        appKey: '查教程获取',
+        notify: 'false' === 'true',
+        verify: 'false' === 'true',
+        visitor: 'false' === 'true',
+        avatar: 'wavatar',
+        pageSize: '10',
+        lang: 'zh-cn',
+        placeholder: '如果你没有GitHub账号，还可以在这里评论啦！'
+    });
+</script>
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="fa fa-dot-circle-o"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/article/redisused.html">
+                    <div class="card-image">
+                        
+                        <img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/featureimages/32.jpg" class="responsive-img" alt="美团一面：项目中使用过Redis吗？我说用Redis做缓存。他对我哦了一声">
+                        
+                        <span class="card-title">美团一面：项目中使用过Redis吗？我说用Redis做缓存。他对我哦了一声</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Redis广泛应用于数据缓存、会话管理、排行榜、计数器、分布式锁、消息队列、社交网络、限流控制、位运算、电商、时间序列、地理位置索引等多样化业务场景。
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2024-03-27
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Redis/" class="post-category" target="_blank">
+                                    Redis
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/面试/" target="_blank">
+                        <span class="chip bg-color">面试</span>
+                    </a>
+                    
+                    <a href="/tags/Redis/" target="_blank">
+                        <span class="chip bg-color">Redis</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fa fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/article/java22.html">
+                    <div class="card-image">
+                        
+                        <img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/featureimages/32.jpg" class="responsive-img" alt="Java22重磅发布！！！！卷不动了，真的卷不动了。。。。">
+                        
+                        <span class="card-title">Java22重磅发布！！！！卷不动了，真的卷不动了。。。。</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Java22重磅来袭！！！！你还卷的动吗？？？
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2024-03-21
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fa fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Java/" class="post-category" target="_blank">
+                                    Java
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Java/" target="_blank">
+                        <span class="chip bg-color">Java</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 码农Academy的博客<br />'
+            + '作者: 码农Academy<br />'
+            + '链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () { bodyElement.removeChild(newdiv); }, 200);
+    });
+</script>
+
+    
+
+</main>
+
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+<!-- 代码语言 -->
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+<!-- 代码块复制 -->
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+<script type="text/javascript" src="/libs/codeBlock/clipboard.min.js"></script>
+<!-- 代码块收缩 -->
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script> 
+<!-- 代码块折行 -->
+<style type="text/css">code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }</style>
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            &copy; 2020-2025 码农Academy. 版权所有
+
+            
+            &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
+            <span class="white-color">182.5k</span>
+            
+
+            <br>
+            <span id="sitetime"></span>
+
+            
+            
+            <br>
+            
+            <span id="busuanzi_container_site_pv" style='display:none'>
+                <i class="fa fa-heart-o"></i>
+                本站总访问量 <span id="busuanzi_value_site_pv" class="white-color"></span>
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv" style='display:none'>
+                人次,&nbsp;访客数 <span id="busuanzi_value_site_uv" class="white-color"></span> 人.
+            </span>
+            
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/coderacademyonline" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fa fa-github"></i>
+    </a>
+
+
+
+
+
+    <a href="https://zhihu.com/people/coderacademy" class="tooltipped" target="_blank" data-tooltip="访问我的知乎" data-position="top" data-delay="50">
+        <i class="fa fa-inverse">知</i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fa fa-rss"></i>
+    </a>
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+<!-- 不蒜子计数初始值纠正 -->
+<script>
+    $(document).ready(function () {
+
+        var int = setInterval(fixCount, 50);
+        var pvcountOffset = 80000;
+        var uvcountOffset = 20000;
+
+        function fixCount() {
+            if (document.getElementById("busuanzi_container_site_pv").style.display != "none") {
+                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + pvcountOffset);
+                clearInterval(int);
+            }
+            if ($("#busuanzi_container_site_pv").css("display") != "none") {
+                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + uvcountOffset); // 加上初始数据 
+                clearInterval(int);
+            }
+        }
+    });
+</script>
+
+<script language=javascript>
+    function siteTime() {
+        window.setTimeout("siteTime()", 1000);
+        var seconds = 1000;
+        var minutes = seconds * 60;
+        var hours = minutes * 60;
+        var days = hours * 24;
+        var years = days * 365;
+        var today = new Date();
+        var todayYear = today.getFullYear();
+        var todayMonth = today.getMonth() + 1;
+        var todayDate = today.getDate();
+        var todayHour = today.getHours();
+        var todayMinute = today.getMinutes();
+        var todaySecond = today.getSeconds();
+        /* Date.UTC() -- 返回date对象距世界标准时间(UTC)1970年1月1日午夜之间的毫秒数(时间戳)
+        year - 作为date对象的年份，为4位年份值
+        month - 0-11之间的整数，做为date对象的月份
+        day - 1-31之间的整数，做为date对象的天数
+        hours - 0(午夜24点)-23之间的整数，做为date对象的小时数
+        minutes - 0-59之间的整数，做为date对象的分钟数
+        seconds - 0-59之间的整数，做为date对象的秒数
+        microseconds - 0-999之间的整数，做为date对象的毫秒数 */
+        var t1 = Date.UTC(2017, 09, 11, 00, 00, 00); //北京时间2018-2-13 00:00:00
+        var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+        var diff = t2 - t1;
+        var diffYears = Math.floor(diff / years);
+        var diffDays = Math.floor((diff / days) - diffYears * 365);
+        var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+        var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) / minutes);
+        var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours - diffMinutes * minutes) / seconds);
+        document.getElementById("sitetime").innerHTML = "本站已运行 " + diffYears + " 年 " + diffDays + " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+    }/*因为建站时间还没有一年，就将之注释掉了。需要的可以取消*/
+    siteTime();
+</script>
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fa fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fa fa-angle-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <script type="text/javascript"> var OriginTitile = document.title, st; document.addEventListener("visibilitychange", function () { document.hidden ? (document.title = "Σ(っ °Д °;)っ喔哟，崩溃啦！", clearTimeout(st)) : (document.title = "φ(゜▽゜*)♪咦，又好了！", st = setTimeout(function () { document.title = OriginTitile }, 3e3)) })
+    </script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=查教程获取"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+        dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+    gtag('config', '查教程获取');
+</script>
+
+
+
+    
+    <script src="/libs/others/clicklove.js"></script>
+    
+
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    <!-- 雪花特效 -->
+    
+
+</body>
+
+</html>

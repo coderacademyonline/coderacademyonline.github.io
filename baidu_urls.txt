@@ -1,3 +1,4 @@
+https://www.coderacademy.online/article/redisused.html
 https://www.coderacademy.online/article/java22.html
 https://www.coderacademy.online/article/redishighperformance.html
 https://www.coderacademy.online/article/javalockcategory.html

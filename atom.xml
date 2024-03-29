@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.coderacademy.online/"/>
-  <updated>2024-03-21T07:18:43.835Z</updated>
+  <updated>2024-03-28T11:32:40.609Z</updated>
   <id>https://www.coderacademy.online/</id>
   
   <author>
@@ -15,6 +15,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>美团一面：项目中使用过Redis吗？我说用Redis做缓存。他对我哦了一声</title>
+    <link href="https://www.coderacademy.online/article/redisused.html"/>
+    <id>https://www.coderacademy.online/article/redisused.html</id>
+    <published>2024-03-27T03:27:41.000Z</published>
+    <updated>2024-03-28T11:32:40.609Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="Redis" scheme="https://www.coderacademy.online/categories/Redis/"/>
+    
+    
+      <category term="面试" scheme="https://www.coderacademy.online/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="Redis" scheme="https://www.coderacademy.online/tags/Redis/"/>
+    
+  </entry>
   
   <entry>
     <title>Java22重磅发布！！！！卷不动了，真的卷不动了。。。。</title>
@@ -243,9 +274,9 @@
       <category term="MySql" scheme="https://www.coderacademy.online/categories/MySql/"/>
     
     
-      <category term="Sql优化" scheme="https://www.coderacademy.online/tags/Sql%E4%BC%98%E5%8C%96/"/>
-    
       <category term="MySql" scheme="https://www.coderacademy.online/tags/MySql/"/>
+    
+      <category term="Sql优化" scheme="https://www.coderacademy.online/tags/Sql%E4%BC%98%E5%8C%96/"/>
     
   </entry>
   
@@ -466,11 +497,11 @@
       <category term="MySql" scheme="https://www.coderacademy.online/categories/MySql/"/>
     
     
-      <category term="Sql优化" scheme="https://www.coderacademy.online/tags/Sql%E4%BC%98%E5%8C%96/"/>
-    
       <category term="MySql" scheme="https://www.coderacademy.online/tags/MySql/"/>
     
       <category term="Sql进阶" scheme="https://www.coderacademy.online/tags/Sql%E8%BF%9B%E9%98%B6/"/>
+    
+      <category term="Sql优化" scheme="https://www.coderacademy.online/tags/Sql%E4%BC%98%E5%8C%96/"/>
     
   </entry>
   
@@ -630,35 +661,6 @@
       <category term="MySql" scheme="https://www.coderacademy.online/tags/MySql/"/>
     
       <category term="Mysql的JSON类型" scheme="https://www.coderacademy.online/tags/Mysql%E7%9A%84JSON%E7%B1%BB%E5%9E%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>华为二面：SpringBoot读取配置文件的原理是什么？加载顺序是什么？</title>
-    <link href="https://www.coderacademy.online/article/springbootloadconfigdata.html"/>
-    <id>https://www.coderacademy.online/article/springbootloadconfigdata.html</id>
-    <published>2024-02-03T02:46:22.000Z</published>
-    <updated>2024-02-18T06:41:06.541Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-      <category term="SpringBoot" scheme="https://www.coderacademy.online/categories/SpringBoot/"/>
-    
-    
-      <category term="SpringBoot" scheme="https://www.coderacademy.online/tags/SpringBoot/"/>
     
   </entry>
   

@@ -374,18 +374,18 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
     
     
     <div class="carousel-item amber white-text carousel-post bg-cover"
-            style="background-image: url('https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/featureimages/24.jpg');">
+            style="background-image: url('https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/featureimages/21.jpg');">
         <div class="container">
             <div class="row">
                 <div class="col s10 offset-s1">
-                    <div class="title center-align">推荐几款IDEA插件，助你玩转Mybatis开发</div>
+                    <div class="title center-align">Java编程的利器：Pair和Triple无缝解决多值返回问题，助力编写高效代码</div>
                     <div class="description center-align">
                     
-                        介绍几款IDEA中开发MyBatis所用的插件，助力开发者轻松高效。自动生成代码，可视化配置，为MyBatis开发提供卓越便利。
+                        Pair和Triple类是commons-lang3库提供的实用工具，可以方便地将多个值组合在一起，实现多个返回值的效果，提高了代码的可读性和可维护性，使得处理多值情景更加轻松。
                     
                     </div>
                     <div class="cover-btns">
-                        <a href="/article/ideamybatisplugins.html" class="waves-effect waves-light btn" target="_blank">
+                        <a href="/article/javapairtriple.html" class="waves-effect waves-light btn" target="_blank">
                             <i class="icon fa fa-eye fa-fw"></i>阅读更多
                         </a>
                     </div>
@@ -418,18 +418,18 @@ $('.bg-cover').css('background-image', 'url(/medias/banner/' + new Date().getDay
     
     
     <div class="carousel-item amber white-text carousel-post bg-cover"
-            style="background-image: url('https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/featureimages/21.jpg');">
+            style="background-image: url('https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/featureimages/24.jpg');">
         <div class="container">
             <div class="row">
                 <div class="col s10 offset-s1">
-                    <div class="title center-align">Java编程的利器：Pair和Triple无缝解决多值返回问题，助力编写高效代码</div>
+                    <div class="title center-align">推荐几款IDEA插件，助你玩转Mybatis开发</div>
                     <div class="description center-align">
                     
-                        Pair和Triple类是commons-lang3库提供的实用工具，可以方便地将多个值组合在一起，实现多个返回值的效果，提高了代码的可读性和可维护性，使得处理多值情景更加轻松。
+                        介绍几款IDEA中开发MyBatis所用的插件，助力开发者轻松高效。自动生成代码，可视化配置，为MyBatis开发提供卓越便利。
                     
                     </div>
                     <div class="cover-btns">
-                        <a href="/article/javapairtriple.html" class="waves-effect waves-light btn" target="_blank">
+                        <a href="/article/ideamybatisplugins.html" class="waves-effect waves-light btn" target="_blank">
                             <i class="icon fa fa-eye fa-fw"></i>阅读更多
                         </a>
                     </div>
@@ -665,6 +665,56 @@ $(function () {
     <!-- 所有文章卡片 -->
     <article id="articles" class="container articles">
         <div class="row article-row">
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/article/redisused.html" target="_blank">
+                        <div class="card-image">
+                            
+                            <img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/featureimages/32.jpg" class="responsive-img" alt="美团一面：项目中使用过Redis吗？我说用Redis做缓存。他对我哦了一声">
+                            
+                            <span class="card-title">美团一面：项目中使用过Redis吗？我说用Redis做缓存。他对我哦了一声</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                            Redis广泛应用于数据缓存、会话管理、排行榜、计数器、分布式锁、消息队列、社交网络、限流控制、位运算、电商、时间序列、地理位置索引等多样化业务场景。
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2024-03-27
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fa fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/Redis/" class="post-category" target="_blank">
+                                    Redis
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/面试/" target="_blank">
+                            <span class="chip bg-color">面试</span>
+                        </a>
+                        
+                        <a href="/tags/Redis/" target="_blank">
+                            <span class="chip bg-color">Redis</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
@@ -1035,12 +1085,12 @@ $(function () {
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/Sql优化/" target="_blank">
-                            <span class="chip bg-color">Sql优化</span>
-                        </a>
-                        
                         <a href="/tags/MySql/" target="_blank">
                             <span class="chip bg-color">MySql</span>
+                        </a>
+                        
+                        <a href="/tags/Sql优化/" target="_blank">
+                            <span class="chip bg-color">Sql优化</span>
                         </a>
                         
                     </div>
@@ -1249,60 +1299,6 @@ $(function () {
                 </div>
             </div>
             
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/article/javastopthread.html" target="_blank">
-                        <div class="card-image">
-                            
-                            <img src="https://coderacademy.oss-cn-zhangjiakou.aliyuncs.com/featureimages/32.jpg" class="responsive-img" alt="阿里一面：Java中如何停止线程？">
-                            
-                            <span class="card-title">阿里一面：Java中如何停止线程？</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                            在Java多线程编程中，正确且安全地停止线程是一项关键技能。简单粗暴地“杀死”线程不仅可能导致数据不一致性，还可能引发各种难以预测的错误。
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2024-02-29
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fa fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/Java/" class="post-category" target="_blank">
-                                    Java
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/面试/" target="_blank">
-                            <span class="chip bg-color">面试</span>
-                        </a>
-                        
-                        <a href="/tags/Java/" target="_blank">
-                            <span class="chip bg-color">Java</span>
-                        </a>
-                        
-                        <a href="/tags/多线程/" target="_blank">
-                            <span class="chip bg-color">多线程</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
         </div>
     </article>
 
@@ -1340,7 +1336,7 @@ $(function () {
 
             
             &nbsp;<i class="fa fa-area-chart"></i>&nbsp;站点总字数:&nbsp;
-            <span class="white-color">175.1k</span>
+            <span class="white-color">182.5k</span>
             
 
             <br>
