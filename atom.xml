@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.coderacademy.online/"/>
-  <updated>2024-04-02T01:50:31.740Z</updated>
+  <updated>2024-04-03T01:52:53.807Z</updated>
   <id>https://www.coderacademy.online/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>字节二面：为什么SpringBoot的 jar 可以直接运行？我说因为内嵌了Tomcat容器，他让我出门左转。。</title>
-    <link href="https://www.coderacademy.online/article/null.html"/>
-    <id>https://www.coderacademy.online/article/null.html</id>
+    <link href="https://www.coderacademy.online/article/springbootjarrun.html"/>
+    <id>https://www.coderacademy.online/article/springbootjarrun.html</id>
     <published>2024-03-29T06:53:55.000Z</published>
-    <updated>2024-04-02T01:50:31.740Z</updated>
+    <updated>2024-04-03T01:52:53.807Z</updated>
     
     <summary type="html">
     
@@ -38,6 +38,12 @@
     
     </summary>
     
+      <category term="SpringBoot" scheme="https://www.coderacademy.online/categories/SpringBoot/"/>
+    
+    
+      <category term="面试" scheme="https://www.coderacademy.online/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="SpringBoot" scheme="https://www.coderacademy.online/tags/SpringBoot/"/>
     
   </entry>
   
