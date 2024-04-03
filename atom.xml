@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.coderacademy.online/"/>
-  <updated>2024-03-28T11:32:40.609Z</updated>
+  <updated>2024-04-02T01:50:31.740Z</updated>
   <id>https://www.coderacademy.online/</id>
   
   <author>
@@ -15,6 +15,64 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>字节二面：为什么SpringBoot的 jar 可以直接运行？我说因为内嵌了Tomcat容器，他让我出门左转。。</title>
+    <link href="https://www.coderacademy.online/article/null.html"/>
+    <id>https://www.coderacademy.online/article/null.html</id>
+    <published>2024-03-29T06:53:55.000Z</published>
+    <updated>2024-04-02T01:50:31.740Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>提高生产力！这10个Lambda表达式必须掌握，开发效率嘎嘎上升！</title>
+    <link href="https://www.coderacademy.online/article/uselambda.html"/>
+    <id>https://www.coderacademy.online/article/uselambda.html</id>
+    <published>2024-03-27T16:11:51.000Z</published>
+    <updated>2024-04-03T01:32:43.204Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="lambda" scheme="https://www.coderacademy.online/categories/lambda/"/>
+    
+    
+      <category term="Java" scheme="https://www.coderacademy.online/tags/Java/"/>
+    
+      <category term="Lambda" scheme="https://www.coderacademy.online/tags/Lambda/"/>
+    
+      <category term="Stream" scheme="https://www.coderacademy.online/tags/Stream/"/>
+    
+  </entry>
   
   <entry>
     <title>美团一面：项目中使用过Redis吗？我说用Redis做缓存。他对我哦了一声</title>
@@ -41,9 +99,9 @@
       <category term="Redis" scheme="https://www.coderacademy.online/categories/Redis/"/>
     
     
-      <category term="面试" scheme="https://www.coderacademy.online/tags/%E9%9D%A2%E8%AF%95/"/>
-    
       <category term="Redis" scheme="https://www.coderacademy.online/tags/Redis/"/>
+    
+      <category term="面试" scheme="https://www.coderacademy.online/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
@@ -101,9 +159,9 @@
       <category term="Redis" scheme="https://www.coderacademy.online/categories/Redis/"/>
     
     
-      <category term="面试" scheme="https://www.coderacademy.online/tags/%E9%9D%A2%E8%AF%95/"/>
-    
       <category term="Redis" scheme="https://www.coderacademy.online/tags/Redis/"/>
+    
+      <category term="面试" scheme="https://www.coderacademy.online/tags/%E9%9D%A2%E8%AF%95/"/>
     
       <category term="Redis为什么快" scheme="https://www.coderacademy.online/tags/Redis%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BF%AB/"/>
     
@@ -274,9 +332,9 @@
       <category term="MySql" scheme="https://www.coderacademy.online/categories/MySql/"/>
     
     
-      <category term="MySql" scheme="https://www.coderacademy.online/tags/MySql/"/>
-    
       <category term="Sql优化" scheme="https://www.coderacademy.online/tags/Sql%E4%BC%98%E5%8C%96/"/>
+    
+      <category term="MySql" scheme="https://www.coderacademy.online/tags/MySql/"/>
     
   </entry>
   
@@ -497,11 +555,11 @@
       <category term="MySql" scheme="https://www.coderacademy.online/categories/MySql/"/>
     
     
+      <category term="Sql优化" scheme="https://www.coderacademy.online/tags/Sql%E4%BC%98%E5%8C%96/"/>
+    
       <category term="MySql" scheme="https://www.coderacademy.online/tags/MySql/"/>
     
       <category term="Sql进阶" scheme="https://www.coderacademy.online/tags/Sql%E8%BF%9B%E9%98%B6/"/>
-    
-      <category term="Sql优化" scheme="https://www.coderacademy.online/tags/Sql%E4%BC%98%E5%8C%96/"/>
     
   </entry>
   
@@ -595,70 +653,6 @@
       <category term="异步方法" scheme="https://www.coderacademy.online/tags/%E5%BC%82%E6%AD%A5%E6%96%B9%E6%B3%95/"/>
     
       <category term="并发" scheme="https://www.coderacademy.online/tags/%E5%B9%B6%E5%8F%91/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>求求你别再用OkHttp调用API接口了，快来试试这款HTTP客户端库吧</title>
-    <link href="https://www.coderacademy.online/article/retrofit2.html"/>
-    <id>https://www.coderacademy.online/article/retrofit2.html</id>
-    <published>2024-02-22T09:30:41.000Z</published>
-    <updated>2024-02-23T02:02:26.084Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-      <category term="Java" scheme="https://www.coderacademy.online/categories/Java/"/>
-    
-    
-      <category term="Java" scheme="https://www.coderacademy.online/tags/Java/"/>
-    
-      <category term="Retrofit2" scheme="https://www.coderacademy.online/tags/Retrofit2/"/>
-    
-      <category term="网络请求" scheme="https://www.coderacademy.online/tags/%E7%BD%91%E7%BB%9C%E8%AF%B7%E6%B1%82/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>玩转SpringBoot：动态排除Starter配置，轻松部署</title>
-    <link href="https://www.coderacademy.online/article/springbootdynamicexclusionstarter.html"/>
-    <id>https://www.coderacademy.online/article/springbootdynamicexclusionstarter.html</id>
-    <published>2024-02-19T08:22:23.000Z</published>
-    <updated>2024-02-22T07:27:41.371Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-      <category term="SpringBoot" scheme="https://www.coderacademy.online/categories/SpringBoot/"/>
-    
-    
-      <category term="SpringBoot" scheme="https://www.coderacademy.online/tags/SpringBoot/"/>
-    
-      <category term="动态排除Starter配置" scheme="https://www.coderacademy.online/tags/%E5%8A%A8%E6%80%81%E6%8E%92%E9%99%A4Starter%E9%85%8D%E7%BD%AE/"/>
     
   </entry>
   

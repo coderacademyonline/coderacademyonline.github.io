@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.coderacademy.online/article/uselambda.html</loc>
+    
+    <lastmod>2024-04-03T01:32:43.204Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://www.coderacademy.online/article/null.html</loc>
+    
+    <lastmod>2024-04-02T01:50:31.740Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.coderacademy.online/article/null.html</loc>
     
     <lastmod>2024-03-29T02:36:18.663Z</lastmod>
@@ -359,6 +373,13 @@
   </url>
   
   <url>
+    <loc>https://www.coderacademy.online/categories/index.html</loc>
+    
+    <lastmod>2021-07-29T12:54:42.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://www.coderacademy.online/archives/index.html</loc>
     
     <lastmod>2021-07-29T12:54:42.000Z</lastmod>
@@ -367,13 +388,6 @@
   
   <url>
     <loc>https://www.coderacademy.online/tags/index.html</loc>
-    
-    <lastmod>2021-07-29T12:54:42.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://www.coderacademy.online/categories/index.html</loc>
     
     <lastmod>2021-07-29T12:54:42.000Z</lastmod>
     
