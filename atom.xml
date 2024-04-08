@@ -174,6 +174,39 @@
   </entry>
   
   <entry>
+    <title>美团一面：说说synchronized的实现原理？问麻了。。。。</title>
+    <link href="https://www.coderacademy.online/article/synchronizedyuanli.html"/>
+    <id>https://www.coderacademy.online/article/synchronizedyuanli.html</id>
+    <published>2024-03-18T14:14:43.000Z</published>
+    <updated>2024-04-08T01:51:33.455Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="https://www.coderacademy.online/categories/Java/"/>
+    
+    
+      <category term="面试" scheme="https://www.coderacademy.online/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="Java" scheme="https://www.coderacademy.online/tags/Java/"/>
+    
+      <category term="synchronized" scheme="https://www.coderacademy.online/tags/synchronized/"/>
+    
+  </entry>
+  
+  <entry>
     <title>阿里二面：Java中锁的分类有哪些？你能说全吗？</title>
     <link href="https://www.coderacademy.online/article/javalockcategory.html"/>
     <id>https://www.coderacademy.online/article/javalockcategory.html</id>
@@ -202,9 +235,9 @@
     
       <category term="Java" scheme="https://www.coderacademy.online/tags/Java/"/>
     
-      <category term="多线程" scheme="https://www.coderacademy.online/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
-    
       <category term="并发编程" scheme="https://www.coderacademy.online/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="多线程" scheme="https://www.coderacademy.online/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
     
   </entry>
   
@@ -626,39 +659,6 @@
       <category term="SpringBoot" scheme="https://www.coderacademy.online/tags/SpringBoot/"/>
     
       <category term="定时任务" scheme="https://www.coderacademy.online/tags/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>提升Spring Boot应用性能的秘密武器：揭秘@Async注解的实用技巧</title>
-    <link href="https://www.coderacademy.online/article/springbootasync.html"/>
-    <id>https://www.coderacademy.online/article/springbootasync.html</id>
-    <published>2024-02-27T00:07:55.000Z</published>
-    <updated>2024-02-28T02:11:08.099Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-      <category term="SpringBoot" scheme="https://www.coderacademy.online/categories/SpringBoot/"/>
-    
-    
-      <category term="SpringBoot" scheme="https://www.coderacademy.online/tags/SpringBoot/"/>
-    
-      <category term="异步方法" scheme="https://www.coderacademy.online/tags/%E5%BC%82%E6%AD%A5%E6%96%B9%E6%B3%95/"/>
-    
-      <category term="并发" scheme="https://www.coderacademy.online/tags/%E5%B9%B6%E5%8F%91/"/>
     
   </entry>
   

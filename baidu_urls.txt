@@ -3,6 +3,7 @@ https://www.coderacademy.online/article/uselambda.html
 https://www.coderacademy.online/article/redisused.html
 https://www.coderacademy.online/article/java22.html
 https://www.coderacademy.online/article/redishighperformance.html
+https://www.coderacademy.online/article/synchronizedyuanli.html
 https://www.coderacademy.online/article/javalockcategory.html
 https://www.coderacademy.online/article/javathreadoom.html
 https://www.coderacademy.online/article/javareference.html
