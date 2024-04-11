@@ -1,6 +1,9 @@
+https://www.coderacademy.online/article/redismysql.html
+https://www.coderacademy.online/article/null.html
 https://www.coderacademy.online/article/springbootjarrun.html
 https://www.coderacademy.online/article/uselambda.html
 https://www.coderacademy.online/article/redisused.html
+https://www.coderacademy.online/article/redislfu.html
 https://www.coderacademy.online/article/java22.html
 https://www.coderacademy.online/article/redishighperformance.html
 https://www.coderacademy.online/article/synchronizedyuanli.html

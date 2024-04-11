@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.coderacademy.online/"/>
-  <updated>2024-04-03T01:52:53.807Z</updated>
+  <updated>2024-04-11T01:35:17.167Z</updated>
   <id>https://www.coderacademy.online/</id>
   
   <author>
@@ -15,6 +15,64 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>美团二面：如何保证Redis与Mysql双写一致性？连续两个面试问到了！</title>
+    <link href="https://www.coderacademy.online/article/redismysql.html"/>
+    <id>https://www.coderacademy.online/article/redismysql.html</id>
+    <published>2024-04-02T14:15:01.000Z</published>
+    <updated>2024-04-11T01:35:17.167Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="Redis" scheme="https://www.coderacademy.online/categories/Redis/"/>
+    
+    
+      <category term="Mysql" scheme="https://www.coderacademy.online/tags/Mysql/"/>
+    
+      <category term="Redis" scheme="https://www.coderacademy.online/tags/Redis/"/>
+    
+      <category term="面试" scheme="https://www.coderacademy.online/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>京东一面：如何在SpringBoot启动时执行特定代码？有哪些方式？我说我不知道。。。。</title>
+    <link href="https://www.coderacademy.online/article/null.html"/>
+    <id>https://www.coderacademy.online/article/null.html</id>
+    <published>2024-04-01T02:34:36.000Z</published>
+    <updated>2024-04-01T11:52:27.178Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>字节二面：为什么SpringBoot的 jar 可以直接运行？我说因为内嵌了Tomcat容器，他让我出门左转。。</title>
@@ -86,6 +144,37 @@
     <id>https://www.coderacademy.online/article/redisused.html</id>
     <published>2024-03-27T03:27:41.000Z</published>
     <updated>2024-03-28T11:32:40.609Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="Redis" scheme="https://www.coderacademy.online/categories/Redis/"/>
+    
+    
+      <category term="Redis" scheme="https://www.coderacademy.online/tags/Redis/"/>
+    
+      <category term="面试" scheme="https://www.coderacademy.online/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>淘宝二面：MySQL里有2000万条数据，但是Redis中只存20万的数据，如何保证redis中的数据都是热点数据?</title>
+    <link href="https://www.coderacademy.online/article/redislfu.html"/>
+    <id>https://www.coderacademy.online/article/redislfu.html</id>
+    <published>2024-03-25T15:20:18.000Z</published>
+    <updated>2024-04-03T01:32:43.204Z</updated>
     
     <summary type="html">
     
@@ -235,9 +324,9 @@
     
       <category term="Java" scheme="https://www.coderacademy.online/tags/Java/"/>
     
-      <category term="并发编程" scheme="https://www.coderacademy.online/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
-    
       <category term="多线程" scheme="https://www.coderacademy.online/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+      <category term="并发编程" scheme="https://www.coderacademy.online/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
@@ -566,99 +655,6 @@
       <category term="多线程状态" scheme="https://www.coderacademy.online/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81/"/>
     
       <category term="并发编程" scheme="https://www.coderacademy.online/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>学会这7种SQL进阶用法，让你少走99%的弯路!</title>
-    <link href="https://www.coderacademy.online/article/mysqlsqladvanced.html"/>
-    <id>https://www.coderacademy.online/article/mysqlsqladvanced.html</id>
-    <published>2024-02-28T14:20:28.000Z</published>
-    <updated>2024-03-07T01:53:13.033Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-      <category term="MySql" scheme="https://www.coderacademy.online/categories/MySql/"/>
-    
-    
-      <category term="Sql优化" scheme="https://www.coderacademy.online/tags/Sql%E4%BC%98%E5%8C%96/"/>
-    
-      <category term="MySql" scheme="https://www.coderacademy.online/tags/MySql/"/>
-    
-      <category term="Sql进阶" scheme="https://www.coderacademy.online/tags/Sql%E8%BF%9B%E9%98%B6/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>美团二面：如何设计一个订单超时未支付关闭订单的解决方案？我说使用Elastic-Job轮训判断。他让我回去等通知。。。。</title>
-    <link href="https://www.coderacademy.online/article/null.html"/>
-    <id>https://www.coderacademy.online/article/null.html</id>
-    <published>2024-02-28T06:10:57.000Z</published>
-    <updated>2024-03-29T02:36:18.663Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-      <category term="架构之道" scheme="https://www.coderacademy.online/categories/%E6%9E%B6%E6%9E%84%E4%B9%8B%E9%81%93/"/>
-    
-    
-      <category term="面试" scheme="https://www.coderacademy.online/tags/%E9%9D%A2%E8%AF%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>玩转SpringBoot：SpringBoot的几种定时任务实现方式</title>
-    <link href="https://www.coderacademy.online/article/springbootscheduled.html"/>
-    <id>https://www.coderacademy.online/article/springbootscheduled.html</id>
-    <published>2024-02-28T06:07:55.000Z</published>
-    <updated>2024-03-07T01:33:39.299Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-      <category term="SpringBoot" scheme="https://www.coderacademy.online/categories/SpringBoot/"/>
-    
-    
-      <category term="SpringBoot" scheme="https://www.coderacademy.online/tags/SpringBoot/"/>
-    
-      <category term="定时任务" scheme="https://www.coderacademy.online/tags/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/"/>
     
   </entry>
   
