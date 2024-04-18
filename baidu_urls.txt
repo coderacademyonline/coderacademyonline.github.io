@@ -23,6 +23,8 @@ https://www.coderacademy.online/article/null.html
 https://www.coderacademy.online/article/springbootscheduled.html
 https://www.coderacademy.online/article/springbootasync.html
 https://www.coderacademy.online/article/retrofit2.html
+https://www.coderacademy.online/article/amountbigdeimallong.html
+https://www.coderacademy.online/article/springbootconfigdata.html
 https://www.coderacademy.online/article/springbootdynamicexclusionstarter.html
 https://www.coderacademy.online/article/mysqljson.html
 https://www.coderacademy.online/article/springbootloadconfigdata.html

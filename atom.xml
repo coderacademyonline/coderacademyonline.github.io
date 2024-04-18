@@ -130,11 +130,11 @@
       <category term="lambda" scheme="https://www.coderacademy.online/categories/lambda/"/>
     
     
+      <category term="Java" scheme="https://www.coderacademy.online/tags/Java/"/>
+    
       <category term="Lambda" scheme="https://www.coderacademy.online/tags/Lambda/"/>
     
       <category term="Stream" scheme="https://www.coderacademy.online/tags/Stream/"/>
-    
-      <category term="Java" scheme="https://www.coderacademy.online/tags/Java/"/>
     
   </entry>
   
@@ -460,9 +460,9 @@
       <category term="MySql" scheme="https://www.coderacademy.online/categories/MySql/"/>
     
     
-      <category term="MySql" scheme="https://www.coderacademy.online/tags/MySql/"/>
-    
       <category term="Sql优化" scheme="https://www.coderacademy.online/tags/Sql%E4%BC%98%E5%8C%96/"/>
+    
+      <category term="MySql" scheme="https://www.coderacademy.online/tags/MySql/"/>
     
   </entry>
   
@@ -553,9 +553,9 @@
     
       <category term="SpringBoot" scheme="https://www.coderacademy.online/tags/SpringBoot/"/>
     
-      <category term="Spring状态机" scheme="https://www.coderacademy.online/tags/Spring%E7%8A%B6%E6%80%81%E6%9C%BA/"/>
-    
       <category term="架构之道" scheme="https://www.coderacademy.online/tags/%E6%9E%B6%E6%9E%84%E4%B9%8B%E9%81%93/"/>
+    
+      <category term="Spring状态机" scheme="https://www.coderacademy.online/tags/Spring%E7%8A%B6%E6%80%81%E6%9C%BA/"/>
     
   </entry>
   
@@ -652,9 +652,9 @@
     
       <category term="Java" scheme="https://www.coderacademy.online/tags/Java/"/>
     
-      <category term="多线程状态" scheme="https://www.coderacademy.online/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81/"/>
-    
       <category term="并发编程" scheme="https://www.coderacademy.online/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="多线程状态" scheme="https://www.coderacademy.online/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81/"/>
     
   </entry>
   
