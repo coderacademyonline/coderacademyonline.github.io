@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.coderacademy.online/"/>
-  <updated>2024-04-11T04:45:24.266Z</updated>
+  <updated>2024-05-09T01:50:36.431Z</updated>
   <id>https://www.coderacademy.online/</id>
   
   <author>
@@ -15,6 +15,161 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>京东二面：Redis持久化方式有哪些？说下各自的优缺点？线上环境如何进行配置的？</title>
+    <link href="https://www.coderacademy.online/article/null.html"/>
+    <id>https://www.coderacademy.online/article/null.html</id>
+    <published>2024-04-26T16:17:19.000Z</published>
+    <updated>2024-05-09T01:50:36.431Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>快手二面：有了Cookie和Session 为什么还要JWT ？你说一下JWT的原理？</title>
+    <link href="https://www.coderacademy.online/article/jwtuse.html"/>
+    <id>https://www.coderacademy.online/article/jwtuse.html</id>
+    <published>2024-04-17T14:55:02.000Z</published>
+    <updated>2024-04-18T13:16:57.769Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="架构之道" scheme="https://www.coderacademy.online/categories/%E6%9E%B6%E6%9E%84%E4%B9%8B%E9%81%93/"/>
+    
+    
+      <category term="面试" scheme="https://www.coderacademy.online/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="Java" scheme="https://www.coderacademy.online/tags/Java/"/>
+    
+      <category term="架构设计" scheme="https://www.coderacademy.online/tags/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"/>
+    
+      <category term="JWT" scheme="https://www.coderacademy.online/tags/JWT/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>美团一面：什么是CAS？有什么优缺点？我说我只用过AtomicInteger。。。。</title>
+    <link href="https://www.coderacademy.online/article/javacas.html"/>
+    <id>https://www.coderacademy.online/article/javacas.html</id>
+    <published>2024-04-13T15:45:40.000Z</published>
+    <updated>2024-04-20T14:38:17.591Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="https://www.coderacademy.online/categories/Java/"/>
+    
+    
+      <category term="面试" scheme="https://www.coderacademy.online/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="Java" scheme="https://www.coderacademy.online/tags/Java/"/>
+    
+      <category term="并发编程" scheme="https://www.coderacademy.online/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>京东二面：Sychronized的锁升级过程是怎样的</title>
+    <link href="https://www.coderacademy.online/article/javasychronizedupgrade.html"/>
+    <id>https://www.coderacademy.online/article/javasychronizedupgrade.html</id>
+    <published>2024-04-13T02:52:55.000Z</published>
+    <updated>2024-04-18T01:28:06.007Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="Java" scheme="https://www.coderacademy.online/categories/Java/"/>
+    
+    
+      <category term="面试" scheme="https://www.coderacademy.online/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="Java" scheme="https://www.coderacademy.online/tags/Java/"/>
+    
+      <category term="并发编程" scheme="https://www.coderacademy.online/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>快手二面：你有没有调用过第三方接口？碰到过哪些坑？</title>
+    <link href="https://www.coderacademy.online/article/connectthirdpartysystem.html"/>
+    <id>https://www.coderacademy.online/article/connectthirdpartysystem.html</id>
+    <published>2024-04-10T16:36:15.000Z</published>
+    <updated>2024-04-18T01:28:06.008Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
+      <category term="架构之道" scheme="https://www.coderacademy.online/categories/%E6%9E%B6%E6%9E%84%E4%B9%8B%E9%81%93/"/>
+    
+    
+      <category term="架构设计" scheme="https://www.coderacademy.online/tags/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/"/>
+    
+  </entry>
   
   <entry>
     <title>美团二面：如何保证Redis与Mysql双写一致性？连续两个面试问到了！</title>
@@ -43,9 +198,9 @@
     
       <category term="Mysql" scheme="https://www.coderacademy.online/tags/Mysql/"/>
     
-      <category term="面试" scheme="https://www.coderacademy.online/tags/%E9%9D%A2%E8%AF%95/"/>
-    
       <category term="Redis" scheme="https://www.coderacademy.online/tags/Redis/"/>
+    
+      <category term="面试" scheme="https://www.coderacademy.online/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
@@ -102,6 +257,31 @@
       <category term="面试" scheme="https://www.coderacademy.online/tags/%E9%9D%A2%E8%AF%95/"/>
     
       <category term="SpringBoot" scheme="https://www.coderacademy.online/tags/SpringBoot/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>字节二面：你有没有用过分布式锁？有哪些分布式锁实现方案？使用分布式锁有哪些优缺点？</title>
+    <link href="https://www.coderacademy.online/article/null.html"/>
+    <id>https://www.coderacademy.online/article/null.html</id>
+    <published>2024-03-29T02:46:27.000Z</published>
+    <updated>2024-04-28T06:16:49.501Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;blockquote&gt;
+&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;img
+        
+      
+    
+    </summary>
+    
     
   </entry>
   
@@ -163,9 +343,9 @@
       <category term="Redis" scheme="https://www.coderacademy.online/categories/Redis/"/>
     
     
-      <category term="面试" scheme="https://www.coderacademy.online/tags/%E9%9D%A2%E8%AF%95/"/>
-    
       <category term="Redis" scheme="https://www.coderacademy.online/tags/Redis/"/>
+    
+      <category term="面试" scheme="https://www.coderacademy.online/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
@@ -194,9 +374,9 @@
       <category term="Redis" scheme="https://www.coderacademy.online/categories/Redis/"/>
     
     
-      <category term="面试" scheme="https://www.coderacademy.online/tags/%E9%9D%A2%E8%AF%95/"/>
-    
       <category term="Redis" scheme="https://www.coderacademy.online/tags/Redis/"/>
+    
+      <category term="面试" scheme="https://www.coderacademy.online/tags/%E9%9D%A2%E8%AF%95/"/>
     
   </entry>
   
@@ -254,9 +434,9 @@
       <category term="Redis" scheme="https://www.coderacademy.online/categories/Redis/"/>
     
     
-      <category term="面试" scheme="https://www.coderacademy.online/tags/%E9%9D%A2%E8%AF%95/"/>
-    
       <category term="Redis" scheme="https://www.coderacademy.online/tags/Redis/"/>
+    
+      <category term="面试" scheme="https://www.coderacademy.online/tags/%E9%9D%A2%E8%AF%95/"/>
     
       <category term="Redis为什么快" scheme="https://www.coderacademy.online/tags/Redis%E4%B8%BA%E4%BB%80%E4%B9%88%E5%BF%AB/"/>
     
@@ -324,9 +504,9 @@
     
       <category term="Java" scheme="https://www.coderacademy.online/tags/Java/"/>
     
-      <category term="并发编程" scheme="https://www.coderacademy.online/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
-    
       <category term="多线程" scheme="https://www.coderacademy.online/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
+    
+      <category term="并发编程" scheme="https://www.coderacademy.online/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
@@ -463,198 +643,6 @@
       <category term="Sql优化" scheme="https://www.coderacademy.online/tags/Sql%E4%BC%98%E5%8C%96/"/>
     
       <category term="MySql" scheme="https://www.coderacademy.online/tags/MySql/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>还在用Calendar操作Date？Java8都弃用了，还不知道它的这款强大的工具吗？</title>
-    <link href="https://www.coderacademy.online/article/null.html"/>
-    <id>https://www.coderacademy.online/article/null.html</id>
-    <published>2024-03-07T11:53:51.000Z</published>
-    <updated>2024-03-12T12:22:08.463Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>腾讯二面：如何保证接口幂等性？高并发下的接口幂等性如何实现？</title>
-    <link href="https://www.coderacademy.online/article/springbootidempotent.html"/>
-    <id>https://www.coderacademy.online/article/springbootidempotent.html</id>
-    <published>2024-03-06T14:36:16.000Z</published>
-    <updated>2024-03-07T08:58:21.738Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-      <category term="SpringBoot" scheme="https://www.coderacademy.online/categories/SpringBoot/"/>
-    
-    
-      <category term="面试" scheme="https://www.coderacademy.online/tags/%E9%9D%A2%E8%AF%95/"/>
-    
-      <category term="SpringBoot" scheme="https://www.coderacademy.online/tags/SpringBoot/"/>
-    
-      <category term="架构之道" scheme="https://www.coderacademy.online/tags/%E6%9E%B6%E6%9E%84%E4%B9%8B%E9%81%93/"/>
-    
-      <category term="接口幂等" scheme="https://www.coderacademy.online/tags/%E6%8E%A5%E5%8F%A3%E5%B9%82%E7%AD%89/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Spring状态机（FSM），让订单状态流转如丝般顺滑</title>
-    <link href="https://www.coderacademy.online/article/springbootstatemachine.html"/>
-    <id>https://www.coderacademy.online/article/springbootstatemachine.html</id>
-    <published>2024-03-05T14:28:11.000Z</published>
-    <updated>2024-03-12T01:50:21.776Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-      <category term="SpringBoot" scheme="https://www.coderacademy.online/categories/SpringBoot/"/>
-    
-    
-      <category term="SpringBoot" scheme="https://www.coderacademy.online/tags/SpringBoot/"/>
-    
-      <category term="架构之道" scheme="https://www.coderacademy.online/tags/%E6%9E%B6%E6%9E%84%E4%B9%8B%E9%81%93/"/>
-    
-      <category term="Spring状态机" scheme="https://www.coderacademy.online/tags/Spring%E7%8A%B6%E6%80%81%E6%9C%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>阿里二面：如何定位&amp;避免死锁？连着两个面试问到了！</title>
-    <link href="https://www.coderacademy.online/article/javadeadlock.html"/>
-    <id>https://www.coderacademy.online/article/javadeadlock.html</id>
-    <published>2024-03-02T06:01:04.000Z</published>
-    <updated>2024-03-27T06:18:02.396Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-      <category term="Java" scheme="https://www.coderacademy.online/categories/Java/"/>
-    
-    
-      <category term="Java" scheme="https://www.coderacademy.online/tags/Java/"/>
-    
-      <category term="并发编程" scheme="https://www.coderacademy.online/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
-    
-      <category term="死锁" scheme="https://www.coderacademy.online/tags/%E6%AD%BB%E9%94%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>阿里一面：Java中如何停止线程？</title>
-    <link href="https://www.coderacademy.online/article/javastopthread.html"/>
-    <id>https://www.coderacademy.online/article/javastopthread.html</id>
-    <published>2024-02-29T14:43:02.000Z</published>
-    <updated>2024-03-04T01:06:25.781Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-      <category term="Java" scheme="https://www.coderacademy.online/categories/Java/"/>
-    
-    
-      <category term="面试" scheme="https://www.coderacademy.online/tags/%E9%9D%A2%E8%AF%95/"/>
-    
-      <category term="Java" scheme="https://www.coderacademy.online/tags/Java/"/>
-    
-      <category term="多线程" scheme="https://www.coderacademy.online/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>美团一面：Java中线程有哪几种状态？</title>
-    <link href="https://www.coderacademy.online/article/javathreadstate.html"/>
-    <id>https://www.coderacademy.online/article/javathreadstate.html</id>
-    <published>2024-02-29T14:41:53.000Z</published>
-    <updated>2024-03-07T01:33:25.449Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;blockquote&gt;
-&lt;p&gt;关注公众号【码农Academy】，每日技术干货马上就来！&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;&lt;img
-        
-      
-    
-    </summary>
-    
-      <category term="Java" scheme="https://www.coderacademy.online/categories/Java/"/>
-    
-    
-      <category term="Java" scheme="https://www.coderacademy.online/tags/Java/"/>
-    
-      <category term="并发编程" scheme="https://www.coderacademy.online/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
-    
-      <category term="多线程状态" scheme="https://www.coderacademy.online/tags/%E5%A4%9A%E7%BA%BF%E7%A8%8B%E7%8A%B6%E6%80%81/"/>
     
   </entry>
   

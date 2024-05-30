@@ -1,6 +1,12 @@
+https://www.coderacademy.online/article/null.html
+https://www.coderacademy.online/article/jwtuse.html
+https://www.coderacademy.online/article/javacas.html
+https://www.coderacademy.online/article/javasychronizedupgrade.html
+https://www.coderacademy.online/article/connectthirdpartysystem.html
 https://www.coderacademy.online/article/redismysql.html
 https://www.coderacademy.online/article/null.html
 https://www.coderacademy.online/article/springbootjarrun.html
+https://www.coderacademy.online/article/null.html
 https://www.coderacademy.online/article/uselambda.html
 https://www.coderacademy.online/article/redisused.html
 https://www.coderacademy.online/article/redislfu.html
